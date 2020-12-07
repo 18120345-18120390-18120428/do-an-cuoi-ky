@@ -7,7 +7,11 @@
 		<key>DoAnCuoiKy.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>21</integer>
+=======
+			<integer>20</integer>
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
 		</dict>
 	</dict>
 </dict>

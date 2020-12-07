@@ -10,5 +10,8 @@ target 'DoAnCuoiKy' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+<<<<<<< HEAD
   pod 'Alertift', '~> 4.2'
+=======
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
 end

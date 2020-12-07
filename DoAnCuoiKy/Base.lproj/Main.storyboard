@@ -10,8 +10,13 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+<<<<<<< HEAD
                 <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="DoAnCuoiKy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="controller">
+=======
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="DoAnCuoiKy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -45,7 +50,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+<<<<<<< HEAD
                                     <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MGK-hN-30y"/>
+=======
+                                    <action selector="btnDangNhap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kHl-lq-IMY"/>
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nếu chưa có tài khoản." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfM-RR-U14">
@@ -61,7 +70,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+<<<<<<< HEAD
                                     <action selector="btnRegis:" destination="BYZ-38-t0r" eventType="touchUpInside" id="30e-rW-dm3"/>
+=======
+                                    <action selector="btnDangKy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w7O-jd-8nZ"/>
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
                                 </connections>
                             </button>
                         </subviews>
@@ -109,7 +122,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="135" y="96"/>
+=======
+            <point key="canvasLocation" x="132" y="96"/>
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
         </scene>
         <!--Regis View Controller-->
         <scene sceneID="d0r-nB-fxu">
@@ -137,6 +154,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="19b-aI-GUp">
                                 <rect key="frame" x="20.5" y="44" width="124.5" height="179"/>
                             </imageView>
+<<<<<<< HEAD
+=======
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJv-k6-KkS">
+                                <rect key="frame" x="41.5" y="231" width="331" height="58.5"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CJZ-YM-uw0">
                                 <rect key="frame" x="41.5" y="304.5" width="331" height="58"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
@@ -150,7 +175,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+<<<<<<< HEAD
                                     <action selector="btnDangKy:" destination="KEe-cn-6JM" eventType="touchUpInside" id="gFv-ae-uM1"/>
+=======
+                                    <action selector="btnDangKy:" destination="KEe-cn-6JM" eventType="touchUpInside" id="D1f-bp-fkc"/>
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập mật khẩu" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eug-Ly-etT">
@@ -162,11 +191,14 @@
                                 <rect key="frame" x="41.5" y="451" width="331" height="58"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+<<<<<<< HEAD
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJv-k6-KkS">
                                 <rect key="frame" x="41.5" y="231" width="331" height="58.5"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
+=======
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -209,19 +241,25 @@
                         <viewLayoutGuide key="safeArea" id="sEg-8n-Trh"/>
                     </view>
                     <connections>
+<<<<<<< HEAD
                         <outlet property="tfCheckPass" destination="Rpy-ML-5tQ" id="ITI-na-AE2"/>
                         <outlet property="tfEmail" destination="CJZ-YM-uw0" id="eww-q5-AcJ"/>
                         <outlet property="tfPass" destination="eug-Ly-etT" id="WBO-hC-unb"/>
+=======
+                        <outlet property="tfCheckPass" destination="Rpy-ML-5tQ" id="DTb-92-TXU"/>
+                        <outlet property="tfEmail" destination="CJZ-YM-uw0" id="Seo-lU-bR9"/>
+                        <outlet property="tfPass" destination="eug-Ly-etT" id="pKS-hq-KKh"/>
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikW-hy-udU" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="96"/>
+            <point key="canvasLocation" x="854" y="96"/>
         </scene>
         <!--Trang Chủ-->
         <scene sceneID="sxP-Hf-rRE">
             <objects>
-                <viewController storyboardIdentifier="MainScreen" id="5oC-G0-soj" customClass="MainViewController" customModule="DoAnCuoiKy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="5oC-G0-soj" customClass="MainViewController" customModule="DoAnCuoiKy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Or5-Gu-qgG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fY-id-DGH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2558" y="-914"/>
+            <point key="canvasLocation" x="2558" y="-915"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="FeI-Kd-3nJ">

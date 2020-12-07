@@ -8,7 +8,11 @@
 
 import UIKit
 import Firebase
+<<<<<<< HEAD
 import Alertift
+=======
+
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
 class RegisViewController: UIViewController {
 
     @IBOutlet weak var tfEmail: UITextField!
@@ -19,6 +23,7 @@ class RegisViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+<<<<<<< HEAD
     @IBAction func btnDangKy(_ sender: Any) {
         if tfEmail.text!.isEmpty{
             Alertift.alert(title: "Error", message: "Please press email!")
@@ -61,6 +66,35 @@ class RegisViewController: UIViewController {
     }
     
 
+=======
+    
+    @IBAction func btnDangKy(_ sender: Any) {
+        if (tfEmail.text!.isEmpty)
+        {
+            //alert
+            return
+        }
+        if tfPass.text!.isEmpty {
+            //alert
+                       return
+        }
+        if tfCheckPass.text!.isEmpty {
+            //alert
+                       return
+        }
+        if( tfCheckPass.text! == tfPass.text!)
+        {
+            Auth.auth().createUser(withEmail: tfEmail.text!, password: tfPass.text!) { authResult, error in
+                     // ...
+                   }
+        }else {
+            //alert nhap sai
+            return
+        }
+       
+    }
+    
+>>>>>>> 5ae4651fcc09b9922b95028676ce4a43b0927e24
     /*
     // MARK: - Navigation
 
