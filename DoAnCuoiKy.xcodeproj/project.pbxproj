@@ -16,8 +16,12 @@
 		33D16D2125778FE700D42840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D1F25778FE700D42840 /* Main.storyboard */; };
 		33D16D2325778FEB00D42840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D2225778FEB00D42840 /* Assets.xcassets */; };
 		33D16D2625778FEB00D42840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D2425778FEB00D42840 /* LaunchScreen.storyboard */; };
+		6C3D57B4257E0F8200B74B4E /* RegisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D57B3257E0F8200B74B4E /* RegisViewController.swift */; };
+		6C3D57B6257E173100B74B4E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D57B5257E173100B74B4E /* LoginViewController.swift */; };
+		6C3D57BA257E527200B74B4E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D57B9257E527100B74B4E /* InfoViewController.swift */; };
 		A360F0AF257DD8F500549B32 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360F0AE257DD8F500549B32 /* HomeViewController.swift */; };
 		A360F0B1257DD95900549B32 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360F0B0257DD95900549B32 /* MenuViewController.swift */; };
+		A3B20815257E610400478024 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3B20814257E610400478024 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +36,14 @@
 		33D16D2225778FEB00D42840 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33D16D2525778FEB00D42840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33D16D2725778FEB00D42840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C3D57B3257E0F8200B74B4E /* RegisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisViewController.swift; sourceTree = "<group>"; };
+		6C3D57B5257E173100B74B4E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6C3D57B9257E527100B74B4E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		7BB6203D5E130E6BB76BB79D /* Pods_DoAnCuoiKy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoAnCuoiKy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA6529242A37901440B1153 /* Pods-DoAnCuoiKy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoAnCuoiKy.debug.xcconfig"; path = "Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy.debug.xcconfig"; sourceTree = "<group>"; };
 		A360F0AE257DD8F500549B32 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A360F0B0257DD95900549B32 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		A3B20814257E610400478024 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +82,14 @@
 				33D16D1925778FE700D42840 /* AppDelegate.swift */,
 				33D16D1B25778FE700D42840 /* SceneDelegate.swift */,
 				33D16D1D25778FE700D42840 /* ViewController.swift */,
+				6C3D57B5257E173100B74B4E /* LoginViewController.swift */,
 				33D16D1F25778FE700D42840 /* Main.storyboard */,
+				6C3D57B3257E0F8200B74B4E /* RegisViewController.swift */,
 				33D16D2225778FEB00D42840 /* Assets.xcassets */,
 				33D16D2425778FEB00D42840 /* LaunchScreen.storyboard */,
 				33D16D2725778FEB00D42840 /* Info.plist */,
+				A3B20814257E610400478024 /* GoogleService-Info.plist */,
+				6C3D57B9257E527100B74B4E /* InfoViewController.swift */,
 				3351E43E257D579F0086E328 /* MainViewController.swift */,
 				3351E442257D58220086E328 /* VVTableViewCell.swift */,
 				A360F0AE257DD8F500549B32 /* HomeViewController.swift */,
@@ -114,6 +126,7 @@
 				33D16D1225778FE700D42840 /* Sources */,
 				33D16D1325778FE700D42840 /* Frameworks */,
 				33D16D1425778FE700D42840 /* Resources */,
+				78230CD358F899E0E774478C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D16D2625778FEB00D42840 /* LaunchScreen.storyboard in Resources */,
+				A3B20815257E610400478024 /* GoogleService-Info.plist in Resources */,
 				33D16D2325778FEB00D42840 /* Assets.xcassets in Resources */,
 				33D16D2125778FE700D42840 /* Main.storyboard in Resources */,
 			);
@@ -171,6 +185,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		78230CD358F899E0E774478C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C92B9D85ABC8ABCF8219C5A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,11 +231,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C3D57B6257E173100B74B4E /* LoginViewController.swift in Sources */,
 				3351E443257D58220086E328 /* VVTableViewCell.swift in Sources */,
 				33D16D1E25778FE700D42840 /* ViewController.swift in Sources */,
 				33D16D1A25778FE700D42840 /* AppDelegate.swift in Sources */,
+				6C3D57BA257E527200B74B4E /* InfoViewController.swift in Sources */,
 				A360F0B1257DD95900549B32 /* MenuViewController.swift in Sources */,
 				33D16D1C25778FE700D42840 /* SceneDelegate.swift in Sources */,
+				6C3D57B4257E0F8200B74B4E /* RegisViewController.swift in Sources */,
 				3351E43F257D579F0086E328 /* MainViewController.swift in Sources */,
 				A360F0AF257DD8F500549B32 /* HomeViewController.swift in Sources */,
 			);
