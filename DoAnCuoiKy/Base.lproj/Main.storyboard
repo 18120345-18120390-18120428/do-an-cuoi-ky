@@ -840,12 +840,8 @@
         <image name="backgroup01" width="562.5" height="1218"/>
         <image name="book.fill" catalog="system" width="64" height="50"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
-<<<<<<< HEAD
-        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
-=======
         <image name="info.circle.fill" catalog="system" width="64" height="62"/>
         <image name="list.dash" catalog="system" width="64" height="44"/>
->>>>>>> 9befe29415bb5f80df273bc4e3f25df361f04283
         <image name="logo" width="256" height="256"/>
         <image name="person.crop.rectangle.fill" catalog="system" width="64" height="46"/>
         <image name="square.grid.3x2.fill" catalog="system" width="64" height="40"/>
