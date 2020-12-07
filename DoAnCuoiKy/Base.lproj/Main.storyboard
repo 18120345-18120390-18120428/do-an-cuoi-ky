@@ -222,17 +222,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroup01" translatesAutoresizingMaskIntoConstraints="NO" id="V5c-Wm-Xzu">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9I-1f-QeA">
                                 <rect key="frame" x="0.0" y="44" width="414" height="89.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ved-3N-Z8R">
+                                        <rect key="frame" x="8" y="30" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="ckN-eK-Npa"/>
+                                            <constraint firstAttribute="height" constant="35.5" id="lLc-Lz-5G1"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" backgroundImage="list.dash" catalog="system"/>
+                                        <connections>
+                                            <action selector="goToMenu:" destination="5oC-G0-soj" eventType="touchUpInside" id="gsv-8Y-Xf3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ved-3N-Z8R" firstAttribute="leading" secondItem="g9I-1f-QeA" secondAttribute="leading" constant="8" id="FQr-zH-Osb"/>
+                                    <constraint firstItem="ved-3N-Z8R" firstAttribute="centerY" secondItem="g9I-1f-QeA" secondAttribute="centerY" id="aqx-MK-4ME"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4dN-hh-sbC">
                                 <rect key="frame" x="0.0" y="133.5" width="414" height="762.5"/>
-                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VVTableCell" id="olg-2v-iaf" customClass="VVTableViewCell" customModule="DoAnCuoiKy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="256.5"/>
@@ -283,7 +297,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="UWr-dT-NlZ" secondAttribute="bottom" id="zfq-zj-XDL"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="UWr-dT-NlZ" firstAttribute="width" secondItem="olg-2v-iaf" secondAttribute="width" multiplier="0.3" id="Z8S-MU-dkw"/>
                                         </constraints>
@@ -299,20 +313,16 @@
                             <constraint firstItem="g9I-1f-QeA" firstAttribute="leading" secondItem="pNR-aC-hhP" secondAttribute="leading" id="1pJ-0q-jdB"/>
                             <constraint firstItem="4dN-hh-sbC" firstAttribute="leading" secondItem="pNR-aC-hhP" secondAttribute="leading" id="BF1-jR-omh"/>
                             <constraint firstItem="pNR-aC-hhP" firstAttribute="trailing" secondItem="4dN-hh-sbC" secondAttribute="trailing" id="E6b-zf-5YY"/>
-                            <constraint firstAttribute="trailing" secondItem="V5c-Wm-Xzu" secondAttribute="trailing" id="EuE-oY-OAs"/>
                             <constraint firstItem="g9I-1f-QeA" firstAttribute="height" secondItem="Or5-Gu-qgG" secondAttribute="height" multiplier="0.1" id="Jw1-8u-nbp"/>
                             <constraint firstAttribute="bottom" secondItem="4dN-hh-sbC" secondAttribute="bottom" id="RWX-G8-jKb"/>
-                            <constraint firstItem="V5c-Wm-Xzu" firstAttribute="leading" secondItem="Or5-Gu-qgG" secondAttribute="leading" id="ULq-fn-IFC"/>
-                            <constraint firstItem="V5c-Wm-Xzu" firstAttribute="top" secondItem="Or5-Gu-qgG" secondAttribute="top" id="WeL-LC-rqw"/>
                             <constraint firstItem="4dN-hh-sbC" firstAttribute="top" secondItem="g9I-1f-QeA" secondAttribute="bottom" id="Xbl-rE-kl2"/>
                             <constraint firstItem="g9I-1f-QeA" firstAttribute="top" secondItem="pNR-aC-hhP" secondAttribute="top" id="dMx-0R-1BG"/>
-                            <constraint firstAttribute="bottom" secondItem="V5c-Wm-Xzu" secondAttribute="bottom" id="os2-de-ReS"/>
                             <constraint firstItem="pNR-aC-hhP" firstAttribute="trailing" secondItem="g9I-1f-QeA" secondAttribute="trailing" id="yia-Ow-cin"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pNR-aC-hhP"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Trang Chủ" image="house.fill" catalog="system" id="Yqh-8q-ycL">
-                        <color key="badgeColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -323,6 +333,149 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fY-id-DGH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2558" y="-915"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="FeI-Kd-3nJ">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" id="AVa-d6-nBt" customClass="MenuViewController" customModule="DoAnCuoiKy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E73-uq-5uY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJM-8J-LxH">
+                                <rect key="frame" x="0.0" y="44" width="314" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oN6-VJ-rSo">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="818"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSn-Oy-s4I">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="150"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Vep-bj-2Po">
+                                                        <rect key="frame" x="107" y="5" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="ehU-dd-6bq"/>
+                                                            <constraint firstAttribute="height" constant="100" id="na5-24-LPY"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjn-td-vfq">
+                                                        <rect key="frame" x="143" y="115" width="28" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Vep-bj-2Po" firstAttribute="top" secondItem="uSn-Oy-s4I" secondAttribute="top" constant="5" id="F6V-Lm-Iw2"/>
+                                                    <constraint firstItem="Vep-bj-2Po" firstAttribute="centerX" secondItem="uSn-Oy-s4I" secondAttribute="centerX" id="Wqr-rr-D4S"/>
+                                                    <constraint firstItem="tjn-td-vfq" firstAttribute="top" secondItem="Vep-bj-2Po" secondAttribute="bottom" constant="10" id="X4a-JU-QUY"/>
+                                                    <constraint firstItem="tjn-td-vfq" firstAttribute="centerX" secondItem="uSn-Oy-s4I" secondAttribute="centerX" id="YRK-96-UdO"/>
+                                                    <constraint firstAttribute="bottom" secondItem="tjn-td-vfq" secondAttribute="bottom" constant="14" id="ngh-DY-P9i"/>
+                                                    <constraint firstAttribute="height" constant="150" id="pXN-a5-DlV"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nDR-iy-ve2">
+                                                <rect key="frame" x="15" y="165" width="284" height="136"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMq-Yk-yFC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="284" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="Truyện xem nhiều">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="topStory:" destination="AVa-d6-nBt" eventType="touchUpInside" id="XC2-KI-C0n"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jn8-rs-AhR">
+                                                        <rect key="frame" x="0.0" y="34" width="284" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="Truyện mới đăng">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="newStory:" destination="AVa-d6-nBt" eventType="touchUpInside" id="btb-0t-x8L"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWc-Bt-cr3">
+                                                        <rect key="frame" x="0.0" y="68" width="284" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="Truyện yêu thích">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="favoriteStory:" destination="AVa-d6-nBt" eventType="touchUpInside" id="zCB-oR-3Ji"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzg-v5-0s1">
+                                                        <rect key="frame" x="0.0" y="102" width="284" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="Đăng truyện">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="publishStory:" destination="AVa-d6-nBt" eventType="touchUpInside" id="J6m-xL-Q16"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="nDR-iy-ve2" firstAttribute="top" secondItem="uSn-Oy-s4I" secondAttribute="bottom" constant="15" id="7GL-UI-6Lm"/>
+                                            <constraint firstAttribute="trailing" secondItem="nDR-iy-ve2" secondAttribute="trailing" constant="15" id="HFE-0v-2Rb"/>
+                                            <constraint firstAttribute="trailing" secondItem="uSn-Oy-s4I" secondAttribute="trailing" id="M70-XX-7MS"/>
+                                            <constraint firstItem="uSn-Oy-s4I" firstAttribute="top" secondItem="oN6-VJ-rSo" secondAttribute="top" id="c4F-Ze-DXs"/>
+                                            <constraint firstItem="nDR-iy-ve2" firstAttribute="leading" secondItem="oN6-VJ-rSo" secondAttribute="leading" constant="15" id="jDq-nL-uYX"/>
+                                            <constraint firstItem="uSn-Oy-s4I" firstAttribute="leading" secondItem="oN6-VJ-rSo" secondAttribute="leading" id="pgU-Vz-hHN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="oN6-VJ-rSo" secondAttribute="bottom" id="Dyy-XI-Zfb"/>
+                                    <constraint firstAttribute="trailing" secondItem="oN6-VJ-rSo" secondAttribute="trailing" id="NMd-Fn-KW9"/>
+                                    <constraint firstItem="oN6-VJ-rSo" firstAttribute="height" secondItem="mJM-8J-LxH" secondAttribute="height" id="OoS-Zk-lFz"/>
+                                    <constraint firstItem="oN6-VJ-rSo" firstAttribute="leading" secondItem="mJM-8J-LxH" secondAttribute="leading" id="Ucn-IT-Kvi"/>
+                                    <constraint firstItem="oN6-VJ-rSo" firstAttribute="top" secondItem="mJM-8J-LxH" secondAttribute="top" id="r9y-XS-g81"/>
+                                    <constraint firstItem="oN6-VJ-rSo" firstAttribute="width" secondItem="mJM-8J-LxH" secondAttribute="width" id="xgI-ih-duB"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVF-zE-3uJ">
+                                <rect key="frame" x="348" y="45" width="46" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="5Og-Ys-7vY"/>
+                                    <constraint firstAttribute="height" constant="40" id="w06-q6-mvI"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <state key="normal" backgroundImage="xmark.rectangle" catalog="system"/>
+                                <connections>
+                                    <action selector="exit:" destination="AVa-d6-nBt" eventType="touchUpInside" id="RUc-tw-y2j"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27023963730569944" green="0.27023963730569944" blue="0.27023963730569944" alpha="0.79684749119718312" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="mJM-8J-LxH" firstAttribute="leading" secondItem="4B2-QS-BBG" secondAttribute="leading" id="Cne-Mw-Kc2"/>
+                            <constraint firstItem="4B2-QS-BBG" firstAttribute="trailing" secondItem="mJM-8J-LxH" secondAttribute="trailing" constant="100" id="E5j-Ul-DkW"/>
+                            <constraint firstItem="iVF-zE-3uJ" firstAttribute="top" secondItem="4B2-QS-BBG" secondAttribute="top" id="LaE-Ud-iLA"/>
+                            <constraint firstItem="4B2-QS-BBG" firstAttribute="bottom" secondItem="mJM-8J-LxH" secondAttribute="bottom" id="PzB-Je-PnT"/>
+                            <constraint firstItem="mJM-8J-LxH" firstAttribute="top" secondItem="4B2-QS-BBG" secondAttribute="top" id="dbU-jI-kfW"/>
+                            <constraint firstItem="4B2-QS-BBG" firstAttribute="trailing" secondItem="iVF-zE-3uJ" secondAttribute="trailing" constant="20" id="qWz-rl-EXf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4B2-QS-BBG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lYJ-T3-dC9"/>
+                    <connections>
+                        <outlet property="avatar" destination="Vep-bj-2Po" id="qGV-rJ-8QV"/>
+                        <outlet property="name" destination="tjn-td-vfq" id="Pnf-To-1l0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p8F-OM-Maf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3379.7101449275365" y="-914.0625"/>
         </scene>
         <!--Thể Loại-->
         <scene sceneID="ExI-jd-nEJ">
@@ -349,116 +502,116 @@
                                                 <rect key="frame" x="10" y="10" width="194.5" height="67.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Ngôn Tình"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgB-sp-xI6">
                                                 <rect key="frame" x="214.5" y="10" width="194.5" height="67.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Kiếm Hiệp"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oa7-1G-J2l">
                                                 <rect key="frame" x="10" y="87.5" width="194.5" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Du Ký"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZ2-GG-8vy">
                                                 <rect key="frame" x="214.5" y="87.5" width="194.5" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Phiêu Lưu"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3N-Rq-kgM">
                                                 <rect key="frame" x="10" y="164.5" width="194.5" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Truyện Teen"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUP-fo-CAA">
                                                 <rect key="frame" x="214.5" y="164.5" width="194.5" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Truyện Ma"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSn-w6-RTn">
                                                 <rect key="frame" x="10" y="241.5" width="194.5" height="67.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Nước Ngoài"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHe-B2-E0F">
                                                 <rect key="frame" x="214.5" y="241.5" width="194.5" height="67.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Truyện Tranh"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxz-fK-nbm">
                                                 <rect key="frame" x="10" y="319" width="194.5" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Xuyên Không"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lac-3w-osI">
                                                 <rect key="frame" x="214.5" y="319" width="194.5" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Thiếu Nhi"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xom-8e-dlx">
                                                 <rect key="frame" x="10" y="396" width="194.5" height="67.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Quân Sự"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9L-ls-uzH">
                                                 <rect key="frame" x="10" y="473.5" width="194.5" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Lịch Sử"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vY-8u-tMf">
                                                 <rect key="frame" x="10" y="550.5" width="194.5" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Truyện Ngắn"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3z-24-hpD">
                                                 <rect key="frame" x="214.5" y="396" width="194.5" height="67.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Trinh Thám"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xq-1W-JIu">
                                                 <rect key="frame" x="214.5" y="473.5" width="194.5" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Tiểu Thuyết"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8C7-nS-j9G">
                                                 <rect key="frame" x="214.5" y="550.5" width="194.5" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Truyện Cười"/>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="gSn-w6-RTn" firstAttribute="leading" secondItem="kRQ-Ne-N2Y" secondAttribute="leading" constant="10" id="35N-9C-K6J"/>
                                             <constraint firstItem="MgB-sp-xI6" firstAttribute="leading" secondItem="dTR-bK-1BT" secondAttribute="trailing" constant="10" id="751-wa-vKm"/>
@@ -571,10 +724,10 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="NKx-qb-Bdk">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="5oC-G0-soj" kind="relationship" relationship="viewControllers" id="Ogz-2b-PG4"/>
@@ -682,13 +835,20 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avatar" width="1280" height="720"/>
         <image name="backgroup" width="562.5" height="1218"/>
         <image name="backgroup01" width="562.5" height="1218"/>
         <image name="book.fill" catalog="system" width="64" height="50"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
+<<<<<<< HEAD
         <image name="info.circle.fill" catalog="system" width="64" height="60"/>
+=======
+        <image name="info.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="list.dash" catalog="system" width="64" height="44"/>
+>>>>>>> 9befe29415bb5f80df273bc4e3f25df361f04283
         <image name="logo" width="256" height="256"/>
         <image name="person.crop.rectangle.fill" catalog="system" width="64" height="46"/>
         <image name="square.grid.3x2.fill" catalog="system" width="64" height="40"/>
+        <image name="xmark.rectangle" catalog="system" width="64" height="48"/>
     </resources>
 </document>

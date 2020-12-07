@@ -16,8 +16,13 @@
 		33D16D2125778FE700D42840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D1F25778FE700D42840 /* Main.storyboard */; };
 		33D16D2325778FEB00D42840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D2225778FEB00D42840 /* Assets.xcassets */; };
 		33D16D2625778FEB00D42840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D2425778FEB00D42840 /* LaunchScreen.storyboard */; };
+<<<<<<< HEAD
 		6C4CB631257DF28F00053DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C4CB630257DF28E00053DF7 /* GoogleService-Info.plist */; };
 		6C8EA176257DD8F8002E2702 /* RegisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8EA175257DD8F8002E2702 /* RegisViewController.swift */; };
+=======
+		A360F0AF257DD8F500549B32 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360F0AE257DD8F500549B32 /* HomeViewController.swift */; };
+		A360F0B1257DD95900549B32 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360F0B0257DD95900549B32 /* MenuViewController.swift */; };
+>>>>>>> 9befe29415bb5f80df273bc4e3f25df361f04283
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,8 @@
 		6C8EA175257DD8F8002E2702 /* RegisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisViewController.swift; sourceTree = "<group>"; };
 		7BB6203D5E130E6BB76BB79D /* Pods_DoAnCuoiKy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoAnCuoiKy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA6529242A37901440B1153 /* Pods-DoAnCuoiKy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoAnCuoiKy.debug.xcconfig"; path = "Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy.debug.xcconfig"; sourceTree = "<group>"; };
+		A360F0AE257DD8F500549B32 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A360F0B0257DD95900549B32 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +89,8 @@
 				33D16D2725778FEB00D42840 /* Info.plist */,
 				3351E43E257D579F0086E328 /* MainViewController.swift */,
 				3351E442257D58220086E328 /* VVTableViewCell.swift */,
+				A360F0AE257DD8F500549B32 /* HomeViewController.swift */,
+				A360F0B0257DD95900549B32 /* MenuViewController.swift */,
 			);
 			path = DoAnCuoiKy;
 			sourceTree = "<group>";
@@ -222,9 +231,14 @@
 				3351E443257D58220086E328 /* VVTableViewCell.swift in Sources */,
 				33D16D1E25778FE700D42840 /* ViewController.swift in Sources */,
 				33D16D1A25778FE700D42840 /* AppDelegate.swift in Sources */,
+				A360F0B1257DD95900549B32 /* MenuViewController.swift in Sources */,
 				33D16D1C25778FE700D42840 /* SceneDelegate.swift in Sources */,
 				3351E43F257D579F0086E328 /* MainViewController.swift in Sources */,
+<<<<<<< HEAD
 				6C8EA176257DD8F8002E2702 /* RegisViewController.swift in Sources */,
+=======
+				A360F0AF257DD8F500549B32 /* HomeViewController.swift in Sources */,
+>>>>>>> 9befe29415bb5f80df273bc4e3f25df361f04283
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
