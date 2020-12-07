@@ -6,5 +6,8 @@ target 'DoAnCuoiKy' do
   use_frameworks!
 
   # Pods for DoAnCuoiKy
-
+  pod 'Firebase/Core'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 end

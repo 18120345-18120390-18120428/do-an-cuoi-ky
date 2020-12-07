@@ -16,6 +16,8 @@
 		33D16D2125778FE700D42840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D1F25778FE700D42840 /* Main.storyboard */; };
 		33D16D2325778FEB00D42840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D2225778FEB00D42840 /* Assets.xcassets */; };
 		33D16D2625778FEB00D42840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D2425778FEB00D42840 /* LaunchScreen.storyboard */; };
+		6C4CB631257DF28F00053DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C4CB630257DF28E00053DF7 /* GoogleService-Info.plist */; };
+		6C8EA176257DD8F8002E2702 /* RegisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8EA175257DD8F8002E2702 /* RegisViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		33D16D2225778FEB00D42840 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33D16D2525778FEB00D42840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33D16D2725778FEB00D42840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C4CB630257DF28E00053DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6C8EA175257DD8F8002E2702 /* RegisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisViewController.swift; sourceTree = "<group>"; };
 		7BB6203D5E130E6BB76BB79D /* Pods_DoAnCuoiKy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoAnCuoiKy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA6529242A37901440B1153 /* Pods-DoAnCuoiKy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoAnCuoiKy.debug.xcconfig"; path = "Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,9 +71,11 @@
 		33D16D1825778FE700D42840 /* DoAnCuoiKy */ = {
 			isa = PBXGroup;
 			children = (
+				6C4CB630257DF28E00053DF7 /* GoogleService-Info.plist */,
 				33D16D1925778FE700D42840 /* AppDelegate.swift */,
 				33D16D1B25778FE700D42840 /* SceneDelegate.swift */,
 				33D16D1D25778FE700D42840 /* ViewController.swift */,
+				6C8EA175257DD8F8002E2702 /* RegisViewController.swift */,
 				33D16D1F25778FE700D42840 /* Main.storyboard */,
 				33D16D2225778FEB00D42840 /* Assets.xcassets */,
 				33D16D2425778FEB00D42840 /* LaunchScreen.storyboard */,
@@ -94,7 +100,6 @@
 				7EA6529242A37901440B1153 /* Pods-DoAnCuoiKy.debug.xcconfig */,
 				0A57FC4C388EF6EFEFF85EC8 /* Pods-DoAnCuoiKy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -109,6 +114,7 @@
 				33D16D1225778FE700D42840 /* Sources */,
 				33D16D1325778FE700D42840 /* Frameworks */,
 				33D16D1425778FE700D42840 /* Resources */,
+				CA4F158D89A8F3B0C2FD6049 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D16D2625778FEB00D42840 /* LaunchScreen.storyboard in Resources */,
+				6C4CB631257DF28F00053DF7 /* GoogleService-Info.plist in Resources */,
 				33D16D2325778FEB00D42840 /* Assets.xcassets in Resources */,
 				33D16D2125778FE700D42840 /* Main.storyboard in Resources */,
 			);
@@ -188,6 +195,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CA4F158D89A8F3B0C2FD6049 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -200,6 +224,7 @@
 				33D16D1A25778FE700D42840 /* AppDelegate.swift in Sources */,
 				33D16D1C25778FE700D42840 /* SceneDelegate.swift in Sources */,
 				3351E43F257D579F0086E328 /* MainViewController.swift in Sources */,
+				6C8EA176257DD8F8002E2702 /* RegisViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
