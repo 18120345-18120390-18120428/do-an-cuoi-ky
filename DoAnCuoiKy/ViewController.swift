@@ -21,9 +21,9 @@ class ViewController: UIViewController {
         print("Chuyen sang man hinh dang ky")
     }
     @IBAction func btnDangNhap(_ sender: Any) {
-        let src = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-        src.modalPresentationStyle = .fullScreen
-        self.present(src, animated: true, completion: nil)
+        let src = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController")
+        src!.modalPresentationStyle = .fullScreen
+        self.present(src!, animated: true, completion: nil)
         print("Chuyen sang man hinh dang nhap")
     }
     

@@ -150,6 +150,9 @@
                                 <state key="normal" title="Đăng Ký">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnDangKy:" destination="KEe-cn-6JM" eventType="touchUpInside" id="D1f-bp-fkc"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập mật khẩu" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eug-Ly-etT">
                                 <rect key="frame" x="41.5" y="377.5" width="331" height="58.5"/>
@@ -201,6 +204,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sEg-8n-Trh"/>
                     </view>
+                    <connections>
+                        <outlet property="tfCheckPass" destination="Rpy-ML-5tQ" id="DTb-92-TXU"/>
+                        <outlet property="tfEmail" destination="CJZ-YM-uw0" id="Seo-lU-bR9"/>
+                        <outlet property="tfPass" destination="eug-Ly-etT" id="pKS-hq-KKh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikW-hy-udU" sceneMemberID="firstResponder"/>
             </objects>
@@ -558,7 +566,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="SIP-o4-GM1">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xy6-ug-Ysa" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" automaticallyAdjustsScrollViewInsets="NO" id="xy6-ug-Ysa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="NKx-qb-Bdk">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
