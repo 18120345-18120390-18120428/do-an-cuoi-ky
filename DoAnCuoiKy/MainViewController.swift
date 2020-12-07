@@ -17,7 +17,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
     }
-
+    // TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 7
     }
@@ -27,5 +27,19 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
+    
+    
+    // Present Menu Viewcontroler
+    @IBAction func goToMenu(_ sender: Any) {
+        let transition = CATransition()
+        transition.duration = 0.25
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+        let dest = storyboard?.instantiateViewController(identifier: "MenuViewController") as! MenuViewController
+        dest.modalPresentationStyle = .overCurrentContext
+        present(dest, animated: false, completion: nil)
+    }
+    
     
 }
