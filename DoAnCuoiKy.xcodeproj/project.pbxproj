@@ -16,13 +16,9 @@
 		33D16D2125778FE700D42840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D1F25778FE700D42840 /* Main.storyboard */; };
 		33D16D2325778FEB00D42840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D2225778FEB00D42840 /* Assets.xcassets */; };
 		33D16D2625778FEB00D42840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D2425778FEB00D42840 /* LaunchScreen.storyboard */; };
-<<<<<<< HEAD
 		6C4CB631257DF28F00053DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C4CB630257DF28E00053DF7 /* GoogleService-Info.plist */; };
 		6C8EA176257DD8F8002E2702 /* RegisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8EA175257DD8F8002E2702 /* RegisViewController.swift */; };
-=======
-		A360F0AF257DD8F500549B32 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360F0AE257DD8F500549B32 /* HomeViewController.swift */; };
-		A360F0B1257DD95900549B32 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360F0B0257DD95900549B32 /* MenuViewController.swift */; };
->>>>>>> 9befe29415bb5f80df273bc4e3f25df361f04283
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
