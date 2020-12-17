@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aJp-Vw-v0I">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aJp-Vw-v0I">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpf-b7-Pre">
-                                <rect key="frame" x="103.66666666666669" y="606.33333333333337" width="207" height="71.666666666666629"/>
+                                <rect key="frame" x="103.5" y="606.5" width="207" height="71.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -26,22 +26,22 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V.V TRUYỆN XIN CHÀO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNd-Cd-dD2">
-                                <rect key="frame" x="41" y="358.66666666666669" width="332.33333333333331" height="71.666666666666686"/>
+                                <rect key="frame" x="41" y="358.5" width="332.5" height="71.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="30"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vào Cảnh Truyện - Vẽ Mộng Uyển" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9h-cN-XC6">
-                                <rect key="frame" x="53.666666666666657" y="430.33333333333331" width="306.66666666666674" height="89.333333333333314"/>
+                                <rect key="frame" x="54" y="430" width="306.5" height="90"/>
                                 <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pu7-hi-jwv">
-                                <rect key="frame" x="103.66666666666669" y="224" width="207" height="134.66666666666663"/>
+                                <rect key="frame" x="103.5" y="224" width="207" height="134.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrw-MN-bu1">
-                                <rect key="frame" x="103.66666666666669" y="519.66666666666663" width="207" height="71.666666666666629"/>
+                                <rect key="frame" x="103.5" y="520" width="207" height="71.5"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,18 +93,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập mật khẩu" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-i4-Z49">
-                                <rect key="frame" x="41.333333333333343" y="315.33333333333331" width="331.33333333333326" height="71.666666666666686"/>
+                                <rect key="frame" x="41.5" y="315.5" width="331" height="71.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOẶC" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfM-RR-U14">
-                                <rect key="frame" x="167" y="560.66666666666663" width="80" height="89.333333333333371"/>
+                                <rect key="frame" x="167" y="560.5" width="80" height="89.5"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxr-wQ-2il">
-                                <rect key="frame" x="82.666666666666671" y="650" width="248.66666666666663" height="71.666666666666629"/>
+                                <rect key="frame" x="83" y="650" width="248" height="72"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="Facebook">
@@ -115,7 +115,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rP1-zP-WEK">
-                                <rect key="frame" x="82.666666666666671" y="417" width="248.66666666666663" height="72"/>
+                                <rect key="frame" x="83" y="417" width="248" height="72"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="Đăng Nhập">
@@ -126,12 +126,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAy-TL-96S">
-                                <rect key="frame" x="41.333333333333343" y="233.66666666666666" width="331.33333333333326" height="71.666666666666657"/>
+                                <rect key="frame" x="41.5" y="234" width="331" height="71.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oW-AD-WgR">
-                                <rect key="frame" x="82.666666666666671" y="731.66666666666663" width="248.66666666666663" height="71.666666666666629"/>
+                                <rect key="frame" x="83" y="732" width="248" height="71.5"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="Google">
@@ -142,13 +142,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐĂNG NHẬP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPA-Vv-txK">
-                                <rect key="frame" x="20" y="162" width="394" height="71.666666666666686"/>
+                                <rect key="frame" x="20" y="162" width="394" height="72"/>
                                 <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te7-uQ-Irn">
-                                <rect key="frame" x="124.33333333333333" y="489.00000000000006" width="165.33333333333337" height="71.666666666666686"/>
+                                <rect key="frame" x="124" y="489" width="166" height="71.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <state key="normal" title="Quên Mật Khẩu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -215,38 +215,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CJZ-YM-uw0">
-                                <rect key="frame" x="41.333333333333343" y="335.33333333333331" width="331.33333333333326" height="71.666666666666686"/>
+                                <rect key="frame" x="41.5" y="335.5" width="331" height="71.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập mật khẩu" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eug-Ly-etT">
-                                <rect key="frame" x="41.333333333333343" y="417" width="331.33333333333326" height="72"/>
+                                <rect key="frame" x="41.5" y="417" width="331" height="72"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập lại mật khẩu" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rpy-ML-5tQ">
-                                <rect key="frame" x="41.333333333333343" y="499.00000000000006" width="331.33333333333326" height="71.666666666666686"/>
+                                <rect key="frame" x="41.5" y="499" width="331" height="71.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJv-k6-KkS">
-                                <rect key="frame" x="41.333333333333343" y="253.66666666666666" width="331.33333333333326" height="71.666666666666657"/>
+                                <rect key="frame" x="41.5" y="254" width="331" height="71.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐĂNG KÝ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kX-Ld-4XX">
-                                <rect key="frame" x="20" y="182" width="394" height="71.666666666666686"/>
+                                <rect key="frame" x="20" y="182" width="394" height="72"/>
                                 <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="qTD-Jy-8Ht">
-                                <rect key="frame" x="82.666666666666686" y="578.66666666666663" width="124.33333333333331" height="89.333333333333371"/>
+                                <rect key="frame" x="83" y="578.5" width="124" height="89.5"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOM-Jp-fpY">
-                                <rect key="frame" x="82.666666666666671" y="698" width="248.66666666666663" height="71.666666666666629"/>
+                                <rect key="frame" x="83" y="698" width="248" height="72"/>
                                 <color key="backgroundColor" red="1" green="0.33550314990000002" blue="0.67735791960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="Đăng Ký">
@@ -257,7 +257,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="V3a-qQ-9O1">
-                                <rect key="frame" x="238" y="587.33333333333337" width="62" height="71.666666666666629"/>
+                                <rect key="frame" x="238" y="587.5" width="62" height="71.5"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                 <state key="normal" title="Chọn">
@@ -318,7 +318,7 @@
             </objects>
             <point key="canvasLocation" x="1086" y="-569"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Trang Chủ-->
         <scene sceneID="sxP-Hf-rRE">
             <objects>
                 <viewController storyboardIdentifier="MainScreen" id="5oC-G0-soj" customClass="MainViewController" customModule="DoAnCuoiKy" customModuleProvider="target" sceneMemberID="viewController">
@@ -327,16 +327,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9I-1f-QeA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="89.666666666666686"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="89.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danh Sách (1/7)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uS1-cy-qU3">
-                                        <rect key="frame" x="41.333333333333329" y="33.666666666666671" width="150.66666666666669" height="22.333333333333329"/>
+                                        <rect key="frame" x="41.5" y="33.5" width="150.5" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrF-P2-O7e">
-                                        <rect key="frame" x="289.66666666666669" y="33.666666666666671" width="41.666666666666686" height="22.333333333333329"/>
+                                        <rect key="frame" x="290" y="33.5" width="41" height="22.5"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="magnifyingglass" catalog="system"/>
                                         <connections>
@@ -344,7 +344,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tT-EH-L9e">
-                                        <rect key="frame" x="372.66666666666669" y="33.666666666666671" width="41.333333333333314" height="22.333333333333329"/>
+                                        <rect key="frame" x="372.5" y="33.5" width="41.5" height="22.5"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="arrowshape.turn.up.right.fill" catalog="system"/>
                                         <connections>
@@ -352,7 +352,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWl-rY-gRp">
-                                        <rect key="frame" x="331.33333333333331" y="33.666666666666671" width="41.333333333333314" height="22.333333333333329"/>
+                                        <rect key="frame" x="331" y="33.5" width="41.5" height="22.5"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="arrow.2.circlepath.circle.fill" catalog="system"/>
                                         <connections>
@@ -360,7 +360,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ved-3N-Z8R">
-                                        <rect key="frame" x="0.0" y="30.333333333333336" width="41.333333333333336" height="29.66666666666665"/>
+                                        <rect key="frame" x="0.0" y="30" width="41.5" height="29.5"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <state key="normal" backgroundImage="list.dash" catalog="system"/>
                                         <connections>
@@ -394,7 +394,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4dN-hh-sbC">
-                                <rect key="frame" x="0.0" y="177.66666666666669" width="414" height="718.33333333333326"/>
+                                <rect key="frame" x="0.0" y="133.5" width="414" height="762.5"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VVTableCell" rowHeight="150" id="olg-2v-iaf" customClass="VVTableViewCell" customModule="DoAnCuoiKy" customModuleProvider="target">
@@ -408,7 +408,7 @@
                                                     <rect key="frame" x="10" y="5" width="394" height="140"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chương: Full" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sg-tm-se6">
-                                                            <rect key="frame" x="100" y="61.666666666666671" width="294" height="17"/>
+                                                            <rect key="frame" x="100" y="61.5" width="294" height="17"/>
                                                             <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -422,19 +422,19 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày cập nhật: 12/12/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwl-aT-jpr">
-                                                            <rect key="frame" x="100" y="95.666666666666671" width="294" height="17"/>
+                                                            <rect key="frame" x="100" y="95.5" width="294" height="17"/>
                                                             <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tác giả: Nguyễn Nhật Ánh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBe-Ga-dHP">
-                                                            <rect key="frame" x="100" y="78.666666666666671" width="294" height="17"/>
+                                                            <rect key="frame" x="100" y="78.5" width="294" height="17"/>
                                                             <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐI QUA MÙA HẠ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9P-tX-69D">
-                                                            <rect key="frame" x="100" y="19.666666666666671" width="294" height="42"/>
+                                                            <rect key="frame" x="100" y="19.5" width="294" height="42"/>
                                                             <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                                             <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -492,8 +492,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pNR-aC-hhP"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Trang Chủ" image="house.fill" catalog="system" id="Yqh-8q-ycL">
+                        <color key="badgeColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="86K-Pa-zVl"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="outlet_danhsach" destination="uS1-cy-qU3" id="FXv-H0-Vfh"/>
@@ -502,7 +504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fY-id-DGH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3792.753623188406" y="-914.0625"/>
+            <point key="canvasLocation" x="2882.608695652174" y="-914.0625"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="T8h-qh-Zun">
@@ -513,13 +515,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8O-ly-rai">
-                                <rect key="frame" x="41.333333333333343" y="44.000000000000007" width="372.66666666666663" height="71.666666666666686"/>
+                                <rect key="frame" x="42" y="44" width="372" height="72"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.3529411764705882" green="0.52941176470588236" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVo-aJ-B9r">
-                                <rect key="frame" x="0.0" y="44" width="41.333333333333336" height="62.666666666666657"/>
+                                <rect key="frame" x="0.0" y="44" width="41.5" height="62.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="house.fill" catalog="system"/>
@@ -561,20 +563,20 @@
                                 <rect key="frame" x="0.0" y="44" width="314" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oN6-VJ-rSo">
-                                        <rect key="frame" x="0.0" y="0.0" width="251.33333333333334" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="251" height="818"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSn-Oy-s4I">
-                                                <rect key="frame" x="0.0" y="0.0" width="251.33333333333334" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="251" height="150"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Vep-bj-2Po">
-                                                        <rect key="frame" x="75.666666666666671" y="5" width="100.00000000000001" height="100"/>
+                                                        <rect key="frame" x="75.5" y="5" width="100" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="ehU-dd-6bq"/>
                                                             <constraint firstAttribute="height" constant="100" id="na5-24-LPY"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjn-td-vfq">
-                                                        <rect key="frame" x="94.333333333333329" y="115" width="62.333333333333329" height="21"/>
+                                                        <rect key="frame" x="94.5" y="115" width="62.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -591,10 +593,10 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nDR-iy-ve2">
-                                                <rect key="frame" x="15" y="165" width="221.33333333333334" height="140"/>
+                                                <rect key="frame" x="15" y="165" width="221" height="140"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMq-Yk-yFC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="221.33333333333334" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="221" height="35"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                         <state key="normal" title="Truyện xem nhiều">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -604,7 +606,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jn8-rs-AhR">
-                                                        <rect key="frame" x="0.0" y="35" width="221.33333333333334" height="35"/>
+                                                        <rect key="frame" x="0.0" y="35" width="221" height="35"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                         <state key="normal" title="Truyện mới đăng">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -614,7 +616,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWc-Bt-cr3">
-                                                        <rect key="frame" x="0.0" y="70" width="221.33333333333334" height="35"/>
+                                                        <rect key="frame" x="0.0" y="70" width="221" height="35"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                         <state key="normal" title="Truyện yêu thích">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -624,7 +626,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzg-v5-0s1">
-                                                        <rect key="frame" x="0.0" y="105" width="221.33333333333334" height="35"/>
+                                                        <rect key="frame" x="0.0" y="105" width="221" height="35"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                         <state key="normal" title="Đăng truyện">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -658,7 +660,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVF-zE-3uJ">
-                                <rect key="frame" x="348" y="45.666666666666657" width="46" height="37.333333333333336"/>
+                                <rect key="frame" x="348" y="45" width="46" height="37.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="5Og-Ys-7vY"/>
                                     <constraint firstAttribute="height" constant="40" id="w06-q6-mvI"/>
@@ -689,7 +691,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8F-OM-Maf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4510.144927536232" y="-914.0625"/>
+            <point key="canvasLocation" x="3600" y="-914"/>
         </scene>
         <!--List Post View Controller-->
         <scene sceneID="xsg-RE-DZh">
@@ -700,14 +702,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRUYỆN ĐÃ ĐĂNG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tm-bh-ULy">
-                                <rect key="frame" x="0.0" y="44.000000000000007" width="414" height="89.666666666666686"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="89.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKg-r3-xGa">
-                                <rect key="frame" x="372.66666666666669" y="66.333333333333329" width="41.333333333333314" height="45"/>
+                                <rect key="frame" x="372.5" y="66.5" width="41.5" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="35"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="plus.rectangle.fill" catalog="system"/>
@@ -716,7 +718,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5S-uf-d0n">
-                                <rect key="frame" x="0.0" y="66.333333333333329" width="41.333333333333336" height="45"/>
+                                <rect key="frame" x="0.0" y="66.5" width="41.5" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="35"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="house.fill" catalog="system"/>
@@ -725,7 +727,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uZd-oG-BV5">
-                                <rect key="frame" x="0.0" y="133.66666666666669" width="414" height="762.33333333333326"/>
+                                <rect key="frame" x="0.0" y="133.5" width="414" height="762.5"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListPostCell" rowHeight="100" id="3Lb-zm-VWZ" customClass="ListPostTableViewCell" customModule="DoAnCuoiKy" customModuleProvider="target">
@@ -736,10 +738,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="di-qua-hoa-cuc-1" translatesAutoresizingMaskIntoConstraints="NO" id="HWb-MO-MZg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="124.33333333333333" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="100"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐI QUA MÙA HẠ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fD-b4-65n">
-                                                    <rect key="frame" x="124.33333333333334" y="0.0" width="289.66666666666663" height="100"/>
+                                                    <rect key="frame" x="124" y="0.0" width="290" height="100"/>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -794,7 +796,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fT8-Qa-2zw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5276.811594202899" y="-914.0625"/>
+            <point key="canvasLocation" x="4366.666666666667" y="-914.0625"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="pv6-oZ-gbd">
@@ -805,27 +807,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tên Truyện" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J3l-uH-JLX">
-                                <rect key="frame" x="41.333333333333343" y="143.66666666666666" width="331.33333333333326" height="58.333333333333343"/>
+                                <rect key="frame" x="41.5" y="143.5" width="331" height="58.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tác Giả" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ean-52-OdF">
-                                <rect key="frame" x="41.333333333333343" y="212" width="331.33333333333326" height="58"/>
+                                <rect key="frame" x="41.5" y="212" width="331" height="58"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Thể Loại" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbF-8t-EjK">
-                                <rect key="frame" x="41.333333333333343" y="280" width="331.33333333333326" height="58.333333333333314"/>
+                                <rect key="frame" x="41.5" y="280" width="331" height="58.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="g4T-xM-Ih9">
-                                <rect key="frame" x="103.66666666666666" y="348.33333333333331" width="82.666666666666657" height="89.666666666666686"/>
+                                <rect key="frame" x="103.5" y="348.5" width="83" height="89.5"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WOq-op-yH0">
-                                <rect key="frame" x="238" y="357.33333333333331" width="62" height="71.666666666666686"/>
+                                <rect key="frame" x="238" y="357.5" width="62" height="71.5"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                 <state key="normal" title="Chọn">
@@ -836,14 +838,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DANH SÁCH CHƯƠNG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J36-bD-CHw">
-                                <rect key="frame" x="0.0" y="438" width="414" height="89.666666666666629"/>
+                                <rect key="frame" x="0.0" y="438" width="414" height="89.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hDe-wV-Sr4">
-                                <rect key="frame" x="0.0" y="527.66666666666663" width="414" height="256"/>
+                                <rect key="frame" x="0.0" y="527.5" width="414" height="256.5"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableCell" rowHeight="50" id="6SF-om-xaP" customClass="PostTableViewCell" customModule="DoAnCuoiKy" customModuleProvider="target">
@@ -854,14 +856,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chương 01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neg-Is-MFg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="124.33333333333333" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="50"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tôi là ai ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yti-6r-OtQ">
-                                                    <rect key="frame" x="124.33333333333334" y="0.0" width="289.66666666666663" height="50"/>
+                                                    <rect key="frame" x="124" y="0.0" width="290" height="50"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -890,14 +892,14 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHỤ LỤC TRUYỆN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAg-nc-cm0">
-                                <rect key="frame" x="0.0" y="44.000000000000007" width="414" height="89.666666666666686"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="89.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ai5-Td-Dyb">
-                                <rect key="frame" x="82.666666666666686" y="793.66666666666663" width="124.33333333333331" height="58.333333333333371"/>
+                                <rect key="frame" x="83" y="794" width="124" height="58"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="LƯU">
@@ -908,7 +910,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6z-Aa-ffH">
-                                <rect key="frame" x="217.00000000000003" y="793.66666666666663" width="124.33333333333334" height="58.333333333333371"/>
+                                <rect key="frame" x="217" y="794" width="124" height="58"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="TRỞ VỀ">
@@ -919,7 +921,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCn-DV-9Oo">
-                                <rect key="frame" x="372.66666666666669" y="460.33333333333331" width="41.333333333333314" height="44.666666666666686"/>
+                                <rect key="frame" x="372.5" y="460.5" width="41.5" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="35"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="plus.rectangle.fill" catalog="system"/>
@@ -990,7 +992,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8d-Jt-ovI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6050.7246376811599" y="-914.0625"/>
+            <point key="canvasLocation" x="5140.579710144928" y="-914.0625"/>
         </scene>
         <!--Post Chap View Controller-->
         <scene sceneID="IeS-m4-pGB">
@@ -1001,29 +1003,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THÊM CHƯƠNG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQp-Ya-Q3O">
-                                <rect key="frame" x="0.0" y="44.000000000000007" width="414" height="89.666666666666686"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="89.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Thứ tự chương" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CS5-tK-Uyt">
-                                <rect key="frame" x="41.333333333333343" y="143.66666666666666" width="331.33333333333326" height="58.333333333333343"/>
+                                <rect key="frame" x="41.5" y="143.5" width="331" height="58.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tên chương" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="reZ-ko-QHH">
-                                <rect key="frame" x="41.333333333333343" y="212" width="331.33333333333326" height="58"/>
+                                <rect key="frame" x="41.5" y="212" width="331" height="58"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nội dung" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOc-me-mU0">
-                                <rect key="frame" x="41.333333333333343" y="280" width="331.33333333333326" height="503.66666666666674"/>
+                                <rect key="frame" x="41.5" y="280" width="331" height="504"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwZ-cs-jOi">
-                                <rect key="frame" x="82.666666666666686" y="793.66666666666663" width="124.33333333333331" height="58.333333333333371"/>
+                                <rect key="frame" x="83" y="794" width="124" height="58"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="LƯU">
@@ -1034,7 +1036,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPR-RX-yB0">
-                                <rect key="frame" x="217.00000000000003" y="793.66666666666663" width="124.33333333333334" height="58.333333333333371"/>
+                                <rect key="frame" x="217" y="794" width="124" height="58"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="TRỞ VỀ">
@@ -1084,7 +1086,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WyE-IL-V6j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6734.7826086956529" y="-914.0625"/>
+            <point key="canvasLocation" x="5826" y="-914"/>
         </scene>
         <!--Thể Loại-->
         <scene sceneID="ExI-jd-nEJ">
@@ -1095,7 +1097,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jEg-T6-YHX">
-                                <rect key="frame" x="0.0" y="133.66666666666669" width="414" height="679.33333333333326"/>
+                                <rect key="frame" x="0.0" y="133.5" width="414" height="679.5"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.64313725490196072" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" rowHeight="100" id="6Vv-k3-kQ6" customClass="CategoryTableViewCell" customModule="DoAnCuoiKy" customModuleProvider="target">
@@ -1151,16 +1153,16 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sju-jE-G1I">
-                                <rect key="frame" x="0.0" y="44.000000000000007" width="414" height="89.666666666666686"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="89.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thể Loại (1/1)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1o-Bm-XPE">
-                                        <rect key="frame" x="41.333333333333343" y="33.666666666666671" width="145" height="22.333333333333329"/>
+                                        <rect key="frame" x="41.5" y="33.5" width="145" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wme-ny-CT9">
-                                        <rect key="frame" x="0.0" y="30.333333333333336" width="41.333333333333336" height="29.66666666666665"/>
+                                        <rect key="frame" x="0.0" y="30" width="41.5" height="29.5"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <state key="normal" backgroundImage="list.dash" catalog="system"/>
                                         <connections>
@@ -1217,19 +1219,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aLq-Ge-MI0">
-                                        <rect key="frame" x="0.0" y="-44" width="414" height="1242.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="-44" width="414" height="1242.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCi-xX-dYx">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="268.66666666666669"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroup01" translatesAutoresizingMaskIntoConstraints="NO" id="hel-o0-ZNH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="268.66666666666669"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="di-qua-hoa-cuc-1" translatesAutoresizingMaskIntoConstraints="NO" id="dMM-Jj-yjF">
-                                                        <rect key="frame" x="103.66666666666669" y="67.333333333333329" width="207" height="134.33333333333337"/>
+                                                        <rect key="frame" x="103.5" y="67" width="207" height="134.5"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RX-D0-oQl">
-                                                        <rect key="frame" x="0.0" y="29.999999999999996" width="41.333333333333336" height="53.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="30" width="41.5" height="54"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="arrowshape.turn.up.left.2.fill" catalog="system"/>
@@ -1253,7 +1255,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMN-YH-TlX">
-                                                <rect key="frame" x="0.0" y="268.66666666666663" width="414" height="448"/>
+                                                <rect key="frame" x="0.0" y="269" width="414" height="448"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐI QUA MÙA HẠ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXD-y3-V1Z">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
@@ -1262,43 +1264,43 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tác giả: Nguyễn Nhật Ánh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxb-2S-pSb">
-                                                        <rect key="frame" x="41.333333333333314" y="103" width="331.33333333333331" height="44.666666666666657"/>
+                                                        <rect key="frame" x="41.5" y="103" width="331" height="45"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thể loại: Truyện ngắn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NC-9J-H28">
-                                                        <rect key="frame" x="41.333333333333314" y="147.66666666666674" width="331.33333333333331" height="44.666666666666657"/>
+                                                        <rect key="frame" x="41.5" y="148" width="331" height="45"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trạng thái: Hoàn thành" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wly-19-zk8">
-                                                        <rect key="frame" x="41.333333333333314" y="192.33333333333337" width="331.33333333333331" height="45"/>
+                                                        <rect key="frame" x="41.5" y="193" width="331" height="44.5"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số chương: 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOp-kj-feI">
-                                                        <rect key="frame" x="41.333333333333314" y="237.33333333333334" width="331.33333333333331" height="44.666666666666657"/>
+                                                        <rect key="frame" x="41.5" y="237.5" width="331" height="45"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày viết: 15/12/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxP-eP-EXr">
-                                                        <rect key="frame" x="41.333333333333314" y="282" width="331.33333333333331" height="45"/>
+                                                        <rect key="frame" x="41.5" y="282.5" width="331" height="44.5"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày cập nhật: 15/12/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wuq-Ey-BFs">
-                                                        <rect key="frame" x="41.333333333333314" y="327" width="331.33333333333331" height="44.666666666666686"/>
+                                                        <rect key="frame" x="41.5" y="327" width="331" height="45"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điểm đánh giá: 5/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XM5-B4-pgl">
-                                                        <rect key="frame" x="41.333333333333314" y="371.66666666666674" width="331.33333333333331" height="44.666666666666686"/>
+                                                        <rect key="frame" x="41.5" y="372" width="331" height="45"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1342,10 +1344,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPy-5F-Qwf">
-                                                <rect key="frame" x="0.0" y="716.66666666666663" width="414" height="179.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="717" width="414" height="179"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27C-NO-Cur">
-                                                        <rect key="frame" x="82.666666666666671" y="0.0" width="248.66666666666663" height="63"/>
+                                                        <rect key="frame" x="83" y="0.0" width="248" height="62.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="30"/>
                                                         <state key="normal" title="ĐỌC TRUYỆN">
@@ -1356,7 +1358,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Cr-Eb-Ghp">
-                                                        <rect key="frame" x="10.333333333333336" y="125.66666666666676" width="82.666666666666657" height="17.666666666666671"/>
+                                                        <rect key="frame" x="10.5" y="125" width="82.5" height="18"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="suit.heart.fill" catalog="system">
                                                             <attributedString key="attributedTitle"/>
@@ -1366,19 +1368,19 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yêu Thích" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UE-3K-GNi">
-                                                        <rect key="frame" x="0.0" y="143.33333333333337" width="103.66666666666667" height="36"/>
+                                                        <rect key="frame" x="0.0" y="143" width="103.5" height="36"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chương" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1P-Eq-bWd">
-                                                        <rect key="frame" x="103.66666666666669" y="143.33333333333337" width="103.33333333333331" height="36"/>
+                                                        <rect key="frame" x="103.5" y="143" width="103.5" height="36"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFi-FO-0Lf">
-                                                        <rect key="frame" x="114" y="125.66666666666676" width="82.666666666666686" height="17.666666666666671"/>
+                                                        <rect key="frame" x="114" y="125" width="82.5" height="18"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="rectangle.grid.2x2.fill" catalog="system">
                                                             <attributedString key="attributedTitle"/>
@@ -1388,13 +1390,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chia Sẻ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFY-uF-LHh">
-                                                        <rect key="frame" x="206.99999999999997" y="143.33333333333337" width="103.66666666666666" height="36"/>
+                                                        <rect key="frame" x="207" y="143" width="103.5" height="36"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6av-E7-Av0">
-                                                        <rect key="frame" x="217.33333333333334" y="125.66666666666676" width="82.666666666666657" height="17.666666666666671"/>
+                                                        <rect key="frame" x="217.5" y="125" width="82.5" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="arrowshape.turn.up.right.circle.fill" catalog="system"/>
@@ -1403,13 +1405,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tải Về" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEA-IS-zMy">
-                                                        <rect key="frame" x="310.66666666666669" y="143.33333333333337" width="103.33333333333331" height="36"/>
+                                                        <rect key="frame" x="310.5" y="143" width="103.5" height="36"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdG-I6-yEE">
-                                                        <rect key="frame" x="321" y="125.66666666666676" width="82.666666666666686" height="17.666666666666671"/>
+                                                        <rect key="frame" x="321" y="125" width="82.5" height="18"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="square.and.arrow.up.fill" catalog="system"/>
                                                         <connections>
@@ -1417,7 +1419,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0z-5Q-c5x">
-                                                        <rect key="frame" x="41.666666666666657" y="67.333333333333371" width="62.333333333333343" height="44.666666666666657"/>
+                                                        <rect key="frame" x="42" y="67" width="62" height="45"/>
                                                         <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Star_01" image="star"/>
@@ -1426,7 +1428,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIp-Ls-LZD">
-                                                        <rect key="frame" x="109" y="67.333333333333371" width="62" height="44.666666666666657"/>
+                                                        <rect key="frame" x="109" y="67" width="62" height="45"/>
                                                         <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Star_02" image="star"/>
@@ -1435,7 +1437,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAc-Nd-4cq">
-                                                        <rect key="frame" x="176" y="67.333333333333371" width="62" height="44.666666666666657"/>
+                                                        <rect key="frame" x="176" y="67" width="62" height="45"/>
                                                         <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Star_03" image="star"/>
@@ -1444,7 +1446,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wl0-Wh-V2O">
-                                                        <rect key="frame" x="243" y="67.333333333333371" width="62" height="44.666666666666657"/>
+                                                        <rect key="frame" x="243" y="67" width="62" height="45"/>
                                                         <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Star_04" image="star"/>
@@ -1453,7 +1455,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTZ-06-tgl">
-                                                        <rect key="frame" x="310" y="67.333333333333371" width="62.333333333333314" height="44.666666666666657"/>
+                                                        <rect key="frame" x="310" y="67" width="62.5" height="45"/>
                                                         <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Star_05" image="star"/>
@@ -1523,16 +1525,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HqL-bA-A5S">
-                                                <rect key="frame" x="0.0" y="896.00000000000011" width="414" height="346.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="896" width="414" height="346.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tóm Tắt Truyện" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6y-m3-btR">
-                                                        <rect key="frame" x="0.0" y="10" width="414" height="34.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="10" width="414" height="34.5"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                                         <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QW8-s0-ASW">
-                                                        <rect key="frame" x="10" y="44.666666666666629" width="394" height="301.66666666666669"/>
+                                                        <rect key="frame" x="10" y="44.5" width="394" height="302"/>
                                                         <string key="text">“Đi qua hoa cúc” là một câu chuyện về tình yêu khá buồn. Buồn vì mối tình dang dở của cậu học trò hồn nhiên, đáng yêu. Buồn vì số phận truân chuyên của các nhân vật. Các câu chuyện của Nguyễn Nhật Ánh luôn làm cho người đọc không thể nào dứt ra được. Như thể người đọc đang hoà mình vào chung một nhịp đập với nhân vật. Nên có những lúc, người đọc sẽ thầm trách Nguyễn Nhật Ánh có quá đáng không khi đã tạo nên một nàng thơ xinh đẹp như trong tranh vẽ, nhưng rồi lại đẩy nhân vật của mình vào bi ai khó tìm được lối thoát?
 
 Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ trẻ con trở thành người lớn của nhân vật của mình. Khi trải qua một biến cố lớn trong quãng đời trẻ con, thì con người ta sẽ không còn là trẻ con nữa. Sẽ không còn quãng thời gian đẹp đẽ đơn thuần của con nít, vô tư lự, ngông nghênh và hiếu động nữa.</string>
@@ -1629,7 +1631,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1344"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-5Y-smz">
-                                                        <rect key="frame" x="41.333333333333336" y="10.000000000000004" width="124.33333333333331" height="58.333333333333343"/>
+                                                        <rect key="frame" x="41.5" y="10" width="124" height="58"/>
                                                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1639,7 +1641,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLM-1W-z2u">
-                                                        <rect key="frame" x="175.66666666666663" y="10.000000000000004" width="207" height="58.333333333333343"/>
+                                                        <rect key="frame" x="175.5" y="10" width="207" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                                         <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1649,7 +1651,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="5000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyt-8M-kSp">
-                                                        <rect key="frame" x="10" y="78.333333333333258" width="394" height="1265.6666666666667"/>
+                                                        <rect key="frame" x="10" y="78" width="394" height="1266"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
                                                                 <string key="content">Trước nhà bà nội tôi có một cây bàng cao thật cao . Mỗi lần về thăm nội, khi chiếc xe gobel của ba tôi ngoặt quanh cái giếng đá đầu làng, bao giờ tôi cũng nhấp nhổm ở yên sau và hồi hộp ngước mắt trông lên. So với dãy hàng rào dâm bụt của những ngôi nhà nằm dọc hai bên con đường đá sỏi, kể cả ngọn sầu đông và cây sứ trắng toả hương thơm nức mũi trước sân nhà bà tôi lúc nào cũng vươn cao sừng sững. Khi nhìn lên, hễ thấy tán bàng xanh um kia hiện ra trong tầm mắt như một chấm đen mỗi lúc một lớn dần, tôi biết ngay đã sắp đến nhà bà. Và thế là tôi không nén nổi nụ cười sung sướng. Và cả e thẹn nữa, chẳng hiểu vì sao . Những lúc đó, bao giờ tôi cũng úp mặt vào lưng ba tôi để giấu đi nỗi xao xuyến của mình. 
@@ -1941,7 +1943,7 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                         <color key="selectedImageTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="07N-FN-XYH" kind="relationship" relationship="viewControllers" id="Ogz-2b-PG4"/>
+                        <segue destination="5oC-G0-soj" kind="relationship" relationship="viewControllers" id="Ogz-2b-PG4"/>
                         <segue destination="xKW-WT-9g3" kind="relationship" relationship="viewControllers" id="2vX-fe-Vyi"/>
                         <segue destination="3Ua-Wc-WsT" kind="relationship" relationship="viewControllers" id="Wub-Ba-jwD"/>
                         <segue destination="Sxl-hC-GDu" kind="relationship" relationship="viewControllers" id="vk6-JS-kdU"/>
@@ -1960,16 +1962,16 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hcz-je-6tq">
-                                <rect key="frame" x="0.0" y="44.000000000000007" width="414" height="89.666666666666686"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="89.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thư Viện (1/1)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghp-ol-56e">
-                                        <rect key="frame" x="41.333333333333343" y="33.666666666666671" width="145" height="22.333333333333329"/>
+                                        <rect key="frame" x="41.5" y="33.5" width="145" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtJ-iV-Aea">
-                                        <rect key="frame" x="0.0" y="30.333333333333336" width="41.333333333333336" height="29.66666666666665"/>
+                                        <rect key="frame" x="0.0" y="30" width="41.5" height="29.5"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <state key="normal" backgroundImage="list.dash" catalog="system"/>
                                         <connections>
@@ -2016,12 +2018,12 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7qQ-kw-ngn">
-                                <rect key="frame" x="41.333333333333343" y="417" width="331.33333333333326" height="72"/>
+                                <rect key="frame" x="41.5" y="417" width="331" height="72"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6k6-gm-Evd">
-                                <rect key="frame" x="82.666666666666671" y="519" width="248.66666666666663" height="71.666666666666629"/>
+                                <rect key="frame" x="83" y="519" width="248" height="71.5"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="Xác Nhận">
@@ -2032,7 +2034,7 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUÊN MẬT KHẨU" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1M5-pr-OEm">
-                                <rect key="frame" x="20" y="345.33333333333331" width="394" height="71.666666666666686"/>
+                                <rect key="frame" x="20" y="345.5" width="394" height="71.5"/>
                                 <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2073,14 +2075,14 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="mza-wo-6qX">
-                                <rect key="frame" x="0.0" y="133.66666666666666" width="414" height="178.99999999999997"/>
+                                <rect key="frame" x="0.0" y="133.5" width="414" height="179.5"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3PX-f9-w6K">
-                                <rect key="frame" x="20.000000000000004" y="313.66666666666669" width="41.333333333333343" height="62"/>
+                                <rect key="frame" x="20" y="313.5" width="41.5" height="61.5"/>
                                 <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlO-Vi-miZ">
-                                <rect key="frame" x="71.333333333333343" y="312.66666666666669" width="342.66666666666663" height="63"/>
+                                <rect key="frame" x="71.5" y="313" width="342.5" height="62.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="Thông tin tài khoản">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2090,11 +2092,11 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ra3-GT-CRc">
-                                <rect key="frame" x="20.000000000000004" y="375.66666666666669" width="41.333333333333343" height="61.666666666666686"/>
+                                <rect key="frame" x="20" y="375" width="41.5" height="61.5"/>
                                 <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzW-fo-irB">
-                                <rect key="frame" x="71.333333333333343" y="375.66666666666669" width="342.66666666666663" height="62.666666666666686"/>
+                                <rect key="frame" x="71.5" y="375.5" width="342.5" height="62.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="Đổi mật khẩu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2104,11 +2106,11 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="v.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BI5-sx-edw">
-                                <rect key="frame" x="20.000000000000004" y="440" width="41.333333333333343" height="60"/>
+                                <rect key="frame" x="20" y="439" width="41.5" height="60.5"/>
                                 <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z95-YZ-U9Y">
-                                <rect key="frame" x="71.333333333333343" y="438.33333333333331" width="342.66666666666663" height="62.666666666666686"/>
+                                <rect key="frame" x="71.5" y="438" width="342.5" height="63"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="V.V Truyện">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2118,11 +2120,11 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.badge.exclam" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Vtd-ns-Tww">
-                                <rect key="frame" x="20.000000000000004" y="502.00000000000006" width="41.333333333333343" height="61.666666666666686"/>
+                                <rect key="frame" x="20" y="501.5" width="41.5" height="61.5"/>
                                 <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAX-wb-Cl3">
-                                <rect key="frame" x="71.333333333333343" y="501.00000000000006" width="342.66666666666663" height="62.666666666666686"/>
+                                <rect key="frame" x="71.5" y="501" width="342.5" height="62.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="Đăng xuất">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2132,16 +2134,16 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHa-t8-UnG">
-                                <rect key="frame" x="0.0" y="44.000000000000007" width="414" height="89.666666666666686"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="89.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cá Nhân (1/1)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POT-pv-jFH">
-                                        <rect key="frame" x="41.333333333333343" y="33.666666666666671" width="145" height="22.333333333333329"/>
+                                        <rect key="frame" x="41.5" y="33.5" width="145" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QW9-sx-BoG">
-                                        <rect key="frame" x="0.0" y="30.333333333333336" width="41.333333333333336" height="29.66666666666665"/>
+                                        <rect key="frame" x="0.0" y="30" width="41.5" height="29.5"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <state key="normal" backgroundImage="list.dash" catalog="system"/>
                                         <connections>
@@ -2224,64 +2226,64 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroup01" translatesAutoresizingMaskIntoConstraints="NO" id="B0L-UE-erR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="268.66666666666669"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="hkH-9S-X4c">
-                                <rect key="frame" x="145" y="67.333333333333329" width="124" height="134.33333333333337"/>
+                                <rect key="frame" x="145" y="67" width="124" height="134.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AnhKiemVipPro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5K-Fy-gho">
-                                <rect key="frame" x="0.0" y="268.66666666666669" width="414" height="89.666666666666686"/>
+                                <rect key="frame" x="0.0" y="269" width="414" height="89.5"/>
                                 <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="40"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6MW-V3-j2b">
-                                <rect key="frame" x="10" y="360" width="41.333333333333336" height="44"/>
+                                <rect key="frame" x="10" y="359.5" width="41.5" height="43.5"/>
                                 <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail: Nguyenhaanhkiem@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dc-JX-Xwy">
-                                <rect key="frame" x="56.333333333333343" y="358.33333333333331" width="347.66666666666663" height="45"/>
+                                <rect key="frame" x="56.5" y="358.5" width="347.5" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5pF-ed-h55">
-                                <rect key="frame" x="10" y="404.33333333333331" width="41.333333333333336" height="43.666666666666686"/>
+                                <rect key="frame" x="10" y="403.5" width="41.5" height="44"/>
                                 <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giới tính: Nam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUq-pg-LIF">
-                                <rect key="frame" x="56.333333333333343" y="403.33333333333331" width="347.66666666666663" height="44.666666666666686"/>
+                                <rect key="frame" x="56.5" y="403" width="347.5" height="45"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="A0e-ld-pcs">
-                                <rect key="frame" x="10" y="448.66666666666669" width="41.333333333333336" height="44.333333333333314"/>
+                                <rect key="frame" x="10" y="448.5" width="41.5" height="44.5"/>
                                 <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sinh nhật: 07/01/2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUV-kl-cDI">
-                                <rect key="frame" x="56.333333333333343" y="448" width="347.66666666666663" height="44.666666666666686"/>
+                                <rect key="frame" x="56.5" y="448" width="347.5" height="45"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.point.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Keh-c8-aft">
-                                <rect key="frame" x="10" y="494.66666666666669" width="41.333333333333336" height="40.666666666666629"/>
+                                <rect key="frame" x="10" y="494.5" width="41.5" height="40"/>
                                 <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày tham gia: 16/12/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpP-fJ-khp">
-                                <rect key="frame" x="56.333333333333343" y="492.66666666666674" width="347.66666666666663" height="45"/>
+                                <rect key="frame" x="56.5" y="493" width="347.5" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="admin" translatesAutoresizingMaskIntoConstraints="NO" id="YXp-kG-A1t">
-                                <rect key="frame" x="82.666666666666671" y="537.66666666666663" width="248.66666666666663" height="179"/>
+                                <rect key="frame" x="83" y="537.5" width="248" height="179.5"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tQ-zQ-2OD">
-                                <rect key="frame" x="0.0" y="44" width="41.333333333333336" height="53.666666666666657"/>
+                                <rect key="frame" x="0.0" y="44" width="41.5" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="arrowshape.turn.up.left.2.fill" catalog="system"/>
@@ -2370,13 +2372,13 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroup01" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-Gu-Uwx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="268.66666666666669"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Wxd-lM-n3R">
-                                <rect key="frame" x="145" y="67.333333333333329" width="124" height="134.33333333333337"/>
+                                <rect key="frame" x="145" y="67" width="124" height="134.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVH-3X-2sZ">
-                                <rect key="frame" x="0.0" y="44" width="41.333333333333336" height="53.666666666666657"/>
+                                <rect key="frame" x="0.0" y="44" width="41.5" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="arrowshape.turn.up.left.2.fill" catalog="system"/>
@@ -2385,22 +2387,22 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mật khẩu hiện tại" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9RC-1i-a1V">
-                                <rect key="frame" x="41.333333333333343" y="278.66666666666669" width="331.33333333333326" height="58.333333333333314"/>
+                                <rect key="frame" x="41.5" y="279" width="331" height="58"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mật khẩu mới" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S5D-va-qbJ">
-                                <rect key="frame" x="41.333333333333343" y="347" width="331.33333333333326" height="71.666666666666686"/>
+                                <rect key="frame" x="41.5" y="347" width="331" height="71.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập lại mật khẩu" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ISt-IF-geJ">
-                                <rect key="frame" x="41.333333333333343" y="428.66666666666669" width="331.33333333333326" height="71.666666666666686"/>
+                                <rect key="frame" x="41.5" y="428.5" width="331" height="72"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnY-sx-jXY">
-                                <rect key="frame" x="82.666666666666671" y="530.33333333333337" width="248.66666666666663" height="71.666666666666629"/>
+                                <rect key="frame" x="83" y="530.5" width="248" height="71.5"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="Xác Nhận">
@@ -2465,13 +2467,13 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroup01" translatesAutoresizingMaskIntoConstraints="NO" id="bTp-C3-k7I">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="268.66666666666669"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="P1u-Bp-Gb5">
-                                <rect key="frame" x="145" y="67.333333333333329" width="124" height="134.33333333333337"/>
+                                <rect key="frame" x="145" y="67" width="124" height="134.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyW-yI-3DG">
-                                <rect key="frame" x="10" y="268.66666666666669" width="394" height="179.33333333333331"/>
+                                <rect key="frame" x="10" y="269" width="394" height="179"/>
                                 <string key="text">V.V TRUYỆN là một app truyện chạy trên nền tảng iOS được tạo nên để phục nhu cầu đọc truyện của giới trẻ 
 </string>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
@@ -2479,31 +2481,31 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NHÓM THỰC HIỆN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qk7-Lw-gIj">
-                                <rect key="frame" x="10" y="448" width="394" height="44.666666666666686"/>
+                                <rect key="frame" x="10" y="448" width="394" height="45"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18120345 - Phạm Minh Duy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5u-Ae-TiS">
-                                <rect key="frame" x="41.333333333333343" y="492.66666666666674" width="331.33333333333326" height="45"/>
+                                <rect key="frame" x="41.5" y="493" width="331" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18120390 - Nguyễn Đình Hùng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plo-BU-Rfa">
-                                <rect key="frame" x="41.333333333333343" y="537.66666666666663" width="331.33333333333326" height="44.666666666666629"/>
+                                <rect key="frame" x="41.5" y="537.5" width="331" height="45"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18120428 - Nguyễn Hà Anh Kiểm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZG-dH-j1B">
-                                <rect key="frame" x="41.333333333333343" y="582.33333333333337" width="331.33333333333326" height="45"/>
+                                <rect key="frame" x="41.5" y="582.5" width="331" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFU-wO-RJm">
-                                <rect key="frame" x="0.0" y="44" width="41.333333333333336" height="53.666666666666657"/>
+                                <rect key="frame" x="0.0" y="44" width="41.5" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="arrowshape.turn.up.left.2.fill" catalog="system"/>
@@ -2576,58 +2578,37 @@ Nhưng hồi đó, cũng như mãi mãi về sau này nếu tôi không hớ hê
             </objects>
             <point key="canvasLocation" x="-584.05797101449275" y="95.758928571428569"/>
         </scene>
-        <!--Trang Chủ-->
-        <scene sceneID="10W-Im-LFR">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="07N-FN-XYH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trang Chủ" image="house.fill" catalog="system" id="Yqh-8q-ycL">
-                        <color key="badgeColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yrW-Ca-d1K">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="5oC-G0-soj" kind="relationship" relationship="rootViewController" id="fac-CR-Xse"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zEL-cf-fyX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2882.608695652174" y="-914.0625"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Trang Chủ" width="16" height="16"/>
         <image name="admin" width="1280" height="717"/>
-        <image name="arrow.2.circlepath.circle.fill" catalog="system" width="64" height="62"/>
-        <image name="arrowshape.turn.up.left.2.fill" catalog="system" width="64" height="44"/>
-        <image name="arrowshape.turn.up.right.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="arrow.2.circlepath.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="arrowshape.turn.up.left.2.fill" catalog="system" width="64" height="42"/>
+        <image name="arrowshape.turn.up.right.circle.fill" catalog="system" width="64" height="60"/>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="64" height="52"/>
-        <image name="avatar" width="125.33333587646484" height="125.33333587646484"/>
-        <image name="backgroup01" width="375" height="812"/>
+        <image name="avatar" width="188" height="188"/>
+        <image name="backgroup01" width="562.5" height="1218"/>
         <image name="book.fill" catalog="system" width="64" height="50"/>
-        <image name="bubble.right.fill" catalog="system" width="64" height="56"/>
+        <image name="bubble.right.fill" catalog="system" width="64" height="54"/>
         <image name="di-qua-hoa-cuc-1" width="702" height="444"/>
         <image name="hand.point.right.fill" catalog="system" width="64" height="48"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
-        <image name="info.circle.fill" catalog="system" width="64" height="62"/>
-        <image name="list.dash" catalog="system" width="64" height="44"/>
-        <image name="logo" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="magnifyingglass" catalog="system" width="64" height="60"/>
+        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="list.dash" catalog="system" width="64" height="42"/>
+        <image name="logo" width="256" height="256"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
-        <image name="person.circle.fill" catalog="system" width="64" height="62"/>
-        <image name="person.crop.circle.badge.exclam" catalog="system" width="64" height="52"/>
-        <image name="person.crop.rectangle.fill" catalog="system" width="64" height="48"/>
-        <image name="plus.rectangle.fill" catalog="system" width="64" height="48"/>
-        <image name="rectangle.grid.2x2.fill" catalog="system" width="64" height="50"/>
+        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="person.crop.circle.badge.exclam" catalog="system" width="64" height="50"/>
+        <image name="person.crop.rectangle.fill" catalog="system" width="64" height="46"/>
+        <image name="plus.rectangle.fill" catalog="system" width="64" height="46"/>
+        <image name="rectangle.grid.2x2.fill" catalog="system" width="64" height="48"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="56" height="64"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
         <image name="square.grid.3x2.fill" catalog="system" width="64" height="40"/>
         <image name="star" width="376" height="359"/>
-        <image name="suit.heart.fill" catalog="system" width="64" height="58"/>
+        <image name="suit.heart.fill" catalog="system" width="64" height="54"/>
         <image name="v.square.fill" catalog="system" width="64" height="56"/>
-        <image name="xmark.rectangle" catalog="system" width="64" height="48"/>
+        <image name="xmark.rectangle" catalog="system" width="64" height="46"/>
     </resources>
 </document>
