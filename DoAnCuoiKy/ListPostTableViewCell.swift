@@ -1,16 +1,16 @@
 //
-//  VVTableViewCell.swift
+//  ListPostTableViewCell.swift
 //  DoAnCuoiKy
 //
-//  Created by AnhKiem on 12/6/20.
+//  Created by AnhKiem on 12/14/20.
 //  Copyright © 2020 AnhKiem. All rights reserved.
 //
 
 import UIKit
 
-class VVTableViewCell: UITableViewCell {
+class ListPostTableViewCell: UITableViewCell {
     // Các biến quản lý đối tượng
-    @IBOutlet weak var logoItem: UIImageView!
+    @IBOutlet weak var outlet_logoitem: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -9,16 +9,21 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        avatar.layer.cornerRadius = 0.5 * avatar.bounds.size.width
-        // Do any additional setup after loading the view.
-    }
     
+    // Các biến quản lý đối tượng
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var name: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Giao diện Avatar
+        avatar.layer.cornerRadius = 0.5 * avatar.bounds.size.width
+        
+        // Hiển thị tên User
+    }
+    
+    // Nút Exit
     @IBAction func exit(_ sender: Any) {
         let transition = CATransition()
         transition.duration = 0.25
@@ -28,17 +33,25 @@ class MenuViewController: UIViewController {
 
         dismiss(animated: false)
     }
+    
+    // nhấn nút truyện xem nhiều
     @IBAction func topStory(_ sender: Any) {
-        // nhấn nút truyện xem nhiều
     }
+    
+    // nhấn dút truyện mới đăng
     @IBAction func newStory(_ sender: Any) {
-        // nhấn dút truyện mới đăng
     }
+    
+    // nhấn nút truyện yêu thích
     @IBAction func favoriteStory(_ sender: Any) {
-        // nhấn nút truyện yêu thích
     }
+    
+    // nhấn nút đăng truyện
     @IBAction func publishStory(_ sender: Any) {
-        // nhân nút đăng truyện
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let dangTruyen = sb.instantiateViewController(identifier: "ListPostViewController")
+        dangTruyen.modalPresentationStyle = .fullScreen
+        self.present(dangTruyen, animated: true, completion: nil)
     }
     
 }
