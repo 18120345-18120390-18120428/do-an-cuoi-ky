@@ -11,6 +11,7 @@ import UIKit
 class ListPostTableViewCell: UITableViewCell {
     // Các biến quản lý đối tượng
     @IBOutlet weak var outlet_logoitem: UIImageView!
+    @IBOutlet var lbTittle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

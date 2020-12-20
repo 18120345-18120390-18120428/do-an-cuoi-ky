@@ -11,6 +11,10 @@ import UIKit
 class VVTableViewCell: UITableViewCell {
     // Các biến quản lý đối tượng
     @IBOutlet weak var logoItem: UIImageView!
+    @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var lbChapterNumber: UILabel!
+    @IBOutlet weak var lbAuthor: UILabel!
+    @IBOutlet weak var lbUpdateDay: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

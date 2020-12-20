@@ -11,24 +11,25 @@ import UIKit
 class StoryViewController: UIViewController {
 
     // Các biến quản lý đối tượng
-    @IBOutlet weak var outlet_trove: UIButton!
-    @IBOutlet weak var outlet_chuongtiep: UIButton!
-    @IBOutlet weak var outlet_noidung: UILabel!
-    
+    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var lbChapterContent: UILabel!
+    var content = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Giao diện Trở về
-        outlet_trove.layer.borderWidth = 1.0
-        outlet_trove.layer.borderColor = UIColor.white.cgColor
-        outlet_trove.layer.cornerRadius = 30.0
+        btnBack.layer.borderWidth = 1.0
+        btnBack.layer.borderColor = UIColor.white.cgColor
+        btnBack.layer.cornerRadius = 30.0
         
         // Giao diện Chương tiếp
-        outlet_chuongtiep.layer.borderWidth = 1.0
-        outlet_chuongtiep.layer.borderColor = UIColor.systemPink.cgColor
-        outlet_chuongtiep.layer.cornerRadius = 30.0
-        
+        btnNext.layer.borderWidth = 1.0
+        btnNext.layer.borderColor = UIColor.systemPink.cgColor
+        btnNext.layer.cornerRadius = 30.0
+        lbChapterContent.text = content
         // Hiển thị nội dung truyện
+        
     }
     
     // Phần Trở về

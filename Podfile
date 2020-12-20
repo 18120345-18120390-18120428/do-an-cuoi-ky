@@ -9,6 +9,7 @@ target 'DoAnCuoiKy' do
   pod 'Firebase/Core'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
   pod 'Alertift', '~> 4.2'
 end
