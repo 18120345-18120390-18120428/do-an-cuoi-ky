@@ -10,7 +10,7 @@ import UIKit
 
 class SideMenuController: UITableViewController {
 
-    var item = ["First", "Second", "Thrid"]
+    var item = ["Truyện yêu thích", "Truyện xem nhiều", "Truyện mới đăng", "Đăng truyện"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
@@ -27,7 +27,7 @@ class SideMenuController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 5
     }
 
     
@@ -41,6 +41,15 @@ class SideMenuController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = item[indexPath.row - 1]
         return cell
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 4) {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let VC1 = sb.instantiateViewController(withIdentifier: "ListPostViewController")
+            let navController = UINavigationController(rootViewController: VC1)
+            navController.modalPresentationStyle = .fullScreen
+            self.present(navController, animated:true, completion: nil)
+        }
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.row == 0) {

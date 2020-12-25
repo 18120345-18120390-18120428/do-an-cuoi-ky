@@ -73,7 +73,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     newChapter.addNewChapter(chapterOrder: chapterOrder, chapterName: chapterName, chapterContent: chapterContent)
                     newStory.storyContent.append(newChapter)
                 }
-                newStory.chapterNumber = newStory.storyContent.count
+                newStory.numberOfChapters = newStory.storyContent.count
                 self.data.append(newStory)
             }
             
@@ -110,7 +110,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let date = dateFormatter.string(from: data[indexPath.row].timestamp)
         print("date: \(date)")
         cell.lbUpdateDay.text = date
-        cell.lbChapterNumber.text = "Số Chương: \(data[indexPath.row].chapterNumber)"
+        cell.lbChapterNumber.text = "Số Chương: \(data[indexPath.row].numberOfChapters)"
         return cell
     }
     

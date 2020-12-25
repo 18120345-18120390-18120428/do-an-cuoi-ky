@@ -8,97 +8,89 @@
 
 import UIKit
 
-class InformationStoryViewController: UIViewController {
+class InformationStoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // Các biến quản lý đối tượng
-    @IBOutlet weak var avatar: UIImageView!
-    @IBOutlet weak var lbStoryName: UILabel!
-    @IBOutlet weak var lbAuthor: UILabel!
-    @IBOutlet weak var lbCategory: UILabel!
-    @IBOutlet weak var lbStatus: UILabel!
-    @IBOutlet weak var lbChapterNumer: UILabel!
-    @IBOutlet weak var lbUpdateDay: UILabel!
-    @IBOutlet weak var lbUpdateDay1: UILabel!
-    @IBOutlet weak var lbRating: UILabel!
-    @IBOutlet weak var btnReadStory: UIButton!
-    @IBOutlet weak var lbDescription: UILabel!
     
     var story = Story()
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Giao diện Avatar
-        avatar.layer.cornerRadius = 50.0
-        
-        // Hiển thị thông tin truyện
-        
-        // Giao diện Đọc truyện
-        btnReadStory.layer.cornerRadius = 30.0
-        
-        // Hiển thị nội dung tóm tắt
-        avatar.image = story.avatar
-        lbStoryName.text = story.name
-        lbAuthor.text = "Tác giả: " +  story.author
-        lbCategory.text = "Thể loại: " + story.category
-        if (story.status) {
-            lbStatus.text = "Trạng thái: Hoàn thành"
-        }
-        else {
-            lbStatus.text = "Trạng thái: Chưa hoàn thành"
-        }
-        lbChapterNumer.text = "Số chương: \(story.chapterNumber)"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        let date = dateFormatter.string(from: story.timestamp)
-        lbUpdateDay.text = "Ngày viết: " + date
-        lbUpdateDay1.text = "Ngày cập nhật: " + date
-        lbRating.text = "Điểm đánh giá: \(story.rating)/5"
-        lbDescription.text = story.description
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+//        tableView.register(AvatarTableViewCell.nib(), forCellReuseIdentifier: AvatarTableViewCell.identifier)
+//        tableView.register(InfoStoryTableViewCell.nib(), forCellReuseIdentifier: InfoStoryTableViewCell.identifier)
+//        tableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
     }
-    
-    // Phần Trở về
     @IBAction func actionBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
     }
     
-    // Phần Đọc truyện
-    @IBAction func actionReadStory(_ sender: Any) {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Load Avatar
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AvatarTableViewCell", for: indexPath) as! AvatarTableViewCell
+            cell.mainAvatar.image = story.avatar
+            return cell
+        }
+        if (indexPath.row == 1) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "InfoStoryTableViewCell", for: indexPath) as! InfoStoryTableViewCell
+            cell.lbName.text = story.name
+            cell.lbAuthor.text = "Tác giả: " +  story.author
+            cell.lbCategory.text = "Thể loại: " + story.category
+            cell.lbNumberOfChapters.text = "Số chương: \(story.numberOfChapters)"
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            let date = dateFormatter.string(from: story.timestamp)
+            cell.lbUpdateDay.text = "Ngày viết: " + date
+            if (story.status) {
+                cell.lbStatus.text = "Trạng thái: Hoàn thành"
+            }
+            else {
+                cell.lbStatus.text = "Trạng thái: Chưa hoàn thành"
+            }
+            cell.lbRating.text = "Điểm đánh giá: \(story.rating)/5"
+            return cell
+        }
+        if (indexPath.row == 2) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+            cell.delegate = self
+            return cell
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "HIHIIHIHIHIH"
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath.row == 0) {
+            return 200
+        }
+        if (indexPath.row == 1) {
+            return 200
+        }
+        if (indexPath.row == 2) {
+            return 150
+        }
+        return 30
+    }
+    
+}
+
+extension InformationStoryViewController: CustomTableViewCellDelegate {
+//    func didTapReadStory(text: String) {
+//        print(text)
+//    }
+    func didTapReadStory() {
+        print("hihihihih")
         performSegue(withIdentifier: "readStory", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let storyViewController = segue.destination as! StoryViewController
-        storyViewController.content = story.storyContent[0].chapterContent
+        storyViewController.content = story.storyContent
     }
-    // Phần Đánh giá
-    @IBAction func action_star01(_ sender: Any) {
-    }
-    
-    @IBAction func action_star02(_ sender: Any) {
-    }
-    
-    @IBAction func action_star03(_ sender: Any) {
-    }
-    
-    @IBAction func action_star04(_ sender: Any) {
-    }
-    
-    @IBAction func action_star05(_ sender: Any) {
-    }
-    
-    // Phần Yêu thích
-    @IBAction func action_yeuthich(_ sender: Any) {
-    }
-    
-    // Phần Chương
-    @IBAction func action_chuong(_ sender: Any) {
-    }
-    
-    // Phần Chia sẻ
-    @IBAction func action_chiase(_ sender: Any) {
-    }
-    
-    // Phần Tải về
-    @IBAction func action_taive(_ sender: Any) {
-    }
-    
 }

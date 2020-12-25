@@ -18,7 +18,10 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
     var indexUpdate = -1
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Khoi tao navigation
+        navigationController?.navigationBar.barTintColor = UIColor.darkText
+        navigationController?.navigationBar.tintColor = UIColor.systemRed
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemYellow]
         // Khai báo Table View
         tableView.delegate = self
         tableView.dataSource = self
@@ -77,10 +80,7 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
     
     // Phần Thêm truyện
     @IBAction func actionAddStory(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let post = sb.instantiateViewController(identifier: "PostViewController") as! PostViewController
-        post.modalPresentationStyle = .fullScreen
-        self.present(post, animated: false, completion: nil)
+        performSegue(withIdentifier: "PostViewController", sender: self)
     }
     
     // Phần TableView
@@ -109,7 +109,10 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
     // Chọn 1 dòng
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let postViewController = segue.destination as! PostViewController
-        postViewController.newStory = data[indexUpdate]
+        if (indexUpdate > -1) {
+            postViewController.newStory = data[indexUpdate]
+        }
+        
     }
     // Phần Xoá, sửa truyện
     

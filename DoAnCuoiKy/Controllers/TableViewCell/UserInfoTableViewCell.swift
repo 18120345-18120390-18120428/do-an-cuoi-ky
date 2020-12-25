@@ -30,6 +30,7 @@ class UserInfoTableViewCell: UITableViewCell {
         // Initialization code
         myImageView.layer.cornerRadius = 0.5 * myImageView.bounds.size.width
         myImageView.contentMode = .scaleToFill
+        lbName.textAlignment = .center
         let userID = Auth.auth().currentUser?.uid
         ref = Database.database().reference()
         ref.child("Profile").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in

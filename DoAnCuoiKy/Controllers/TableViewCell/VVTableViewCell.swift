@@ -23,6 +23,7 @@ class VVTableViewCell: UITableViewCell {
         self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.cornerRadius = 50.0
+        logoItem.layer.cornerRadius = logoItem.bounds.size.width * 0.5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

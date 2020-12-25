@@ -82,7 +82,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     let category = ["Ngôn Tình", "Kiếm Hiệp", "Truyện Teen", "Truyện Ma", "Quân Sự", "Trinh Thám", "Lịch Sử", "Tiểu Thuyết", "Thiếu Nhi", "Truyện Ngắn", "Truyện Cười", "Cổ Tích", "Nước Ngoài", "Khoa Học","Truyện Voz"]
-
+    var indexUpdate = -1
     // Phần Picker View
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -167,13 +167,15 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Phần Thêm chương
     @IBAction func actionAddNewChapter(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let addNewChapter = sb.instantiateViewController(withIdentifier: "PostChapViewController") as! PostChapViewController
-        addNewChapter.modalPresentationStyle = .fullScreen
-        addNewChapter.delegate = self
-        self.present(addNewChapter, animated: false, completion: nil)
+        performSegue(withIdentifier: "chapter", sender: self)
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let postChapterViewController = segue.destination as! PostChapViewController
+        if (self.indexUpdate > -1) {
+            postChapterViewController.chapter = newStory.storyContent[indexUpdate]
+        }
+        
+    }
     // Phần Lưu
     @IBAction func actionSave(_ sender: Any) {
 
@@ -197,17 +199,6 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
                 child.removeFromParent()
             }
         }
-//        let group = DispatchGroup()
-//        group.enter()
-//        DispatchQueue.main.async {
-//            newStory.pushToFirebase()
-//            group.leave()
-//        }
-//        group.notify(queue: .main) {
-            
-//        }
-        // Dismiss
-        
     }
     
     // Phần trở về

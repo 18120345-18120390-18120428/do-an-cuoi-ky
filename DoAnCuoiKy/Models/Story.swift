@@ -22,7 +22,7 @@ class Story {
     var downloads: Int = 0
     var rating: Float = 0.0
     var status: Bool = false
-    var chapterNumber: Int = 0
+    var numberOfChapters: Int = 0
     var storyContent: [Chapter] = []
     var timestamp: Date = Date()
     func addSimpleStory(name: String, author: String, category: String, avatar: UIImage) {
@@ -82,7 +82,7 @@ class Story {
                     "views": self.views,
                     "donloads": self.downloads,
                     "status": self.status,
-                    "chapterNumber": self.chapterNumber,
+                    "numberOfChapters": self.numberOfChapters,
                     "timestamp": updateDay
                 ]
                 database.child("Stories/\(self.name)").setValue(object)
