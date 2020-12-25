@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import SideMenu
+
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Các biến quản lý đối tượng
@@ -18,16 +20,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     var indexUpdate = -1
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Hiển thị danh sách hiện tại
 
         // Khai báo Table view
         tableView.delegate = self
         tableView.dataSource = self
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
-        let child = SpinnerViewController()
+        // add side menu
+        sideMenu.leftSide = true
+        sideMenu.setNavigationBarHidden(true, animated: false)
+        let model: SideMenuPresentationStyle = .menuSlideIn
+        var settings = SideMenuSettings()
+        settings.presentationStyle = model
+        sideMenu.settings = settings
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
 
         // add the spinner view controller
+        let child = SpinnerViewController()
         addChild(child)
         child.view.frame = view.frame
         view.addSubview(child.view)
@@ -114,16 +124,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         InfoStoryViewController.story = data[indexUpdate]
     }
     // Phần Slide Menu
-    @IBAction func goToMenu(_ sender: Any) {
-        let transition = CATransition()
-        transition.duration = 0.25
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromLeft
-        self.view.window!.layer.add(transition, forKey: kCATransition)
-        let dest = storyboard?.instantiateViewController(identifier: "MenuViewController") as! MenuViewController
-        dest.modalPresentationStyle = .overCurrentContext
-        present(dest, animated: false, completion: nil)
+    private let sideMenu = SideMenuNavigationController(rootViewController: SideMenuController())
+    @IBAction func tapSideMenu() {
+        present(sideMenu, animated: true)
     }
+
     
     // Nút Search
     @IBAction func action_search(_ sender: Any) {

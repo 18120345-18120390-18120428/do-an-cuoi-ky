@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class LibraryViewController: UIViewController {
     
@@ -14,20 +15,22 @@ class LibraryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        // add side menu
+        sideMenu.leftSide = true
+        sideMenu.setNavigationBarHidden(true, animated: false)
+        let model: SideMenuPresentationStyle = .menuSlideIn
+        var settings = SideMenuSettings()
+        settings.presentationStyle = model
+        sideMenu.settings = settings
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
     }
     
     // Phần Slide Menu
-    @IBAction func action_slidemenu(_ sender: Any) {
-        let transition = CATransition()
-        transition.duration = 0.25
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromLeft
-        self.view.window!.layer.add(transition, forKey: kCATransition)
-        let dest = storyboard?.instantiateViewController(identifier: "MenuViewController") as! MenuViewController
-        dest.modalPresentationStyle = .overCurrentContext
-        present(dest, animated: false, completion: nil)
+    private let sideMenu = SideMenuNavigationController(rootViewController: SideMenuController())
+    @IBAction func tapSideMenu() {
+        present(sideMenu, animated: true)
     }
     
     // Phần Lịch sử

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -19,9 +20,23 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         // Khai báo Table View
         outlet_tableview.delegate = self
         outlet_tableview.dataSource = self
+        
+        // add side menu
+        sideMenu.leftSide = true
+        sideMenu.setNavigationBarHidden(true, animated: false)
+        let model: SideMenuPresentationStyle = .menuSlideIn
+        var settings = SideMenuSettings()
+        settings.presentationStyle = model
+        sideMenu.settings = settings
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
     }
     
     // Phần Slide Menu
+    private let sideMenu = SideMenuNavigationController(rootViewController: SideMenuController())
+    @IBAction func tapSideMenu() {
+        present(sideMenu, animated: true)
+    }
     @IBAction func action_slidemenu(_ sender: Any) {
         let transition = CATransition()
         transition.duration = 0.25
