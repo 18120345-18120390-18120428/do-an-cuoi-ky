@@ -141,7 +141,7 @@
                                     <action selector="action_gg:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OQS-st-TUz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐĂNG NHẬP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPA-Vv-txK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐĂNG NHẬP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPA-Vv-txK">
                                 <rect key="frame" x="20" y="162" width="394" height="72"/>
                                 <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -234,7 +234,7 @@
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐĂNG KÝ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kX-Ld-4XX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐĂNG KÝ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kX-Ld-4XX">
                                 <rect key="frame" x="20" y="182" width="394" height="72"/>
                                 <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -306,6 +306,7 @@
                         <viewLayoutGuide key="safeArea" id="sEg-8n-Trh"/>
                     </view>
                     <connections>
+                        <outlet property="avatarImg" destination="qTD-Jy-8Ht" id="dbC-V3-2B0"/>
                         <outlet property="outlet_avatar" destination="V3a-qQ-9O1" id="BHe-40-ORw"/>
                         <outlet property="outlet_dangky" destination="FOM-Jp-fpY" id="V4o-QG-Gfj"/>
                         <outlet property="tfCheckPass" destination="Rpy-ML-5tQ" id="ITI-na-AE2"/>
@@ -318,7 +319,7 @@
             </objects>
             <point key="canvasLocation" x="1086" y="-569"/>
         </scene>
-        <!--Trang Chủ-->
+        <!--Main View Controller-->
         <scene sceneID="sxP-Hf-rRE">
             <objects>
                 <viewController storyboardIdentifier="MainScreen" id="5oC-G0-soj" customClass="MainViewController" customModule="DoAnCuoiKy" customModuleProvider="target" sceneMemberID="viewController">
@@ -327,7 +328,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9I-1f-QeA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="89.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="89.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danh Sách (1/7)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uS1-cy-qU3">
                                         <rect key="frame" x="41.5" y="33.5" width="150.5" height="22.5"/>
@@ -394,7 +395,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4dN-hh-sbC">
-                                <rect key="frame" x="0.0" y="133.5" width="414" height="762.5"/>
+                                <rect key="frame" x="0.0" y="177.5" width="414" height="718.5"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VVTableCell" rowHeight="150" id="olg-2v-iaf" customClass="VVTableViewCell" customModule="DoAnCuoiKy" customModuleProvider="target">
@@ -496,10 +497,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pNR-aC-hhP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Trang Chủ" image="house.fill" catalog="system" id="Yqh-8q-ycL">
-                        <color key="badgeColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TaO-NB-yOu">
+                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="P1q-Cg-Nal"/>
+                        <rightBarButtonItems>
+                            <barButtonItem image="arrowshape.turn.up.right.fill" catalog="system" id="C4o-k2-S0W"/>
+                            <barButtonItem image="arrow.2.circlepath.circle.fill" catalog="system" id="yuu-3M-F5U"/>
+                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="duG-mn-ofo"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="listStory" destination="uS1-cy-qU3" id="FXv-H0-Vfh"/>
@@ -509,7 +515,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fY-id-DGH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2882.608695652174" y="-914.0625"/>
+            <point key="canvasLocation" x="3792.753623188406" y="-914.0625"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="T8h-qh-Zun">
@@ -573,16 +579,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSn-Oy-s4I">
                                                 <rect key="frame" x="0.0" y="0.0" width="251" height="150"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Vep-bj-2Po">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vep-bj-2Po">
                                                         <rect key="frame" x="75.5" y="5" width="100" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="ehU-dd-6bq"/>
                                                             <constraint firstAttribute="height" constant="100" id="na5-24-LPY"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjn-td-vfq">
-                                                        <rect key="frame" x="94.5" y="115" width="62.5" height="21"/>
-                                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="35"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjn-td-vfq">
+                                                        <rect key="frame" x="125.5" y="115" width="0.0" height="21"/>
+                                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -696,7 +702,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8F-OM-Maf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3600" y="-914"/>
+            <point key="canvasLocation" x="4510.144927536232" y="-914.0625"/>
         </scene>
         <!--List Post View Controller-->
         <scene sceneID="xsg-RE-DZh">
@@ -803,7 +809,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fT8-Qa-2zw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4366.666666666667" y="-914.0625"/>
+            <point key="canvasLocation" x="5276.811594202899" y="-914.0625"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="pv6-oZ-gbd">
@@ -999,7 +1005,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8d-Jt-ovI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5140.579710144928" y="-914.0625"/>
+            <point key="canvasLocation" x="6050.7246376811599" y="-914.0625"/>
         </scene>
         <!--Post Chap View Controller-->
         <scene sceneID="IeS-m4-pGB">
@@ -1093,7 +1099,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WyE-IL-V6j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5826" y="-914"/>
+            <point key="canvasLocation" x="6734.7826086956529" y="-914.0625"/>
         </scene>
         <!--Thể Loại-->
         <scene sceneID="ExI-jd-nEJ">
@@ -1737,7 +1743,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                         <color key="selectedImageTintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="5oC-G0-soj" kind="relationship" relationship="viewControllers" id="Ogz-2b-PG4"/>
+                        <segue destination="5Vh-3d-CsY" kind="relationship" relationship="viewControllers" id="Ogz-2b-PG4"/>
                         <segue destination="xKW-WT-9g3" kind="relationship" relationship="viewControllers" id="2vX-fe-Vyi"/>
                         <segue destination="3Ua-Wc-WsT" kind="relationship" relationship="viewControllers" id="Wub-Ba-jwD"/>
                         <segue destination="Sxl-hC-GDu" kind="relationship" relationship="viewControllers" id="vk6-JS-kdU"/>
@@ -1827,7 +1833,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                                     <action selector="action_xacnhan:" destination="eEs-Ju-64l" eventType="touchUpInside" id="MIx-T7-KaB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUÊN MẬT KHẨU" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1M5-pr-OEm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUÊN MẬT KHẨU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1M5-pr-OEm">
                                 <rect key="frame" x="20" y="345.5" width="394" height="71.5"/>
                                 <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2025,7 +2031,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="hkH-9S-X4c">
                                 <rect key="frame" x="145" y="67" width="124" height="134.5"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AnhKiemVipPro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5K-Fy-gho">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5K-Fy-gho">
                                 <rect key="frame" x="0.0" y="269" width="414" height="89.5"/>
                                 <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="40"/>
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2035,7 +2041,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                                 <rect key="frame" x="10" y="359.5" width="41.5" height="44"/>
                                 <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail: Nguyenhaanhkiem@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dc-JX-Xwy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dc-JX-Xwy">
                                 <rect key="frame" x="56.5" y="358.5" width="347.5" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2045,7 +2051,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                                 <rect key="frame" x="10" y="403.5" width="41.5" height="44.5"/>
                                 <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giới tính: Nam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUq-pg-LIF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUq-pg-LIF">
                                 <rect key="frame" x="56.5" y="403" width="347.5" height="45"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2055,7 +2061,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                                 <rect key="frame" x="10" y="448.5" width="41.5" height="45"/>
                                 <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sinh nhật: 07/01/2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUV-kl-cDI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUV-kl-cDI">
                                 <rect key="frame" x="56.5" y="448" width="347.5" height="45"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2065,13 +2071,13 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                                 <rect key="frame" x="10" y="494.5" width="41.5" height="40.5"/>
                                 <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày tham gia: 16/12/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpP-fJ-khp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpP-fJ-khp">
                                 <rect key="frame" x="56.5" y="493" width="347.5" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="admin" translatesAutoresizingMaskIntoConstraints="NO" id="YXp-kG-A1t">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YXp-kG-A1t">
                                 <rect key="frame" x="83" y="537.5" width="248" height="179.5"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" systemColor="tertiarySystemFillColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2083,6 +2089,19 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                                 <state key="normal" image="arrowshape.turn.up.left.2.fill" catalog="system"/>
                                 <connections>
                                     <action selector="action_trove:" destination="EhE-xc-AoV" eventType="touchUpInside" id="5tf-Us-P2Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPb-BV-neD">
+                                <rect key="frame" x="373" y="38" width="22" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="DRQ-ik-FCA"/>
+                                    <constraint firstAttribute="height" constant="60" id="hrL-1d-2fa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="doc.on.clipboard.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="EditProfile:" destination="EhE-xc-AoV" eventType="touchUpInside" id="Kbm-bs-wn1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2114,6 +2133,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                             <constraint firstItem="hkH-9S-X4c" firstAttribute="height" secondItem="B0L-UE-erR" secondAttribute="height" multiplier="0.5" id="SHx-rr-fuh"/>
                             <constraint firstItem="ef4-Iz-7ND" firstAttribute="trailing" secondItem="n5K-Fy-gho" secondAttribute="trailing" id="SL0-Rp-XUl"/>
                             <constraint firstItem="KUq-pg-LIF" firstAttribute="centerY" secondItem="5pF-ed-h55" secondAttribute="centerY" id="SYW-y1-zKP"/>
+                            <constraint firstItem="SPb-BV-neD" firstAttribute="top" secondItem="lLB-ZK-Bg1" secondAttribute="top" constant="38" id="Sbw-gd-3sT"/>
                             <constraint firstItem="lpP-fJ-khp" firstAttribute="leading" secondItem="Keh-c8-aft" secondAttribute="trailing" constant="5" id="Sng-x7-323"/>
                             <constraint firstItem="Keh-c8-aft" firstAttribute="leading" secondItem="ef4-Iz-7ND" secondAttribute="leading" constant="10" id="Tau-Qk-dTc"/>
                             <constraint firstItem="YXp-kG-A1t" firstAttribute="height" secondItem="lLB-ZK-Bg1" secondAttribute="height" multiplier="0.2" id="Uml-4q-KD9"/>
@@ -2139,6 +2159,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
                             <constraint firstItem="YXp-kG-A1t" firstAttribute="centerX" secondItem="ef4-Iz-7ND" secondAttribute="centerX" id="wC1-pa-YR8"/>
                             <constraint firstItem="CUV-kl-cDI" firstAttribute="height" secondItem="lLB-ZK-Bg1" secondAttribute="height" multiplier="0.05" id="wyb-2E-yJ2"/>
                             <constraint firstItem="B0L-UE-erR" firstAttribute="height" secondItem="lLB-ZK-Bg1" secondAttribute="height" multiplier="0.3" id="xcR-Mk-dE5"/>
+                            <constraint firstItem="ef4-Iz-7ND" firstAttribute="trailing" secondItem="SPb-BV-neD" secondAttribute="trailing" constant="19" id="z4r-9Q-fXj"/>
                             <constraint firstItem="KUq-pg-LIF" firstAttribute="leading" secondItem="5pF-ed-h55" secondAttribute="trailing" constant="5" id="zk7-VN-Jxz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ef4-Iz-7ND"/>
@@ -2354,7 +2375,7 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
         <!--Navigation Controller-->
         <scene sceneID="0BC-2Z-LF4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aJp-Vw-v0I" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="homeview" automaticallyAdjustsScrollViewInsets="NO" id="aJp-Vw-v0I" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="Trang Chủ" backIndicatorTransitionMaskImage="Trang Chủ" id="jtS-bu-A0a">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -2372,10 +2393,196 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
             </objects>
             <point key="canvasLocation" x="-584.05797101449275" y="95.758928571428569"/>
         </scene>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="6Kr-2l-yKj">
+            <objects>
+                <viewController storyboardIdentifier="EditProfileViewController" id="k76-7v-mwK" customClass="EditProfileViewController" customModule="DoAnCuoiKy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R0g-x6-pkA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroup01" translatesAutoresizingMaskIntoConstraints="NO" id="gkJ-bi-8yk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="6OR-ZI-EXW">
+                                <rect key="frame" x="145" y="67" width="124" height="134.5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52X-2Q-iKa">
+                                <rect key="frame" x="0.0" y="44" width="41.5" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrowshape.turn.up.left.2.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="BtnBack:" destination="k76-7v-mwK" eventType="touchUpInside" id="Sbv-Uk-U4e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atN-5w-mmf">
+                                <rect key="frame" x="356" y="43" width="48" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="Z3m-se-mJM"/>
+                                    <constraint firstAttribute="height" constant="55" id="v0h-LD-jvQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="100"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="checkmark.rectangle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="BtnSave:" destination="k76-7v-mwK" eventType="touchUpInside" id="AlD-Tb-m7y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKv-uZ-Gw2">
+                                <rect key="frame" x="257" y="185" width="24" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="camera.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="BtnGetImage:" destination="k76-7v-mwK" eventType="touchUpInside" id="UZD-yK-e1g"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRe-Dg-t0V">
+                                <rect key="frame" x="32" y="327" width="58" height="24"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="Cfy-1x-W04"/>
+                                    <constraint firstAttribute="height" constant="24" id="xXi-lf-0xP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVI-Sw-VTq">
+                                <rect key="frame" x="32" y="381" width="103" height="24"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giới tính:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1a-FX-SUe">
+                                <rect key="frame" x="32" y="436" width="85" height="24"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày sinh:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZA-NY-nNV">
+                                <rect key="frame" x="32" y="491" width="100" height="24"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ly-TP-hNR">
+                                <rect key="frame" x="98" y="322" width="284" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="75Z-Q4-khN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3v3-P8-v3Y">
+                                <rect key="frame" x="143" y="376" width="239" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="cFi-Hy-i1J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvU-pv-UpG">
+                                <rect key="frame" x="125" y="431" width="257" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="YIx-DV-4xz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="25X-5o-9N1">
+                                <rect key="frame" x="140" y="486" width="242" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="hQm-n4-N47"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35294117650000001" green="0.52941176469999995" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3v3-P8-v3Y" firstAttribute="leading" secondItem="ZVI-Sw-VTq" secondAttribute="trailing" constant="8" id="2mt-O4-5qA"/>
+                            <constraint firstItem="gG1-Nt-qQe" firstAttribute="trailing" secondItem="25X-5o-9N1" secondAttribute="trailing" constant="32" id="5aW-Ah-pNx"/>
+                            <constraint firstItem="A1a-FX-SUe" firstAttribute="top" secondItem="ZVI-Sw-VTq" secondAttribute="bottom" constant="31" id="6d2-U8-ttp"/>
+                            <constraint firstItem="6OR-ZI-EXW" firstAttribute="width" secondItem="gkJ-bi-8yk" secondAttribute="width" multiplier="0.3" id="6j7-gy-5QT"/>
+                            <constraint firstItem="tvU-pv-UpG" firstAttribute="leading" secondItem="A1a-FX-SUe" secondAttribute="trailing" constant="8" id="94i-ZL-Yph"/>
+                            <constraint firstItem="atN-5w-mmf" firstAttribute="top" secondItem="R0g-x6-pkA" secondAttribute="top" constant="43" id="Ajb-Od-qYB"/>
+                            <constraint firstItem="52X-2Q-iKa" firstAttribute="leading" secondItem="R0g-x6-pkA" secondAttribute="leading" id="CXw-AO-BPq"/>
+                            <constraint firstItem="52X-2Q-iKa" firstAttribute="height" secondItem="R0g-x6-pkA" secondAttribute="height" multiplier="0.06" id="HbF-8n-Mtr"/>
+                            <constraint firstItem="ZVI-Sw-VTq" firstAttribute="top" secondItem="4Ly-TP-hNR" secondAttribute="bottom" constant="25" id="MB9-tE-UiA"/>
+                            <constraint firstItem="gG1-Nt-qQe" firstAttribute="trailing" secondItem="3v3-P8-v3Y" secondAttribute="trailing" constant="32" id="O63-6B-lYE"/>
+                            <constraint firstItem="gkJ-bi-8yk" firstAttribute="leading" secondItem="R0g-x6-pkA" secondAttribute="leading" id="OK4-p7-342"/>
+                            <constraint firstItem="25X-5o-9N1" firstAttribute="leading" secondItem="WZA-NY-nNV" secondAttribute="trailing" constant="8" id="OxZ-Lo-7xk"/>
+                            <constraint firstItem="gG1-Nt-qQe" firstAttribute="trailing" secondItem="tvU-pv-UpG" secondAttribute="trailing" constant="32" id="PTt-mk-z9w"/>
+                            <constraint firstItem="gG1-Nt-qQe" firstAttribute="trailing" secondItem="4Ly-TP-hNR" secondAttribute="trailing" constant="32" id="Peb-s3-J4S"/>
+                            <constraint firstItem="gkJ-bi-8yk" firstAttribute="top" secondItem="R0g-x6-pkA" secondAttribute="top" id="SJP-m8-78I"/>
+                            <constraint firstItem="3v3-P8-v3Y" firstAttribute="leading" secondItem="ZVI-Sw-VTq" secondAttribute="trailing" constant="8" id="SrD-NW-2Ld"/>
+                            <constraint firstAttribute="trailing" secondItem="gkJ-bi-8yk" secondAttribute="trailing" id="Ub3-0F-PNe"/>
+                            <constraint firstItem="tvU-pv-UpG" firstAttribute="top" secondItem="3v3-P8-v3Y" secondAttribute="bottom" constant="21" id="WtT-NY-u85"/>
+                            <constraint firstItem="tvU-pv-UpG" firstAttribute="leading" secondItem="A1a-FX-SUe" secondAttribute="trailing" constant="8" id="Xgu-qY-Mya"/>
+                            <constraint firstItem="4Ly-TP-hNR" firstAttribute="leading" secondItem="RRe-Dg-t0V" secondAttribute="trailing" constant="8" id="YE3-Tf-3xc"/>
+                            <constraint firstItem="WZA-NY-nNV" firstAttribute="top" secondItem="tvU-pv-UpG" secondAttribute="bottom" constant="26" id="c1Z-BY-tx0"/>
+                            <constraint firstItem="4Ly-TP-hNR" firstAttribute="top" secondItem="gkJ-bi-8yk" secondAttribute="bottom" constant="53" id="de1-aF-4FW"/>
+                            <constraint firstItem="gG1-Nt-qQe" firstAttribute="trailing" secondItem="atN-5w-mmf" secondAttribute="trailing" constant="10" id="hw2-Ct-bjc"/>
+                            <constraint firstItem="ZVI-Sw-VTq" firstAttribute="leading" secondItem="gG1-Nt-qQe" secondAttribute="leading" constant="32" id="i4g-eV-JVS"/>
+                            <constraint firstItem="6OR-ZI-EXW" firstAttribute="height" secondItem="gkJ-bi-8yk" secondAttribute="height" multiplier="0.5" id="jui-BQ-Thb"/>
+                            <constraint firstItem="3v3-P8-v3Y" firstAttribute="top" secondItem="4Ly-TP-hNR" secondAttribute="bottom" constant="20" id="kVq-dh-jmh"/>
+                            <constraint firstItem="gkJ-bi-8yk" firstAttribute="height" secondItem="R0g-x6-pkA" secondAttribute="height" multiplier="0.3" id="ldh-Ne-yq7"/>
+                            <constraint firstItem="25X-5o-9N1" firstAttribute="leading" secondItem="WZA-NY-nNV" secondAttribute="trailing" constant="8" id="nJL-z2-czo"/>
+                            <constraint firstItem="6OR-ZI-EXW" firstAttribute="centerX" secondItem="gkJ-bi-8yk" secondAttribute="centerX" id="noM-XD-FEe"/>
+                            <constraint firstItem="52X-2Q-iKa" firstAttribute="width" secondItem="R0g-x6-pkA" secondAttribute="width" multiplier="0.1" id="oPa-iC-UDT"/>
+                            <constraint firstItem="gG1-Nt-qQe" firstAttribute="trailing" secondItem="4Ly-TP-hNR" secondAttribute="trailing" constant="32" id="pmj-7i-Zjn"/>
+                            <constraint firstItem="52X-2Q-iKa" firstAttribute="top" secondItem="gG1-Nt-qQe" secondAttribute="top" id="qyU-ns-Ah1"/>
+                            <constraint firstItem="6OR-ZI-EXW" firstAttribute="centerY" secondItem="gkJ-bi-8yk" secondAttribute="centerY" id="rNm-ZM-2eJ"/>
+                            <constraint firstItem="RRe-Dg-t0V" firstAttribute="top" secondItem="gkJ-bi-8yk" secondAttribute="bottom" constant="58" id="tXq-Oc-U7P"/>
+                            <constraint firstItem="RRe-Dg-t0V" firstAttribute="leading" secondItem="gG1-Nt-qQe" secondAttribute="leading" constant="32" id="tgK-4b-Rtt"/>
+                            <constraint firstItem="25X-5o-9N1" firstAttribute="top" secondItem="tvU-pv-UpG" secondAttribute="bottom" constant="21" id="x9a-xL-xJe"/>
+                            <constraint firstItem="WZA-NY-nNV" firstAttribute="leading" secondItem="gG1-Nt-qQe" secondAttribute="leading" constant="32" id="xcj-ag-JEs"/>
+                            <constraint firstItem="A1a-FX-SUe" firstAttribute="leading" secondItem="gG1-Nt-qQe" secondAttribute="leading" constant="32" id="zwg-86-a9n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gG1-Nt-qQe"/>
+                    </view>
+                    <connections>
+                        <outlet property="Image" destination="6OR-ZI-EXW" id="3pr-hp-hm6"/>
+                        <outlet property="tfDateOfBirth" destination="25X-5o-9N1" id="r5o-HH-SNf"/>
+                        <outlet property="tfEmail" destination="4Ly-TP-hNR" id="I2x-qR-kyL"/>
+                        <outlet property="tfGender" destination="tvU-pv-UpG" id="Rrp-xm-CDd"/>
+                        <outlet property="tfUsername" destination="3v3-P8-v3Y" id="D6n-sy-ETa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDF-Kd-HMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2882.608695652174" y="1978.7946428571427"/>
+        </scene>
+        <!--Trang Chủ-->
+        <scene sceneID="G7z-pn-Qiz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Vh-3d-CsY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Trang Chủ" image="house.fill" catalog="system" id="Yqh-8q-ycL">
+                        <color key="badgeColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qvd-q1-PmA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5oC-G0-soj" kind="relationship" relationship="rootViewController" id="EZ7-x9-QVQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7s-FL-VdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2882.608695652174" y="-914.0625"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Trang Chủ" width="16" height="16"/>
-        <image name="admin" width="1280" height="717"/>
         <image name="arrow.2.circlepath.circle.fill" catalog="system" width="64" height="62"/>
         <image name="arrowshape.turn.up.left.2.fill" catalog="system" width="64" height="44"/>
         <image name="arrowshape.turn.up.right.circle.fill" catalog="system" width="64" height="62"/>
@@ -2384,10 +2591,14 @@ Tác giả đã miêu tả một cách hoàn hảo cái khoảnh khắc từ tr�
         <image name="backgroup01" width="562.5" height="1218"/>
         <image name="book.fill" catalog="system" width="64" height="50"/>
         <image name="bubble.right.fill" catalog="system" width="64" height="56"/>
+        <image name="camera.fill" catalog="system" width="64" height="48"/>
+        <image name="checkmark.rectangle.fill" catalog="system" width="64" height="48"/>
         <image name="di-qua-hoa-cuc-1" width="702" height="444"/>
+        <image name="doc.on.clipboard.fill" catalog="system" width="58" height="64"/>
         <image name="hand.point.right.fill" catalog="system" width="64" height="48"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="info.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="list.dash" catalog="system" width="64" height="44"/>
         <image name="logo" width="256" height="256"/>
         <image name="magnifyingglass" catalog="system" width="64" height="60"/>

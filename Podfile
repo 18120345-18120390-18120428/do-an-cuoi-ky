@@ -12,4 +12,10 @@ target 'DoAnCuoiKy' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Alertift', '~> 4.2'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
+  pod 'GoogleSignIn'
+  pod 'SideMenu'
+
 end

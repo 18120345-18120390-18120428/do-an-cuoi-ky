@@ -9,7 +9,9 @@
 import UIKit
 import Firebase
 import Alertift
-class RegisViewController: UIViewController {
+class RegisViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
     // Các biến quản lý đối tượng
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPass: UITextField!
@@ -17,7 +19,11 @@ class RegisViewController: UIViewController {
     @IBOutlet weak var tfUsername: UITextField!
     @IBOutlet weak var outlet_dangky: UIButton!
     @IBOutlet weak var outlet_avatar: UIButton!
-    
+    @IBOutlet weak var avatarImg: UIImageView!
+    var pickerView = UIPickerView()
+    var imagePicker =  UIImagePickerController()
+   
+    var ref = Database.database().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,13 +63,87 @@ class RegisViewController: UIViewController {
         outlet_avatar.layer.masksToBounds = true
         outlet_avatar.layer.cornerRadius = outlet_avatar.frame.size.width / 2
         
+        
     }
     
     // Phần chọn Avatar
     @IBAction func action_avatar(_ sender: Any) {
-        
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+
+        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+                   self.openGallery()
+               }))
+
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
     }
-    
+    func openGallery()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            guard let pickedImage = info[.originalImage] as? UIImage else {
+                return
+            }
+            avatarImg.image = pickedImage
+       
+            picker.dismiss(animated: true, completion: nil)
+    }
+    // ham xy ly upload anh len firebase
+    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let storageRef = Storage.storage().reference().child("user/\(uid)")
+
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+        if error == nil, metaData != nil {
+
+            storageRef.downloadURL { url, error in
+                completion(url)
+                // success!
+            }
+            } else {
+                // failed
+                completion(nil)
+            }
+        }
+    }
+    // ham luu tai khoan dang ky vao realtime firebase
+    func saveProfile(username:String,email:String, gender:String, dateOfBirth:String, profileImageURL:URL,joinDate:String, position:String, completion: @escaping ((_ success:Bool)->())) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let databaseRef = Database.database().reference().child("Profile/\(uid)")
+        
+        let userObject = [
+            "username": username,
+            "email":email,
+            "gender": gender,
+            "dateOfbirth": dateOfBirth,
+            "photoURL": profileImageURL.absoluteString,
+            "joinDate": joinDate,
+            "position": position
+        ] as [String:Any]
+        
+        databaseRef.setValue(userObject) { error, ref in
+            completion(error == nil)
+        }
+    }
     // Phần Đăng ký
     @IBAction func btnDangKy(_ sender: Any) {
         if tfEmail.text!.isEmpty{
@@ -88,22 +168,79 @@ class RegisViewController: UIViewController {
             return
         }
         if tfPass.text! == tfCheckPass.text! {
-            Auth.auth().createUser(withEmail: tfEmail.text!, password: tfPass.text!) { authResult, error in
-                guard let user = authResult?.user, error == nil else{
-                    print("Error : \(error!.localizedDescription)")
-                    Alertift.alert(title: "Error", message: error?.localizedDescription)
-                    .action(.default("OK"))
-                    .show(on: self)
-                    return
+            Auth.auth().createUser(withEmail: tfEmail.text!, password: tfPass.text!) { user, error in
+            if error == nil && user != nil {
+                print("User created!")
+                
+                
+                
+                // 1. Upload the profile image to Firebase Storage
+                let image = self.avatarImg.image
+                self.uploadProfileImage(image!) { url in
+                    
+                    if url != nil {
+                        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                        changeRequest?.displayName = self.tfUsername.text!
+                        changeRequest?.photoURL = url
+                        
+                        
+                        changeRequest?.commitChanges { error in
+                            if error == nil {
+                                print("User display name changed!")
+                                let date = Date()
+                                let format = DateFormatter()
+                                format.dateFormat = "dd-MM-yyyy"
+                                let formattedDate = format.string(from: date)
+                                self.saveProfile(username: self.tfUsername.text!, email: self.tfEmail.text!,gender: "",dateOfBirth: "", profileImageURL: url!, joinDate: formattedDate, position: "Member") { success in
+                                    if success {
+                                        self.dismiss(animated: true, completion: nil)
+                                    }
+                                }
+                                
+                            } else {
+                                print("Error: \(error!.localizedDescription)")
+                                Alertift.alert(title: "Error", message: error?.localizedDescription)
+                                .action(.default("OK"))
+                                .show(on: self)
+                                return
+                            }
+                        }
+                    } else {
+                        // Error unable to upload profile image
+                    }
+                    
                 }
-                Alertift.alert(title: "Congratulations!", message: "You have successfully registered!")
+                
+            } else {
+                print("Error : \(error!.localizedDescription)")
+                Alertift.alert(title: "Error", message: error?.localizedDescription)
                 .action(.default("OK"))
                 .show(on: self)
-                let src = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                src.modalPresentationStyle = .fullScreen
-                self.present(src, animated: true, completion: nil)
+                return
             }
+//            Auth.auth().createUser(withEmail: tfEmail.text!, password: tfPass.text!) { authResult, error in
+//                if let user = authResult?.user, error == nil{
+//                    Alertift.alert(title: "Congratulations!", message: "You have successfully registered!")
+//                    .action(.default("OK"))
+//                    .show(on: self)
+//                    let InfoUser: [String: Any] = [
+//                        "Name": self.tfUsername.text!,
+//                       // "Avatar": self.avatarImg.image!
+//                    ]
+//                    self.ref.child("Profile/\(user.uid)").setValue(InfoUser)
+//
+//                } else{
+//                    print("Error : \(error!.localizedDescription)")
+//                    Alertift.alert(title: "Error", message: error?.localizedDescription)
+//                    .action(.default("OK"))
+//                    .show(on: self)
+//                    return
+//                }
+//
+//
+//            }
         }
     }
 
+}
 }

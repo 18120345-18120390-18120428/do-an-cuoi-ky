@@ -7,21 +7,43 @@
 //
 
 import UIKit
-
+import Firebase
 class MenuViewController: UIViewController {
     
     // Các biến quản lý đối tượng
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var name: UILabel!
-    
+    var ref: DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        ref = Database.database().reference()
         // Giao diện Avatar
         avatar.layer.cornerRadius = 0.5 * avatar.bounds.size.width
         
-        // Hiển thị tên User
+       
+       
     }
+    override func viewWillAppear(_ animated: Bool) {
+        let userID = Auth.auth().currentUser?.uid
+        ref.child("Profile").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+        // Lấy giá trị của user
+            let value = snapshot.value as? NSDictionary
+            let urlImage = value?["photoURL"] as? String ?? ""
+            if urlImage == ""{
+                self.avatar.image = #imageLiteral(resourceName: "avatar")
+            }else{
+                let url = URL(string: urlImage)
+                let data = try? Data(contentsOf: url!)
+                let image = UIImage(data: data!, scale: UIScreen.main.scale)!
+                self.avatar.image = image
+            }
+                  
+            let username = value?["username"] as? String ?? ""
+            self.name.text! = username
+        })
+    }
+    
     
     // Nút Exit
     @IBAction func exit(_ sender: Any) {

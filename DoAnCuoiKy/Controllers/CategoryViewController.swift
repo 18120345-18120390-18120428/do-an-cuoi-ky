@@ -34,7 +34,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     // Mang chứa tên Thể loại
-    let category = ["Ngôn Tình", "Kiếm Hiệp", "Truyện Teen", "Truyện Ma", "Quân Sự", "Trinh Thám", "Lịch Sử", "Tiểu Thuyết", "Thiếu Nhi", "Truyện Ngắn", "Truyện Cười", "Cổ Tích", "Nước Ngoài", "Khoa Học"]
+    let category = ["Ngôn Tình", "Kiếm Hiệp", "Truyện Teen", "Truyện Ma", "Quân Sự", "Trinh Thám", "Lịch Sử", "Tiểu Thuyết", "Thiếu Nhi", "Truyện Ngắn", "Truyện Cười", "Cổ Tích", "Nước Ngoài", "Khoa Học","Truyện Voz"]
     
     // Phần Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

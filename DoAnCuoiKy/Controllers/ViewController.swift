@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class ViewController: UIViewController {
 
     // Các biến quản lý đối tượng
@@ -28,6 +28,17 @@ class ViewController: UIViewController {
         outlet_dangky.layer.borderColor = UIColor.systemPink.cgColor
         outlet_dangky.layer.masksToBounds = true
         outlet_dangky.layer.cornerRadius = 30.0
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        // kiem tra xem user da dang nhap chua, neu dang nhap roi chuyen sang man hinh trang chu
+         Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                print("Da dang nhap !")
+                let src = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController")
+                src!.modalPresentationStyle = .fullScreen
+                self.present(src!, animated: true, completion: nil)
+            }
+         }
     }
    
     // Phần Đăng Nhập

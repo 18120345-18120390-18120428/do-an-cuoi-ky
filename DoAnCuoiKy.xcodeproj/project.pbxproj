@@ -32,6 +32,7 @@
 		33D16D2625778FEB00D42840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D16D2425778FEB00D42840 /* LaunchScreen.storyboard */; };
 		33FD93962587A37400A52E75 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD93952587A37400A52E75 /* PostViewController.swift */; };
 		33FD93982587A39C00A52E75 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD93972587A39C00A52E75 /* PostTableViewCell.swift */; };
+		6C214C6725943CE900181BBF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C214C6625943CE900181BBF /* EditProfileViewController.swift */; };
 		6C3D57B4257E0F8200B74B4E /* RegisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D57B3257E0F8200B74B4E /* RegisViewController.swift */; };
 		6C3D57B6257E173100B74B4E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D57B5257E173100B74B4E /* LoginViewController.swift */; };
 		6C3D57BA257E527200B74B4E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D57B9257E527100B74B4E /* InfoViewController.swift */; };
@@ -69,6 +70,7 @@
 		33D16D2725778FEB00D42840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33FD93952587A37400A52E75 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		33FD93972587A39C00A52E75 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		6C214C6625943CE900181BBF /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		6C3D57B3257E0F8200B74B4E /* RegisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisViewController.swift; sourceTree = "<group>"; };
 		6C3D57B5257E173100B74B4E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6C3D57B9257E527100B74B4E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				3351E43E257D579F0086E328 /* MainViewController.swift */,
 				A360F0B0257DD95900549B32 /* MenuViewController.swift */,
 				335630C825888706000010E0 /* PostChapViewController.swift */,
+				6C214C6625943CE900181BBF /* EditProfileViewController.swift */,
 				33FD93952587A37400A52E75 /* PostViewController.swift */,
 				33681A59258A675C00133584 /* ChangePasswordViewController.swift */,
 				33537CF6258482CD0032084C /* CategoryViewController.swift */,
@@ -210,6 +213,7 @@
 				33D16D1325778FE700D42840 /* Frameworks */,
 				33D16D1425778FE700D42840 /* Resources */,
 				78230CD358F899E0E774478C /* [CP] Embed Pods Frameworks */,
+				6A0786B9C7CDC0A3A768631D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +272,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6A0786B9C7CDC0A3A768631D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		78230CD358F899E0E774478C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,6 +355,7 @@
 				3359009C25893B9000D3D28C /* InformationStoryViewController.swift in Sources */,
 				33D16D1A25778FE700D42840 /* AppDelegate.swift in Sources */,
 				6C3D57BA257E527200B74B4E /* InfoViewController.swift in Sources */,
+				6C214C6725943CE900181BBF /* EditProfileViewController.swift in Sources */,
 				A360F0B1257DD95900549B32 /* MenuViewController.swift in Sources */,
 				33681A60258A9C4000133584 /* SearchViewController.swift in Sources */,
 				33D16D1C25778FE700D42840 /* SceneDelegate.swift in Sources */,

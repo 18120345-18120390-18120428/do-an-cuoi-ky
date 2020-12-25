@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Firebase
+import Alertift
 class ChangePasswordViewController: UIViewController {
     // Các biến quản lý đối tượng
     @IBOutlet weak var outlet_avatar: UIImageView!
@@ -19,7 +20,7 @@ class ChangePasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Giao diện Avatar
         outlet_avatar.layer.cornerRadius = 30.0
         
@@ -55,6 +56,55 @@ class ChangePasswordViewController: UIViewController {
     
     // Phần Xác nhận
     @IBAction func action_xacnhan(_ sender: Any) {
+        if outlet_matkhaucu.text! == "" {
+            Alertift.alert(title: "Notice", message: "Please press old password !")
+                           .action(.default("OK"))
+                           .show(on: self)
+            return
+        }
+        if outlet_matkhaumoi.text! == "" {
+            Alertift.alert(title: "Notice", message: "Please press new password !")
+                           .action(.default("OK"))
+                           .show(on: self)
+            return
+        }
+        if outlet_nhaplai.text! == "" {
+            Alertift.alert(title: "Notice", message: "Please press retype password !")
+                           .action(.default("OK"))
+                           .show(on: self)
+            return
+        }
+        Auth.auth().signIn(withEmail:(Auth.auth().currentUser?.email)! , password: outlet_matkhaucu.text!) { [weak self] authResult, error in
+        guard self != nil else { return }
+        if let error = error {
+            print(error.localizedDescription)
+            Alertift.alert(title: "Error", message: error.localizedDescription)
+            .action(.default("OK"))
+            .show(on: self)
+            return
+        }
+        }
+    
+        if outlet_nhaplai.text! != outlet_matkhaumoi.text! {
+            Alertift.alert(title: "Notice", message: "Retye password is incorrect !")
+                           .action(.default("OK"))
+                           .show(on: self)
+            return
+        }
+        Auth.auth().currentUser?.updatePassword(to: outlet_matkhaumoi.text!) { (error) in
+            if let error = error {
+                Alertift.alert(title: "Error", message: error.localizedDescription)
+                .action(.default("OK"))
+                .show(on: self)
+                return
+            }else{
+                Alertift.alert(title: "Notice", message: "You change success password")
+                .action(.default("OK"))
+                .show(on: self)
+                return
+            }
+        }
     }
     
 }
+

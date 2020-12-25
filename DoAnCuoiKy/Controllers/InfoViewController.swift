@@ -59,9 +59,11 @@ class InfoViewController: UIViewController {
         
         do {
             try firebaseAuth.signOut()
-            let src = self.storyboard?.instantiateViewController(withIdentifier: "ViewScreen")
+            let src = self.storyboard?.instantiateViewController(withIdentifier: "homeview")
             src!.modalPresentationStyle = .fullScreen
+           // self.dismiss(animated: true, completion: nil)
             self.present(src!, animated: true, completion: nil)
+           
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
             Alertift.alert(title: "Error", message: "Error logout")
@@ -70,3 +72,6 @@ class InfoViewController: UIViewController {
         }
     }
 }
+
+    
+  
