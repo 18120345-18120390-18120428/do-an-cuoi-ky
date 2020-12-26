@@ -10,16 +10,16 @@ import UIKit
 
 class ListPostTableViewCell: UITableViewCell {
     // Các biến quản lý đối tượng
-    @IBOutlet weak var outlet_logoitem: UIImageView!
+    @IBOutlet weak var avatar: UIImageView!
     @IBOutlet var lbTittle: UILabel!
-    
+    @IBOutlet weak var subView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         
         // Giao diện Table View Cell
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.white.cgColor
-        self.layer.cornerRadius = 50.0
+        subView.layer.cornerRadius = 15.0
+        avatar.layer.cornerRadius = 0.5 * avatar.bounds.size.width
+        avatar.contentMode = .scaleToFill
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

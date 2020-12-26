@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol UpdatePostTable: class {
+protocol PostChapViewControllerDelegate: class {
     func updateInfo(newChapter: Chapter)
 }
 class PostChapViewController: UIViewController {
@@ -16,54 +16,29 @@ class PostChapViewController: UIViewController {
     // Các biến quản lý đối tượng
     @IBOutlet weak var chapterOrderField: UITextField!
     @IBOutlet weak var chapterNameField: UITextField!
-    @IBOutlet weak var chapterContentField: UITextField!
+//    @IBOutlet weak var chapterContentField: UITextField!
+    @IBOutlet weak var tvChapterContent: UITextView!
     @IBOutlet weak var btnSave: UIButton!
-    @IBOutlet weak var btnBack: UIButton!
-    weak var delegate: UpdatePostTable?
+    weak var delegate: PostChapViewControllerDelegate?
     
     var chapter: Chapter = Chapter()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Giao diện khung Thứ tự chương
-        chapterOrderField.layer.borderWidth = 1.0
-        chapterOrderField.layer.borderColor = UIColor.darkText.cgColor
-        chapterOrderField.layer.masksToBounds = true
-        chapterOrderField.layer.cornerRadius = 30.0
+        tvChapterContent.allowsEditingTextAttributes = true
+        chapterOrderField.text = chapter.chapterOrder
+        chapterNameField.text = chapter.chapterName
+        tvChapterContent.text = chapter.chapterContent
         
-        // Giao diện khung Tên chương
-        chapterNameField.layer.borderWidth = 1.0
-        chapterNameField.layer.borderColor = UIColor.darkText.cgColor
-        chapterNameField.layer.masksToBounds = true
-        chapterNameField.layer.cornerRadius = 30.0
-        
-        // Giao diện khung Nội dung
-        chapterContentField.layer.borderWidth = 1.0
-        chapterContentField.layer.borderColor = UIColor.darkText.cgColor
-        
-        // Giao diện Lưu
-        btnSave.layer.borderColor = UIColor.white.cgColor
-        btnSave.layer.borderWidth = 1.0
-        btnSave.layer.cornerRadius = 30.0
-        
-        // Giao diện Trở về
-        btnBack.layer.borderColor = UIColor.systemPink.cgColor
-        btnBack.layer.borderWidth = 1.0
-        btnBack.layer.cornerRadius = 30.0
-        
+    }
         // Hiển thị nội dung chương (nếu chỉnh sửa)
         
+
+//     Phần Lưu
+    @IBAction func action_luu(_ sender: Any) {
+        print("Save")
+        chapter.addNewChapter(chapterOrder: chapterOrderField.text!, chapterName: chapterNameField.text!, chapterContent: tvChapterContent.text)
+        delegate?.updateInfo(newChapter: chapter)
+        self.navigationController?.popViewController(animated: true)
     }
 
-    // Phần Lưu
-    @IBAction func action_luu(_ sender: Any) {
-        chapter.addNewChapter(chapterOrder: chapterOrderField.text!, chapterName: chapterNameField.text!, chapterContent: chapterContentField.text!)
-        delegate?.updateInfo(newChapter: chapter)
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    // Phần Trở về
-    @IBAction func action_trove(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
 }

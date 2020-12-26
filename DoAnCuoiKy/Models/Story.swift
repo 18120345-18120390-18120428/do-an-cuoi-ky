@@ -46,9 +46,30 @@ class Story {
     func rated(newRating: Float) {
         self.rating = newRating
     }
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+    
     func pushToFirebase() -> StorageUploadTask {
-        
-        let image: UIImage = self.avatar
+        let image = resizeImage(image: self.avatar, targetSize: CGSize.init(width: 300, height: 300))
         let storage = Storage.storage().reference()
         guard let imageData = image.pngData() else {
             return StorageUploadTask.init()
@@ -64,9 +85,6 @@ class Story {
                   // Uh-oh, an error occurred!
                   return
                 }
-//                urlString = downloadURL.absoluteString
-//                print(urlString)
-//                UserDefaults.standard.set(urlString, forKey: "url")
                 let date = Date()
                 let formatter = DateFormatter()
                 formatter.dateFormat = "dd/MM/yyyy"
@@ -83,6 +101,7 @@ class Story {
                     "donloads": self.downloads,
                     "status": self.status,
                     "numberOfChapters": self.numberOfChapters,
+                    "description": self.description,
                     "timestamp": updateDay
                 ]
                 database.child("Stories/\(self.name)").setValue(object)

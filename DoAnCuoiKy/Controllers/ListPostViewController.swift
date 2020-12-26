@@ -42,12 +42,14 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
                 let author = storyDict["author"] as! String
                 let category = storyDict["category"] as! String
                 let urlImage = storyDict["avatar"] as! String
+                let description = storyDict["description"] as! String
                 let newStory: Story = Story()
                 
                 let url = URL(string: urlImage)
                 let data = try? Data(contentsOf: url!)
                 let image = UIImage(data: data!, scale: UIScreen.main.scale)!
                 newStory.addSimpleStory(name: name, author: author, category: category, avatar: image)
+                newStory.description = description
                 let storyContent = snap.childSnapshot(forPath: "storyContent")
                 for chapter in storyContent.children {
                     let snap1 = chapter as! DataSnapshot
@@ -80,6 +82,7 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
     
     // Phần Thêm truyện
     @IBAction func actionAddStory(_ sender: Any) {
+        indexUpdate = -1
         performSegue(withIdentifier: "PostViewController", sender: self)
     }
     
@@ -94,10 +97,8 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListPostCell") as! ListPostTableViewCell
-        cell.outlet_logoitem.image = data[indexPath.row].avatar
+        cell.avatar.image = data[indexPath.row].avatar
         cell.lbTittle.text = data[indexPath.row].name
-        // Giao diện Avatar
-        cell.outlet_logoitem.layer.cornerRadius = 50.0
     
         return cell
     }
@@ -115,5 +116,4 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     // Phần Xoá, sửa truyện
-    
 }

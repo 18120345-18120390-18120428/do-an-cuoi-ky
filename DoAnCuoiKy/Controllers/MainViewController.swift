@@ -51,6 +51,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let author = storyDict["author"] as! String
                 let category = storyDict["category"] as! String
                 let urlImage = storyDict["avatar"] as! String
+                let description = storyDict["description"] as! String
                 let updateDay = storyDict["timestamp"] as! String
                 let newStory: Story = Story()
                 let dateFormatter = DateFormatter()
@@ -62,6 +63,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let data = try? Data(contentsOf: url!)
                 let image = UIImage(data: data!, scale: UIScreen.main.scale)!
                 newStory.addSimpleStory(name: name, author: author, category: category, avatar: image)
+                newStory.description = description
                 let storyContent = snap.childSnapshot(forPath: "storyContent")
                 for chapter in storyContent.children {
                     let snap1 = chapter as! DataSnapshot
@@ -140,7 +142,56 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Nút Reload
     @IBAction func action_reload(_ sender: Any) {
+        let child = SpinnerViewController()
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
         
+        ref.child("Stories").observeSingleEvent(of: .value, with: {snapshot in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let storyDict = snap.value as! [String: Any]
+                let name = storyDict["name"] as! String
+                let author = storyDict["author"] as! String
+                let category = storyDict["category"] as! String
+                let urlImage = storyDict["avatar"] as! String
+                let description = storyDict["description"] as! String
+                let updateDay = storyDict["timestamp"] as! String
+                let newStory: Story = Story()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yyyy"
+                let date = dateFormatter.date(from:updateDay)!
+                newStory.timestamp = date
+                let url = URL(string: urlImage)
+                let data = try? Data(contentsOf: url!)
+                let image = UIImage(data: data!, scale: UIScreen.main.scale)!
+                newStory.addSimpleStory(name: name, author: author, category: category, avatar: image)
+                newStory.description = description
+                let storyContent = snap.childSnapshot(forPath: "storyContent")
+                for chapter in storyContent.children {
+                    let snap1 = chapter as! DataSnapshot
+                    let chapterDict = snap1.value as! [String: Any]
+                    let chapterOrder = chapterDict["chapterOrder"] as! String
+                    let chapterName = chapterDict["chapterName"] as! String
+                    let chapterContent = chapterDict["chapterContent"] as! String
+                    let newChapter = Chapter()
+                    newChapter.addNewChapter(chapterOrder: chapterOrder, chapterName: chapterName, chapterContent: chapterContent)
+                    newStory.storyContent.append(newChapter)
+                }
+                newStory.numberOfChapters = newStory.storyContent.count
+                self.data.append(newStory)
+            }
+            
+            self.tableView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                print("Simulation finished")
+                // then remove the spinner view controller
+                child.willMove(toParent: nil)
+                child.view.removeFromSuperview()
+                child.removeFromParent()
+            }
+        })
     }
     
     // Nút Pushlist

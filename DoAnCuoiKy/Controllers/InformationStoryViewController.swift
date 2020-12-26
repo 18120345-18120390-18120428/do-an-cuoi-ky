@@ -13,13 +13,15 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
     
     var story = Story()
     @IBOutlet weak var tableView: UITableView!
-    
+    var heightDescription: CGFloat = 100.0
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 600
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 //        tableView.register(AvatarTableViewCell.nib(), forCellReuseIdentifier: AvatarTableViewCell.identifier)
 //        tableView.register(InfoStoryTableViewCell.nib(), forCellReuseIdentifier: InfoStoryTableViewCell.identifier)
 //        tableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
@@ -62,8 +64,10 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
             cell.delegate = self
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "HIHIIHIHIHIH"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell
+        cell.lbDescription.text = story.description
+        cell.lbDescription.sizeToFit()
+        heightDescription = cell.lbDescription.frame.height + 50
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -76,7 +80,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
         if (indexPath.row == 2) {
             return 150
         }
-        return 30
+        return CGFloat(heightDescription)
     }
     
 }
@@ -86,7 +90,6 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
 //        print(text)
 //    }
     func didTapReadStory() {
-        print("hihihihih")
         performSegue(withIdentifier: "readStory", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
