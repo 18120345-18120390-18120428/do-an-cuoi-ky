@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol AddChapterViewControllerDelegate : class {
+    func addNewStory(newStory: Story)
+}
+
 class AddChapterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var newStory = Story()
     var indexUpdate = -1
+    weak var delegate: AddChapterViewControllerDelegate?
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSave: UIButton!
     @IBAction func actionSave(_ sender: Any) {
@@ -23,6 +28,7 @@ class AddChapterViewController: UIViewController, UITableViewDelegate, UITableVi
         uploadTask.observe(.success) { snapshot in
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 print("Simulation finished")
+                self.delegate?.addNewStory(newStory: self.newStory)
                 // then remove the spinner view controller
                 child.willMove(toParent: nil)
                 child.view.removeFromSuperview()

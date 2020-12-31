@@ -69,7 +69,7 @@ class Story {
     }
     
     func pushToFirebase() -> StorageUploadTask {
-        let image = resizeImage(image: self.avatar, targetSize: CGSize.init(width: 300, height: 300))
+        let image = resizeImage(image: self.avatar, targetSize: CGSize.init(width: 150, height: 150))
         let storage = Storage.storage().reference()
         guard let imageData = image.pngData() else {
             return StorageUploadTask.init()

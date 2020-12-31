@@ -36,6 +36,7 @@
 		6C3D57B4257E0F8200B74B4E /* RegisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D57B3257E0F8200B74B4E /* RegisViewController.swift */; };
 		6C3D57B6257E173100B74B4E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D57B5257E173100B74B4E /* LoginViewController.swift */; };
 		6C3D57BA257E527200B74B4E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D57B9257E527100B74B4E /* InfoViewController.swift */; };
+		A3224A86259DD45700883FC1 /* DetailCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3224A85259DD45700883FC1 /* DetailCategoryViewController.swift */; };
 		A32309342597765600AFA42C /* AddChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32309332597765600AFA42C /* AddChapterViewController.swift */; };
 		A32588CB2596239000F18A07 /* AvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32588CA2596239000F18A07 /* AvatarTableViewCell.swift */; };
 		A32588CD259623C000F18A07 /* InfoStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32588CC259623C000F18A07 /* InfoStoryTableViewCell.swift */; };
@@ -91,6 +92,7 @@
 		6C3D57B9257E527100B74B4E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		7BB6203D5E130E6BB76BB79D /* Pods_DoAnCuoiKy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoAnCuoiKy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA6529242A37901440B1153 /* Pods-DoAnCuoiKy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoAnCuoiKy.debug.xcconfig"; path = "Target Support Files/Pods-DoAnCuoiKy/Pods-DoAnCuoiKy.debug.xcconfig"; sourceTree = "<group>"; };
+		A3224A85259DD45700883FC1 /* DetailCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategoryViewController.swift; sourceTree = "<group>"; };
 		A32309332597765600AFA42C /* AddChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChapterViewController.swift; sourceTree = "<group>"; };
 		A32588CA2596239000F18A07 /* AvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarTableViewCell.swift; sourceTree = "<group>"; };
 		A32588CC259623C000F18A07 /* InfoStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoStoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				A39F30F125957E8900936100 /* SideMenuController.swift */,
 				A325E3F92596E99500B37180 /* ListChapterViewController.swift */,
 				A32309332597765600AFA42C /* AddChapterViewController.swift */,
+				A3224A85259DD45700883FC1 /* DetailCategoryViewController.swift */,
 				A33CE149258CFAE0007EDD2C /* TableViewCell */,
 			);
 			path = Controllers;
@@ -388,6 +391,7 @@
 				A32309342597765600AFA42C /* AddChapterViewController.swift in Sources */,
 				3353E2622583C6A90032F428 /* ForgetViewController.swift in Sources */,
 				33FD93982587A39C00A52E75 /* PostTableViewCell.swift in Sources */,
+				A3224A86259DD45700883FC1 /* DetailCategoryViewController.swift in Sources */,
 				3351E443257D58220086E328 /* VVTableViewCell.swift in Sources */,
 				33A5D76A2587585400362F9A /* ListPostViewController.swift in Sources */,
 				A325E3F82596E88D00B37180 /* ChapterTableViewCell.swift in Sources */,

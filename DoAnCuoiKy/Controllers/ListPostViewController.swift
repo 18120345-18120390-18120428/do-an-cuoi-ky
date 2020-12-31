@@ -110,10 +110,18 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
     // Chọn 1 dòng
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let postViewController = segue.destination as! PostViewController
+        postViewController.delegate = self
         if (indexUpdate > -1) {
             postViewController.newStory = data[indexUpdate]
         }
-        
     }
     // Phần Xoá, sửa truyện
+}
+
+extension ListPostViewController: PostViewControllerDelegate {
+    func addNewStory(newStory: Story) {
+        print(newStory)
+        data.append(newStory)
+        tableView.reloadData()
+    }
 }

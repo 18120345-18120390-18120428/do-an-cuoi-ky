@@ -15,14 +15,13 @@ class VVTableViewCell: UITableViewCell {
     @IBOutlet weak var lbChapterNumber: UILabel!
     @IBOutlet weak var lbAuthor: UILabel!
     @IBOutlet weak var lbUpdateDay: UILabel!
+    @IBOutlet weak var myView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         // Giao diện Table View Cell
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.white.cgColor
-        self.layer.cornerRadius = 50.0
+        myView.layer.cornerRadius = 10
         logoItem.layer.cornerRadius = logoItem.bounds.size.width * 0.5
     }
 

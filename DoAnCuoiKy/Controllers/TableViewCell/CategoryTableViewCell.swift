@@ -8,11 +8,22 @@
 
 import UIKit
 
+protocol CategoryTableViewCellDelegate: class {
+    func tapCate1(text: String)
+    func tapCate2(text: String)
+}
 class CategoryTableViewCell: UITableViewCell {
     // Các biến quản lý các đối tượng
-    @IBOutlet weak var outlet_categorylabel: UILabel!
-    @IBOutlet weak var outlet_categoryavatar: UIImageView!
-    @IBOutlet weak var outlet_viewcell: UIView!
+    @IBOutlet weak var btnCategory1: UIButton!
+    @IBOutlet weak var btnCategory2: UIButton!
+    weak var delegate: CategoryTableViewCellDelegate?
+    @IBAction func actGoCategory1() {
+        delegate?.tapCate1(text: btnCategory1.titleLabel!.text!)
+    }
+    
+    @IBAction func actGoCategory2() {
+        delegate?.tapCate2(text: btnCategory2.titleLabel!.text!)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

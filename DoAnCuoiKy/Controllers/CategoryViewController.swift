@@ -12,14 +12,14 @@ import SideMenu
 class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Các biến quản lý đối tượng
-    @IBOutlet weak var outlet_tableview: UITableView!
-    
+    @IBOutlet weak var tableView: UITableView!
+    var categoryUpdate = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Khai báo Table View
-        outlet_tableview.delegate = self
-        outlet_tableview.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
         // add side menu
         sideMenu.leftSide = true
@@ -30,6 +30,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         sideMenu.settings = settings
         SideMenuManager.default.leftMenuNavigationController = sideMenu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
     }
     
     // Phần Slide Menu
@@ -53,28 +54,36 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     
     // Phần Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return category.count
+        return category.count / 2
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 60
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = outlet_tableview.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
-        
-        // Nội dung cell
-        cell.outlet_categorylabel.text = category[indexPath.row]
-        
-        // Giao diện Avatar
-        cell.outlet_categoryavatar.layer.cornerRadius = 50.0
-        
-        // Giao diện View Cell
-        cell.outlet_viewcell.layer.borderWidth = 3.0
-        cell.outlet_viewcell.layer.borderColor = UIColor.white.cgColor
-        cell.outlet_viewcell.layer.cornerRadius = 50.0
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
+        cell.btnCategory1.setTitle(category[indexPath.row * 2 ], for: .normal)
+        cell.btnCategory2.setTitle(category[indexPath.row * 2 + 1], for: .normal)
+        cell.delegate = self
         return cell
     }
+}
 
+extension CategoryViewController: CategoryTableViewCellDelegate {
+    func tapCate1(text: String) {
+        categoryUpdate = text
+        performSegue(withIdentifier: "passCategory", sender: self)
+    }
+    
+    func tapCate2(text: String) {
+        categoryUpdate = text
+        performSegue(withIdentifier: "passCategory", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailCategoryViewController = segue.destination as! DetailCategoryViewController
+        detailCategoryViewController.title = categoryUpdate
+        
+    }
 }

@@ -16,9 +16,15 @@ class StoryViewController: UIViewController {
     var currentIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        textViewContent.text = """
-            \(content[currentIndex].chapterContent)
-        """        
+        if (content.count == 0) {
+            
+        }
+        else {
+            textViewContent.text = """
+                \(content[currentIndex].chapterContent)
+            """
+        }
+               
     }
     
     // Phần Trở về
