@@ -10,11 +10,16 @@ import UIKit
 
 protocol ButtonTableViewCellDelegate: class {
     func tapNext()
+    func tapSave()
 }
 class ButtonTableViewCell: UITableViewCell {
     @IBOutlet weak var btnNext: UIButton!
     @IBAction func actionNext() {
         delegate?.tapNext()
+    }
+    @IBOutlet weak var btnSave: UIButton!
+    @IBAction func actionSave() {
+        delegate?.tapSave()
     }
     weak var delegate: ButtonTableViewCellDelegate?
     override func awakeFromNib() {

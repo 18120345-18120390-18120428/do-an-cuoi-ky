@@ -39,31 +39,15 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
                 let snap = child as! DataSnapshot
                 let storyDict = snap.value as! [String: Any]
                 let name = storyDict["name"] as! String
-                let author = storyDict["author"] as! String
-                let category = storyDict["category"] as! String
                 let urlImage = storyDict["avatar"] as! String
-                let description = storyDict["description"] as! String
                 let newStory: Story = Story()
-                
                 let url = URL(string: urlImage)
                 let data = try? Data(contentsOf: url!)
                 let image = UIImage(data: data!, scale: UIScreen.main.scale)!
-                newStory.addSimpleStory(name: name, author: author, category: category, avatar: image)
-                newStory.description = description
-                let storyContent = snap.childSnapshot(forPath: "storyContent")
-                for chapter in storyContent.children {
-                    let snap1 = chapter as! DataSnapshot
-                    let chapterDict = snap1.value as! [String: Any]
-                    let chapterOrder = chapterDict["chapterOrder"] as! String
-                    let chapterName = chapterDict["chapterName"] as! String
-                    let chapterContent = chapterDict["chapterContent"] as! String
-                    let newChapter = Chapter()
-                    newChapter.addNewChapter(chapterOrder: chapterOrder, chapterName: chapterName, chapterContent: chapterContent)
-                    newStory.storyContent.append(newChapter)
-                }
+                newStory.avatar = image
+                newStory.name = name
                 self.data.append(newStory)
             }
-            
             self.tableView.reloadData()
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 print("Simulation finished")
@@ -112,7 +96,7 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
         let postViewController = segue.destination as! PostViewController
         postViewController.delegate = self
         if (indexUpdate > -1) {
-            postViewController.newStory = data[indexUpdate]
+            postViewController.storyName = data[indexUpdate].name
         }
     }
     // Phần Xoá, sửa truyện
@@ -120,7 +104,12 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
 
 extension ListPostViewController: PostViewControllerDelegate {
     func addNewStory(newStory: Story) {
-        print(newStory)
+        for index in 0..<data.count {
+            if (data[index].name == newStory.name) {
+                data[index] = newStory
+                return
+            }
+        }
         data.append(newStory)
         tableView.reloadData()
     }

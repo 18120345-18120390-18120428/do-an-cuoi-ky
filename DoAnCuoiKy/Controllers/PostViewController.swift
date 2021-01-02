@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseStorage
+import Firebase
 
 protocol PostViewControllerDelegate: class {
     func addNewStory(newStory: Story)
@@ -16,11 +16,13 @@ protocol PostViewControllerDelegate: class {
 class PostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var mainAvatar: UIImage!
-    var storyTitle = ""
+    var storyName = ""
     var category = ""
     var author = ""
     var newdescription = ""
-    var newStory = Story()
+    var arrayStory : [Story] = []
+    private var newStory = Story()
+    var ref = Database.database().reference()
     weak var delegate: PostViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +30,61 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Khai bao table view
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
+        if (storyName != "") {
+            fetchStory(name: storyName)
+        }
     }
-    
+    func fetchStory(name: String) {
+        let child = SpinnerViewController()
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+        ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: name).queryEnding(atValue: storyName+"\u{f8ff}").observe(.value, with: {snapshot in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let storyDict = snap.value as! [String: Any]
+                let name = storyDict["name"] as! String
+                let author = storyDict["author"] as! String
+                let category = storyDict["category"] as! String
+                let urlImage = storyDict["avatar"] as! String
+                let description = storyDict["description"] as! String
+                let updateDay = storyDict["timestamp"] as! String
+                let newStory: Story = Story()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yyyy"
+                let date = dateFormatter.date(from:updateDay)!
+                newStory.timestamp = date
+                let url = URL(string: urlImage)
+                let data = try? Data(contentsOf: url!)
+                let image = UIImage(data: data!, scale: UIScreen.main.scale)!
+                newStory.addSimpleStory(name: name, author: author, category: category, avatar: image)
+                newStory.description = description
+                let storyContent = snap.childSnapshot(forPath: "storyContent")
+                for chapter in storyContent.children {
+                    let snap1 = chapter as! DataSnapshot
+                    let chapterDict = snap1.value as! [String: Any]
+                    let chapterOrder = chapterDict["chapterOrder"] as! String
+                    let chapterName = chapterDict["chapterName"] as! String
+                    let chapterContent = chapterDict["chapterContent"] as! String
+                    let newChapter = Chapter()
+                    newChapter.addNewChapter(chapterOrder: chapterOrder, chapterName: chapterName, chapterContent: chapterContent)
+                    newStory.storyContent.append(newChapter)
+                }
+                print("new story: \(newStory.name)")
+                self.arrayStory.append(newStory)
+                self.newStory = self.arrayStory.first!
+                print("Story: \(self.newStory.description)")
+                self.tableView.reloadData()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                // then remove the spinner view controller
+                child.willMove(toParent: nil)
+                child.view.removeFromSuperview()
+                child.removeFromParent()
+            }
+        })
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
@@ -54,14 +108,15 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         if (indexPath.row == 2) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PickerTableViewCell") as! PickerTableViewCell
             cell.tfInfo.placeholder = "Thể loại"
+            print("jojjoojojo \(newStory.category)")
             cell.tfInfo.text = newStory.category
             cell.delegate = self
             return cell
         }
         if (indexPath.row == 3) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputDesTableViewCell") as! InputDesTableViewCell
-            print(newStory.description)
-            cell.tvDescription.text = newStory.description
+            print("jojjoojojo \(newStory.description)")
+            cell.tvDescription.text = self.newStory.description
             cell.delegate = self
             return cell
         }
@@ -130,15 +185,34 @@ extension PostViewController: ButtonTableViewCellDelegate, TextFiledTableViewCel
         newStory.author = text
     }
     func getDescription(text: String) {
-        print("description: \(text)")
-        newStory.description = text
+//        print("delegate: \(newStory.description)")
+        if (text != "") {
+            newStory.description = text
+        }
     }
     func getCategory(text: String) {
         newStory.category = text
     }
     func tapNext() {
-        delegate?.addNewStory(newStory: newStory)
         performSegue(withIdentifier: "addChapter", sender: self)
+    }
+    func tapSave() {
+        delegate?.addNewStory(newStory: newStory)
+        let child = SpinnerViewController()
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+        self.newStory.numberOfChapters = self.newStory.storyContent.count
+        let uploadTask = newStory.pushToFirebase()
+        uploadTask.observe(.success) { snapshot in
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                print("Simulation finished")
+                child.willMove(toParent: nil)
+                child.view.removeFromSuperview()
+                child.removeFromParent()
+            }
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let addChapterViewController = segue.destination as! AddChapterViewController

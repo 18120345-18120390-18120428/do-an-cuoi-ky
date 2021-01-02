@@ -19,22 +19,9 @@ class AddChapterViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSave: UIButton!
     @IBAction func actionSave(_ sender: Any) {
-        let child = SpinnerViewController()
-        addChild(child)
-        child.view.frame = view.frame
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
-        let uploadTask = newStory.pushToFirebase()
-        uploadTask.observe(.success) { snapshot in
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                print("Simulation finished")
-                self.delegate?.addNewStory(newStory: self.newStory)
-                // then remove the spinner view controller
-                child.willMove(toParent: nil)
-                child.view.removeFromSuperview()
-                child.removeFromParent()
-            }
-        }
+        self.newStory.numberOfChapters = self.newStory.storyContent.count
+        self.delegate?.addNewStory(newStory: self.newStory)
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func actionAdd(_ sender: Any) {
         indexUpdate = -1
@@ -44,7 +31,6 @@ class AddChapterViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newStory.storyContent.count

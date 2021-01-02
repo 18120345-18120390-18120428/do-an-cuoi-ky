@@ -39,7 +39,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
         child.view.frame = view.frame
         view.addSubview(child.view)
         child.didMove(toParent: self)
-        ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: storyName).queryEnding(atValue: storyName+"\u{f8ff}").observe(.value, with: {snapshot in
+        ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: name).queryEnding(atValue: storyName+"\u{f8ff}").observe(.value, with: {snapshot in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let storyDict = snap.value as! [String: Any]
