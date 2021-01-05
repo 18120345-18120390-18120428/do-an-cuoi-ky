@@ -27,6 +27,13 @@ class DetailCategoryViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         fetchStories()
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParent {
+            self.tabBarController?.tabBar.isHidden = false
+        }
+    }
     var currentKey = ""
     var currentName = ""
     func fetchStories() {

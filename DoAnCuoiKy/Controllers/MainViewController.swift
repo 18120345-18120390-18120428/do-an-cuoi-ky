@@ -58,6 +58,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let author = storyDict["author"] as! String
                     let urlImage = storyDict["avatar"] as! String
                     let updateDay = storyDict["timestamp"] as! String
+                    let numberOfChapters = storyDict["numberOfChapters"] as! Int
                     let newStory: Story = Story()
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -65,8 +66,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     newStory.timestamp = date
                     let url = URL(string: urlImage)
                     let data = try? Data(contentsOf: url!)
-                    let image = UIImage(data: data!, scale: UIScreen.main.scale)!
-                    newStory.addSimpleStory(name: name, author: author, category: "", avatar: image)
+                    let image = UIImage(data: data!, scale: UIScreen.main.scale)
+                    newStory.addSimpleStory(name: name, author: author, category: "", avatar: image!)
+                    newStory.numberOfChapters = numberOfChapters
                     self.data.append(newStory)
                 }
                 self.currentKey = last.key
@@ -92,6 +94,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                         let author = storyDict["author"] as! String
                         let urlImage = storyDict["avatar"] as! String
                         let updateDay = storyDict["timestamp"] as! String
+                        let numberOfChapters = storyDict["numberOfChapters"] as! Int
                         let newStory: Story = Story()
                         let dateFormatter = DateFormatter()
                         dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -101,6 +104,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                         let data = try? Data(contentsOf: url!)
                         let image = UIImage(data: data!, scale: UIScreen.main.scale)!
                         newStory.addSimpleStory(name: name, author: author, category: "", avatar: image)
+                        newStory.numberOfChapters = numberOfChapters
                         self.data.append(newStory)
                     }
                 }
@@ -128,8 +132,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VVTableCell") as! VVTableViewCell
-        
-        // Giao diện Avatar
         cell.logoItem.layer.cornerRadius = 40.0
         cell.logoItem.image = data[indexPath.row].avatar
         cell.lbName.text = data[indexPath.row].name

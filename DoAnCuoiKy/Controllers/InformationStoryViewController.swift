@@ -11,9 +11,13 @@ import Firebase
 
 class InformationStoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
+    var liked = false
+    var rating = 0
     var storyName = ""
+    var likes = 0;
     var arrayStory : [Story] = []
+    var favoriteBook : [String] = []
+    var listRating : [String : Int?] = [:]
     private var story = Story()
     var ref = Database.database().reference()
     @IBOutlet weak var tableView: UITableView!
@@ -26,12 +30,37 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         fetchStory(name: storyName)
+        fetchDataUser()
     }
     @IBAction func actionBack(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
+    }
+    func fetchDataUser() {
+        let userID = Auth.auth().currentUser?.uid
+        ref = Database.database().reference()
+        ref.child("Profile").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+        // Lấy giá trị của user
+            let value = snapshot.value as? NSDictionary
+//            let liked = value?["photoURL"] as? String ?? ""
+            if (snapshot.hasChild("favoriteBook")) {
+                self.favoriteBook = value?["favoriteBook"] as! [String]
+            }
+            
+            if (snapshot.hasChild("rating")) {
+                self.listRating = value?["rating"] as! [String : Int?]
+            }
+            
+            if (self.listRating[self.story.name] != nil) {
+                self.rating = self.listRating[self.story.name]!!
+            }
+            if self.favoriteBook.contains(self.story.name) {
+                self.liked = true
+            }
+            self.tableView.reloadData()
+        })
     }
     func fetchStory(name: String) {
         let child = SpinnerViewController()
@@ -49,6 +78,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
                 let urlImage = storyDict["avatar"] as! String
                 let description = storyDict["description"] as! String
                 let updateDay = storyDict["timestamp"] as! String
+                self.likes = storyDict["likes"] as! Int
                 let newStory: Story = Story()
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -113,6 +143,49 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
         }
         if (indexPath.row == 2) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+            if (liked) {
+                cell.itemLike.image = UIImage(systemName: "heart.fill")
+            } else {
+                cell.itemLike.image = UIImage(systemName: "heart")
+            }
+            switch rating {
+            case 1:
+                cell.oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.twoStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+                cell.threeStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+                cell.fourStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+                cell.fiveStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+            case 2:
+                cell.oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.threeStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+                cell.fourStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+                cell.fiveStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+            case 3:
+                cell.oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.threeStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.fourStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+                cell.fiveStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+            case 4:
+                cell.oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.threeStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.fourStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.fiveStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+            case 5:
+                cell.oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.threeStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.fourStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+                cell.fiveStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            default:
+                cell.oneStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+                cell.twoStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+                cell.threeStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+                cell.fourStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+                cell.fiveStar.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
+            }
             cell.delegate = self
             return cell
         }
@@ -137,6 +210,83 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
 }
 
 extension InformationStoryViewController: CustomTableViewCellDelegate {
+    func choseOneStar() {
+        rating = 1;
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let ref = Database.database().reference().child("Profile/\(uid)/rating/")
+        ref.updateChildValues([
+            "\(story.name)" : rating
+        ])
+        tableView.reloadData()
+    }
+    
+    func choseTwoStar() {
+        rating = 2;
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let ref = Database.database().reference().child("Profile/\(uid)/rating/")
+        ref.updateChildValues([
+            "\(story.name)" : rating
+        ])
+        tableView.reloadData()
+    }
+    
+    func choseThreeStar() {
+        rating = 3;
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let ref = Database.database().reference().child("Profile/\(uid)/rating/")
+        ref.updateChildValues([
+            "\(story.name)" : rating
+        ])
+        tableView.reloadData()
+    }
+    
+    func choseFourStar() {
+        rating = 4;
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let ref = Database.database().reference().child("Profile/\(uid)/rating/")
+        ref.updateChildValues([
+            "\(story.name)" : rating
+        ])
+        tableView.reloadData()
+    }
+    
+    func choseFiveStar() {
+        rating = 5;
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let ref = Database.database().reference().child("Profile/\(uid)/rating/")
+        ref.updateChildValues([
+            "\(story.name)" : rating
+        ])
+        tableView.reloadData()
+    }
+    
+    func didTapBarItem(item: UITabBarItem) {
+        if (item.title == "Thích") {
+            if (liked) {
+                liked = false
+                if let index = favoriteBook.firstIndex(of: story.name) {
+                    favoriteBook.remove(at: index)
+                }
+                likes = likes - 1
+            } else {
+                liked = true
+                favoriteBook.append(story.name)
+                likes = likes + 1
+            }
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let ref = Database.database().reference().child("Profile/\(uid)")
+            ref.updateChildValues([
+                "favoriteBook": self.favoriteBook
+            ])
+            let ref2 = Database.database().reference().child("Stories/\(story.name)")
+            ref2.updateChildValues([
+                "likes": likes,
+                "rating": rating
+            ])
+            tableView.reloadData()
+        }
+    }
+    
     func didTapReadStory() {
         performSegue(withIdentifier: "readStory", sender: self)
     }
