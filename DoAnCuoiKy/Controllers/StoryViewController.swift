@@ -14,6 +14,7 @@ class StoryViewController: UIViewController {
     @IBOutlet weak var textViewContent: UITextView!
     var content: [Chapter] = []
     var currentIndex = 0
+    var nameStory = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         if (content.count == 0) {
@@ -26,6 +27,21 @@ class StoryViewController: UIViewController {
         }
                
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        // an navigationbar
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+//        // an tabbar
+//        self.tabBarController?.tabBar.isHidden = true
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        navigationController?.setNavigationBarHidden(false, animated: animated)
+//        if self.isMovingFromParent {
+//            self.tabBarController?.tabBar.isHidden = false
+//        }
+//    }
     
     // Phần Trở về
     @IBAction func actionBack(_ sender: Any) {
@@ -34,12 +50,22 @@ class StoryViewController: UIViewController {
     @IBAction func actionListChapter(_ sender: Any) {
         performSegue(withIdentifier: "choseChapter", sender: self)
     }
+    @IBAction func actComment(_ sender: Any) {
+        performSegue(withIdentifier: "commentReadStory", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let listChapterViewController = segue.destination as! ListChapterViewController
-        listChapterViewController.delegate = self
-        listChapterViewController.content = content
-        listChapterViewController.currentIndex = currentIndex
+        
+        if segue.destination is ListChapterViewController {
+            let listChapterViewController = segue.destination as! ListChapterViewController
+            listChapterViewController.delegate = self
+            listChapterViewController.content = content
+            listChapterViewController.currentIndex = currentIndex
+        }
+        else if segue.destination is CommentViewController {
+            let commentViewController = segue.destination as! CommentViewController
+            commentViewController.nameStory = nameStory
+        }
     }
     
 }

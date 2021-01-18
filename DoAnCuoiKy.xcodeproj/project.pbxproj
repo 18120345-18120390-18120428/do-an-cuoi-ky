@@ -45,6 +45,8 @@
 		A325E3F82596E88D00B37180 /* ChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325E3F72596E88D00B37180 /* ChapterTableViewCell.swift */; };
 		A325E3FA2596E99500B37180 /* ListChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A325E3F92596E99500B37180 /* ListChapterViewController.swift */; };
 		A3296E44258EFD8E00CE5551 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3296E43258EFD8E00CE5551 /* SpinnerViewController.swift */; };
+		A32AEDD325B57BC300BFB5AB /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AEDD225B57BC300BFB5AB /* CommentTableViewCell.swift */; };
+		A32AEDD525B58E8700BFB5AB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AEDD425B58E8700BFB5AB /* Comment.swift */; };
 		A32E9A782597265700B27957 /* TextFiledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E9A772597265700B27957 /* TextFiledTableViewCell.swift */; };
 		A32E9A7A2597269400B27957 /* ChoseAvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E9A792597269400B27957 /* ChoseAvatarTableViewCell.swift */; };
 		A32E9A7C2597270700B27957 /* InputDesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E9A7B2597270700B27957 /* InputDesTableViewCell.swift */; };
@@ -56,6 +58,7 @@
 		A39F30F625957FB800936100 /* UserInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A39F30F425957FB800936100 /* UserInfoTableViewCell.xib */; };
 		A39FA489258D023600C02B10 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FA488258D023600C02B10 /* Story.swift */; };
 		A39FA48D258D122F00C02B10 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FA48C258D122F00C02B10 /* Chapter.swift */; };
+		A3D05C1925B3405900E78DB6 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D05C1825B3405900E78DB6 /* CommentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +104,8 @@
 		A325E3F72596E88D00B37180 /* ChapterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTableViewCell.swift; sourceTree = "<group>"; };
 		A325E3F92596E99500B37180 /* ListChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListChapterViewController.swift; sourceTree = "<group>"; };
 		A3296E43258EFD8E00CE5551 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		A32AEDD225B57BC300BFB5AB /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		A32AEDD425B58E8700BFB5AB /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A32E9A772597265700B27957 /* TextFiledTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFiledTableViewCell.swift; sourceTree = "<group>"; };
 		A32E9A792597269400B27957 /* ChoseAvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseAvatarTableViewCell.swift; sourceTree = "<group>"; };
 		A32E9A7B2597270700B27957 /* InputDesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDesTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +117,7 @@
 		A39F30F425957FB800936100 /* UserInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoTableViewCell.xib; sourceTree = "<group>"; };
 		A39FA488258D023600C02B10 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		A39FA48C258D122F00C02B10 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		A3D05C1825B3405900E78DB6 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +202,7 @@
 				A325E3F92596E99500B37180 /* ListChapterViewController.swift */,
 				A32309332597765600AFA42C /* AddChapterViewController.swift */,
 				A3224A85259DD45700883FC1 /* DetailCategoryViewController.swift */,
+				A3D05C1825B3405900E78DB6 /* CommentViewController.swift */,
 				A33CE149258CFAE0007EDD2C /* TableViewCell */,
 			);
 			path = Controllers;
@@ -220,6 +227,7 @@
 				A32E9A7B2597270700B27957 /* InputDesTableViewCell.swift */,
 				A32E9A7D2597277300B27957 /* ButtonTableViewCell.swift */,
 				A32E9A8125973C8D00B27957 /* PickerTableViewCell.swift */,
+				A32AEDD225B57BC300BFB5AB /* CommentTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 			children = (
 				A39FA488258D023600C02B10 /* Story.swift */,
 				A39FA48C258D122F00C02B10 /* Chapter.swift */,
+				A32AEDD425B58E8700BFB5AB /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -385,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A39F30F525957FB800936100 /* UserInfoTableViewCell.swift in Sources */,
+				A32AEDD525B58E8700BFB5AB /* Comment.swift in Sources */,
 				6C3D57B6257E173100B74B4E /* LoginViewController.swift in Sources */,
 				A32E9A8225973C8D00B27957 /* PickerTableViewCell.swift in Sources */,
 				A325E3F42596D35300B37180 /* DescriptionTableViewCell.swift in Sources */,
@@ -406,6 +416,7 @@
 				A32E9A7A2597269400B27957 /* ChoseAvatarTableViewCell.swift in Sources */,
 				A39F30F225957E8900936100 /* SideMenuController.swift in Sources */,
 				3372DACB2585D90600EAA910 /* LibraryViewController.swift in Sources */,
+				A32AEDD325B57BC300BFB5AB /* CommentTableViewCell.swift in Sources */,
 				33A5D76C2587658800362F9A /* ListPostTableViewCell.swift in Sources */,
 				33537CF7258482CD0032084C /* CategoryViewController.swift in Sources */,
 				33681A5C258A701A00133584 /* VVTruyenViewController.swift in Sources */,
@@ -416,6 +427,7 @@
 				6C3D57BA257E527200B74B4E /* InfoViewController.swift in Sources */,
 				A32E9A7E2597277300B27957 /* ButtonTableViewCell.swift in Sources */,
 				6C214C6725943CE900181BBF /* EditProfileViewController.swift in Sources */,
+				A3D05C1925B3405900E78DB6 /* CommentViewController.swift in Sources */,
 				A32588CF2596257C00F18A07 /* CustomTableViewCell.swift in Sources */,
 				A360F0B1257DD95900549B32 /* MenuViewController.swift in Sources */,
 				33681A60258A9C4000133584 /* SearchViewController.swift in Sources */,

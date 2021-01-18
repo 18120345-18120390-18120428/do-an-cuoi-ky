@@ -18,6 +18,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
     var arrayStory : [Story] = []
     var favoriteBook : [String] = []
     var listRating : [String : Int?] = [:]
+    var arrRating : [String: Int] = [:]
     private var story = Story()
     var ref = Database.database().reference()
     @IBOutlet weak var tableView: UITableView!
@@ -29,9 +30,26 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
+        
+        self.title = "Info"
         fetchStory(name: storyName)
         fetchDataUser()
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        // an navigationbar
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+//        // an tabbar
+//        self.tabBarController?.tabBar.isHidden = true
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        navigationController?.setNavigationBarHidden(false, animated: animated)
+//        if self.isMovingFromParent {
+//            self.tabBarController?.tabBar.isHidden = false
+//        }
+//    }
     @IBAction func actionBack(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }
@@ -78,6 +96,10 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
                 let urlImage = storyDict["avatar"] as! String
                 let description = storyDict["description"] as! String
                 let updateDay = storyDict["timestamp"] as! String
+                var arrRating: [String: Int] = [:]
+                if (storyDict["rating"] as? [String: Int] != nil) {
+                    arrRating = storyDict["rating"] as! [String: Int]
+                }
                 self.likes = storyDict["likes"] as! Int
                 let newStory: Story = Story()
                 let dateFormatter = DateFormatter()
@@ -89,6 +111,8 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
                 let image = UIImage(data: data!, scale: UIScreen.main.scale)!
                 newStory.addSimpleStory(name: name, author: author, category: category, avatar: image)
                 newStory.description = description
+                newStory.rating = arrRating
+                self.arrRating = arrRating
                 let storyContent = snap.childSnapshot(forPath: "storyContent")
                 for chapter in storyContent.children {
                     let snap1 = chapter as! DataSnapshot
@@ -104,7 +128,6 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
                 print("new story: \(newStory.name)")
                 self.arrayStory.append(newStory)
                 self.story = self.arrayStory.first!
-                print("Story: \(self.story)")
                 self.tableView.reloadData()
             }
             DispatchQueue.main.asyncAfter(deadline: .now()) {
@@ -138,11 +161,22 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
             else {
                 cell.lbStatus.text = "Trạng thái: Chưa hoàn thành"
             }
-            cell.lbRating.text = "Điểm đánh giá: \(story.rating)/5"
+//            print(story.rating)
+            var avgRating:Float = 0
+            if (self.arrRating.count > 0) {
+                var sum : Float = 0;
+                for (_, value) in self.arrRating {
+                    sum = sum + Float(value)
+                }
+                avgRating = sum / Float(self.arrRating.count)
+            }
+            
+            cell.lbRating.text = "Điểm đánh giá: \(avgRating)/5"
             return cell
         }
         if (indexPath.row == 2) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+            cell.itemLike.badgeValue = String(likes)
             if (liked) {
                 cell.itemLike.image = UIImage(systemName: "heart.fill")
             } else {
@@ -217,6 +251,11 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
         ref.updateChildValues([
             "\(story.name)" : rating
         ])
+        let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
+        ref1.updateChildValues([
+            "\(uid)" : rating
+        ])
+        self.arrRating["\(uid)"] = rating
         tableView.reloadData()
     }
     
@@ -227,6 +266,11 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
         ref.updateChildValues([
             "\(story.name)" : rating
         ])
+        let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
+        ref1.updateChildValues([
+            "\(uid)" : rating
+        ])
+        self.arrRating["\(uid)"] = rating
         tableView.reloadData()
     }
     
@@ -237,6 +281,11 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
         ref.updateChildValues([
             "\(story.name)" : rating
         ])
+        let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
+        ref1.updateChildValues([
+            "\(uid)" : rating
+        ])
+        self.arrRating["\(uid)"] = rating
         tableView.reloadData()
     }
     
@@ -247,6 +296,11 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
         ref.updateChildValues([
             "\(story.name)" : rating
         ])
+        let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
+        ref1.updateChildValues([
+            "\(uid)" : rating
+        ])
+        self.arrRating["\(uid)"] = rating
         tableView.reloadData()
     }
     
@@ -257,6 +311,11 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
         ref.updateChildValues([
             "\(story.name)" : rating
         ])
+        let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
+        ref1.updateChildValues([
+            "\(uid)" : rating
+        ])
+        self.arrRating["\(uid)"] = rating
         tableView.reloadData()
     }
     
@@ -280,10 +339,12 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
             ])
             let ref2 = Database.database().reference().child("Stories/\(story.name)")
             ref2.updateChildValues([
-                "likes": likes,
-                "rating": rating
+                "likes": likes
             ])
             tableView.reloadData()
+        } else if (item.title == "Bình luận") {
+            performSegue(withIdentifier: "commentInfo", sender: self)
+            
         }
     }
     
@@ -299,13 +360,21 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let storyViewController = segue.destination as! StoryViewController
-        if (story.storyContent.count == 0) {
-            storyViewController.content = story.storyContent
-            showNote()
+        if segue.destination is StoryViewController
+        {
+            let storyViewController = segue.destination as! StoryViewController
+            if (story.storyContent.count == 0) {
+                storyViewController.content = story.storyContent
+                showNote()
+            }
+            else {
+                storyViewController.content = story.storyContent
+                storyViewController.nameStory = story.name
+            }
         }
-        else {
-            storyViewController.content = story.storyContent
+        else if segue.destination is CommentViewController {
+            let commentViewController = segue.destination as! CommentViewController
+            commentViewController.nameStory = story.name
         }
         
     }

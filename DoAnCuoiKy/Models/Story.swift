@@ -20,7 +20,7 @@ class Story {
     var likes: Int = 0
     var views: Int = 0
     var downloads: Int = 0
-    var rating: Float = 0.0
+    var rating: [String: Int] = [:]
     var status: Bool = false
     var numberOfChapters: Int = 0
     var storyContent: [Chapter] = []
@@ -42,9 +42,6 @@ class Story {
     }
     func viewed() {
         self.views = self.views + 1
-    }
-    func rated(newRating: Float) {
-        self.rating = newRating
     }
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size

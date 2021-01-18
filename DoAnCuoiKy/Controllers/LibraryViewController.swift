@@ -13,6 +13,7 @@ import Firebase
 class LibraryViewController: UIViewController {
     
     var favoriteBook : [String] = []
+    var indexFavoriteBook = -1;
     var downloadBook : [String] = []
     var dataFavoriteStory : [Story] = []
     var dataDownloadStory : [Story] = []
@@ -36,6 +37,7 @@ class LibraryViewController: UIViewController {
         SideMenuManager.default.addPanGestureToPresent(toView: view)
         tableView.delegate = self
         tableView.dataSource = self
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         fetchDataUser()
     }
     func fetchDataUser() {
@@ -110,5 +112,16 @@ extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.indexFavoriteBook = indexPath.row
+        performSegue(withIdentifier: "favoriteBook", sender: self)
+    }
+    // Chọn 1 dòng
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let informationStoryViewController = segue.destination as! InformationStoryViewController
+        if (indexFavoriteBook > -1) {
+            informationStoryViewController.storyName = dataFavoriteStory[indexFavoriteBook].name
+        }
+    }
 }

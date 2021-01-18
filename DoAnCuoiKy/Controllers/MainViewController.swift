@@ -42,13 +42,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     var currentKey = ""
     var currentName = ""
     func fetchStories() {
-        // add the spinner view controller
-        let child = SpinnerViewController()
-        addChild(child)
-        child.view.frame = view.frame
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
         if (currentKey == "") {
+            // add the spinner view controller
+            let child = SpinnerViewController()
+            addChild(child)
+            child.view.frame = view.frame
+            view.addSubview(child.view)
+            child.didMove(toParent: self)
             ref.child("Stories").queryOrdered(byChild: "name").queryLimited(toFirst: 10).observe(.value, with: {snapshot in
                 let last = snapshot.children.allObjects.last as! DataSnapshot
                 for child in snapshot.children {
@@ -82,10 +82,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             })
         } else {
+            self.tableView.tableFooterView = self.createSpinnerFooter()
             ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: currentName).queryLimited(toFirst: 11).observe(.value, with: {snapshot in
                 let last = snapshot.children.allObjects.last as! DataSnapshot
                 for child in snapshot.children {
-                    
                     let snap = child as! DataSnapshot
                     if (snap.key != self.currentKey) {
                         let snap = child as! DataSnapshot
@@ -111,11 +111,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.currentKey = last.key
                 self.currentName = last.childSnapshot(forPath: "name").value as! String
                 self.tableView.reloadData()
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    // then remove the spinner view controller
-                    child.willMove(toParent: nil)
-                    child.view.removeFromSuperview()
-                    child.removeFromParent()
+                DispatchQueue.main.async {
+                    self.tableView.tableFooterView = nil
                 }
             })
         }
@@ -159,7 +156,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let currentOffset = scrollView.contentOffset.y
         let maxOffset = scrollView.contentSize.height - scrollView.frame.size.height
-        if (maxOffset - currentOffset < 100) {
+        if (maxOffset - currentOffset < 150) {
             fetchStories()
         }
     }

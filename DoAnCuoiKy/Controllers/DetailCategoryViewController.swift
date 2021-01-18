@@ -29,7 +29,6 @@ class DetailCategoryViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
         if self.isMovingFromParent {
             self.tabBarController?.tabBar.isHidden = false
         }
@@ -37,15 +36,25 @@ class DetailCategoryViewController: UIViewController {
     var currentKey = ""
     var currentName = ""
     func fetchStories() {
-        // add the spinner view controller
-        let child = SpinnerViewController()
-        addChild(child)
-        child.view.frame = view.frame
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
         if (currentKey == "") {
+            let child = SpinnerViewController()
+            addChild(child)
+            child.view.frame = view.frame
+            view.addSubview(child.view)
+            child.didMove(toParent: self)
             ref.child("Stories").queryOrdered(byChild: "category").queryEqual(toValue: title).queryLimited(toFirst: 10).observe(.value, with: {snapshot in
-                let last = snapshot.children.allObjects.last as! DataSnapshot
+                var last: DataSnapshot
+                if (snapshot.children.allObjects.last as? DataSnapshot != nil) {
+                    last = snapshot.children.allObjects.last as! DataSnapshot
+                } else {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        // then remove the spinner view controller
+                        child.willMove(toParent: nil)
+                        child.view.removeFromSuperview()
+                        child.removeFromParent()
+                    }
+                    return
+                }
                 for child in snapshot.children {
                     let snap = child as! DataSnapshot
                     let storyDict = snap.value as! [String: Any]
@@ -102,12 +111,6 @@ class DetailCategoryViewController: UIViewController {
                 self.currentKey = last.key
                 self.currentName = last.childSnapshot(forPath: "name").value as! String
                 self.tableView.reloadData()
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    // then remove the spinner view controller
-                    child.willMove(toParent: nil)
-                    child.view.removeFromSuperview()
-                    child.removeFromParent()
-                }
             })
         }
         
