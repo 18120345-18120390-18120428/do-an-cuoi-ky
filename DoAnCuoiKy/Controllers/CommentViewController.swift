@@ -15,14 +15,16 @@ class CommentViewController: UIViewController {
     private var comments : [Comment] = []
     @IBOutlet weak var tfInput: UITextField!
     @IBOutlet weak var tableViewCommnet: UITableView!
-    @IBAction func sentComment() {
+    @IBAction func sentComment(_ sender: Any) {
         let content = self.tfInput.text!
+        comments.removeAll()
         sentComment(content: content)
     }
     @IBAction func actBack() {
         dismiss(animated: true, completion: nil)
     }
-    let ref = Database.database().reference()
+    var ref: DatabaseReference!
+    var refHandle: DatabaseHandle!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewCommnet.delegate = self
@@ -35,10 +37,12 @@ class CommentViewController: UIViewController {
     var urlAvatar : String!
     var currentUsername: String!
     func sentComment(content: String) {
+        ref = Database.database().reference()
         if (content == "") {
             // show alert
         } else {
             let userID = Auth.auth().currentUser?.uid
+            
             ref.child("Profile").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Lấy giá trị của user
                 let value = snapshot.value as? NSDictionary
@@ -64,14 +68,10 @@ class CommentViewController: UIViewController {
                 comment.content = content
                 comment.timestamp = result
                 comment.avatar = image
-                self.comments.append(comment)
-                print(comment.content)
-                self.tableViewCommnet.reloadData()
-                let ref1 = Database.database().reference().child("Stories/\(self.nameStory)/comment")
-                ref1.childByAutoId().setValue(object)
+                self.ref = self.ref.child("Stories/\(self.nameStory)/comment")
+                self.ref.childByAutoId().setValue(object)
             })
         }
-        
     }
     // Phan lay du lieu
     var currentKey = ""
@@ -91,6 +91,7 @@ class CommentViewController: UIViewController {
 //        }
 //    }
     func getlistComment() {
+        
         if (currentKey == "") {
             // add the spinner view controller
             let child = SpinnerViewController()
@@ -98,6 +99,7 @@ class CommentViewController: UIViewController {
             child.view.frame = view.frame
             view.addSubview(child.view)
             child.didMove(toParent: self)
+            ref = Database.database().reference()
             ref.child("Stories/\(nameStory)/comment").queryOrdered(byChild: "date").queryLimited(toFirst: 10).observe(.value, with: {snapshot in
                 var last: DataSnapshot
                 if (snapshot.children.allObjects.last as? DataSnapshot != nil) {

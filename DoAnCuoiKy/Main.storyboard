@@ -1007,7 +1007,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="paperplane" catalog="system"/>
                                 <connections>
-                                    <action selector="sentComment" destination="fT7-P2-mLj" eventType="touchUpInside" id="dDC-bE-Lyi"/>
+                                    <action selector="sentComment:" destination="fT7-P2-mLj" eventType="touchUpInside" id="9xk-kt-FfA"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDh-wp-FS8">

@@ -20,7 +20,9 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
     var listRating : [String : Int?] = [:]
     var arrRating : [String: Int] = [:]
     private var story = Story()
-    var ref = Database.database().reference()
+    var ref: DatabaseReference!
+    
+    private var refHandle: DatabaseHandle!
     @IBOutlet weak var tableView: UITableView!
     var heightDescription: CGFloat = 100.0
     override func viewDidLoad() {
@@ -86,7 +88,8 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
         child.view.frame = view.frame
         view.addSubview(child.view)
         child.didMove(toParent: self)
-        ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: name).queryEnding(atValue: storyName+"\u{f8ff}").observe(.value, with: {snapshot in
+        self.ref = Database.database().reference()
+        self.refHandle = ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: name).queryEnding(atValue: storyName+"\u{f8ff}").observe(.value, with: {snapshot in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let storyDict = snap.value as! [String: Any]
@@ -137,6 +140,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
                 child.removeFromParent()
             }
         })
+        self.ref.removeObserver(withHandle: self.refHandle)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Load Avatar
@@ -161,7 +165,6 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
             else {
                 cell.lbStatus.text = "Trạng thái: Chưa hoàn thành"
             }
-//            print(story.rating)
             var avgRating:Float = 0
             if (self.arrRating.count > 0) {
                 var sum : Float = 0;
@@ -343,8 +346,8 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
             ])
             tableView.reloadData()
         } else if (item.title == "Bình luận") {
-            performSegue(withIdentifier: "commentInfo", sender: self)
             
+            performSegue(withIdentifier: "commentInfo", sender: self)
         }
     }
     

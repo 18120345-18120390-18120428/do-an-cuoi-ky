@@ -74,7 +74,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print("new story: \(newStory.name)")
                 self.arrayStory.append(newStory)
                 self.newStory = self.arrayStory.first!
-                print("Story: \(self.newStory.description)")
+//                print("Story: \(self.newStory.description)")
                 self.tableView.reloadData()
             }
             DispatchQueue.main.asyncAfter(deadline: .now()) {
@@ -108,14 +108,12 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         if (indexPath.row == 2) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PickerTableViewCell") as! PickerTableViewCell
             cell.tfInfo.placeholder = "Thể loại"
-            print("jojjoojojo \(newStory.category)")
             cell.tfInfo.text = newStory.category
             cell.delegate = self
             return cell
         }
         if (indexPath.row == 3) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputDesTableViewCell") as! InputDesTableViewCell
-            print("jojjoojojo \(newStory.description)")
             cell.tvDescription.text = self.newStory.description
             cell.delegate = self
             return cell
