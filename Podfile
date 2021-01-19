@@ -17,5 +17,6 @@ target 'DoAnCuoiKy' do
   pod 'FBSDKShareKit'
   pod 'GoogleSignIn'
   pod 'SideMenu'
+  pod 'RealmSwift'
 
 end
