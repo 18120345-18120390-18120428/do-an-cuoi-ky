@@ -17,7 +17,6 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var tableViewCommnet: UITableView!
     @IBAction func sentComment(_ sender: Any) {
         let content = self.tfInput.text!
-        comments.removeAll()
         sentComment(content: content)
     }
     @IBAction func actBack() {
@@ -68,6 +67,8 @@ class CommentViewController: UIViewController {
                 comment.content = content
                 comment.timestamp = result
                 comment.avatar = image
+                self.comments.append(comment)
+                self.tableViewCommnet.reloadData()
                 self.ref = self.ref.child("Stories/\(self.nameStory)/comment")
                 self.ref.childByAutoId().setValue(object)
             })
@@ -83,15 +84,14 @@ class CommentViewController: UIViewController {
         footerView.addSubview(spinner)
         return footerView
     }
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        let currentOffset = scrollView.contentOffset.y
-//        let maxOffset = scrollView.contentSize.height - scrollView.frame.size.height
-//        if (maxOffset - currentOffset < 150) {
-//            getlistComment()
-//        }
-//    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let currentOffset = scrollView.contentOffset.y
+        let maxOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        if (maxOffset - currentOffset < 150) {
+            getlistComment()
+        }
+    }
     func getlistComment() {
-        
         if (currentKey == "") {
             // add the spinner view controller
             let child = SpinnerViewController()
@@ -100,7 +100,7 @@ class CommentViewController: UIViewController {
             view.addSubview(child.view)
             child.didMove(toParent: self)
             ref = Database.database().reference()
-            ref.child("Stories/\(nameStory)/comment").queryOrdered(byChild: "date").queryLimited(toFirst: 10).observe(.value, with: {snapshot in
+            ref.child("Stories/\(nameStory)/comment").queryOrdered(byChild: "date").queryLimited(toFirst: 10).observeSingleEvent(of: .value, with: {snapshot in
                 var last: DataSnapshot
                 if (snapshot.children.allObjects.last as? DataSnapshot != nil) {
                     last = snapshot.children.allObjects.last as! DataSnapshot
@@ -132,6 +132,7 @@ class CommentViewController: UIViewController {
                 }
                 self.currentKey = last.key
                 self.currentName = last.childSnapshot(forPath: "date").value as! String
+                print("reload comment")
                 self.tableViewCommnet.reloadData()
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     // then remove the spinner view controller
@@ -142,32 +143,33 @@ class CommentViewController: UIViewController {
             })
         } else {
             self.tableViewCommnet.tableFooterView = self.createSpinnerFooter()
-            ref.child("Stories/\(nameStory)/comment").queryOrdered(byChild: "date").queryStarting(atValue: currentName).queryLimited(toFirst: 11).observe(.value, with: {snapshot in
-                var last: DataSnapshot
-                if (snapshot.children.allObjects.last as? DataSnapshot != nil) {
-                    last = snapshot.children.allObjects.last as! DataSnapshot
-                } else {
-                    return
-                }
+            print(currentName)
+            ref.child("Stories/\(nameStory)/comment").queryOrdered(byChild: "date").queryStarting(atValue: currentName).queryLimited(toFirst: 11).observeSingleEvent(of: .value, with: {snapshot in
+                let last = snapshot.children.allObjects.last as! DataSnapshot
                 for child in snapshot.children {
                     let snap = child as! DataSnapshot
-                    let storyDict = snap.value as! [String: Any]
-                    let username = storyDict["username"] as! String
-                    let content = storyDict["content"] as! String
-                    let urlImage = storyDict["urlAvatar"] as! String
-                    let date = storyDict["date"] as! String
-                    let url = URL(string: urlImage)
-                    let data = try? Data(contentsOf: url!)
-                    let image = UIImage(data: data!, scale: UIScreen.main.scale)
-                    let comment = Comment()
-                    comment.username = username
-                    comment.content = content
-                    comment.timestamp = date
-                    comment.avatar = image
-                    self.comments.append(comment)
+                    if (snap.key != self.currentKey) {
+                        let snap = child as! DataSnapshot
+                        let storyDict = snap.value as! [String: Any]
+                        let username = storyDict["username"] as! String
+                        let content = storyDict["content"] as! String
+                        let urlImage = storyDict["urlAvatar"] as! String
+                        let date = storyDict["date"] as! String
+                        let url = URL(string: urlImage)
+                        let data = try? Data(contentsOf: url!)
+                        let image = UIImage(data: data!, scale: UIScreen.main.scale)
+                        let comment = Comment()
+                        comment.username = username
+                        comment.content = content
+                        comment.timestamp = date
+                        comment.avatar = image
+                        self.comments.append(comment)
+                    }
+                    
                 }
                 self.currentKey = last.key
                 self.currentName = last.childSnapshot(forPath: "date").value as! String
+                print("reload comment")
                 self.tableViewCommnet.reloadData()
                 DispatchQueue.main.async {
                     self.tableViewCommnet.tableFooterView = nil

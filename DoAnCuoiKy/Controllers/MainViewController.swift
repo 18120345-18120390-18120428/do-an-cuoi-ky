@@ -49,7 +49,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             child.view.frame = view.frame
             view.addSubview(child.view)
             child.didMove(toParent: self)
-            ref.child("Stories").queryOrdered(byChild: "name").queryLimited(toFirst: 10).observe(.value, with: {snapshot in
+            ref.child("Stories").queryOrdered(byChild: "name").queryLimited(toFirst: 10).observeSingleEvent(of: .value, with: {snapshot in
                 let last = snapshot.children.allObjects.last as! DataSnapshot
                 for child in snapshot.children {
                     let snap = child as! DataSnapshot
@@ -66,8 +66,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     newStory.timestamp = date
                     let url = URL(string: urlImage)
                     let data = try? Data(contentsOf: url!)
-                    let image = UIImage(data: data!, scale: UIScreen.main.scale)
-                    newStory.addSimpleStory(name: name, author: author, category: "", avatar: image!)
+                    let image = UIImage(data: data!, scale: UIScreen.main.scale)!
+                    newStory.addSimpleStory(name: name, author: author, category: "", avatar: image)
                     newStory.numberOfChapters = numberOfChapters
                     self.data.append(newStory)
                 }
@@ -83,7 +83,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             })
         } else {
             self.tableView.tableFooterView = self.createSpinnerFooter()
-            ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: currentName).queryLimited(toFirst: 11).observe(.value, with: {snapshot in
+            ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: currentName).queryLimited(toFirst: 11).observeSingleEvent(of: .value, with: {snapshot in
                 let last = snapshot.children.allObjects.last as! DataSnapshot
                 for child in snapshot.children {
                     let snap = child as! DataSnapshot

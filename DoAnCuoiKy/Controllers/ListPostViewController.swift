@@ -26,6 +26,7 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
         // Khai báo Table View
         tableView.delegate = self
         tableView.dataSource = self
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         getPublishStories()
 //        let child = SpinnerViewController()
 //        addChild(child)
@@ -78,13 +79,8 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
         ref.child("Stories").child(name).observeSingleEvent(of: .value, with: { (snapshot) in
             let storyDict = snapshot.value as! [String: Any]
             let name = storyDict["name"] as! String
-            let urlImage = storyDict["avatar"] as! String
             let newStory: Story = Story()
-            let url = URL(string: urlImage)
-            let data = try? Data(contentsOf: url!)
-            let image = UIImage(data: data!, scale: UIScreen.main.scale)!
             newStory.name = name
-            newStory.avatar = image
             self.data.append(newStory)
             self.tableView.reloadData()
         })
@@ -107,14 +103,12 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
     }
    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListPostCell") as! ListPostTableViewCell
-        cell.avatar.image = data[indexPath.row].avatar
         cell.lbTittle.text = data[indexPath.row].name
-    
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

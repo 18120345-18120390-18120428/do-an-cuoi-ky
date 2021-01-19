@@ -14,14 +14,14 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
     var liked = false
     var rating = 0
     var storyName = ""
-    var likes = 0;
+    var likes = 0
+    var views = 0
     var arrayStory : [Story] = []
     var favoriteBook : [String] = []
     var listRating : [String : Int?] = [:]
     var arrRating : [String: Int] = [:]
     private var story = Story()
     var ref: DatabaseReference!
-    
     private var refHandle: DatabaseHandle!
     @IBOutlet weak var tableView: UITableView!
     var heightDescription: CGFloat = 100.0
@@ -36,22 +36,14 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
         self.title = "Info"
         fetchStory(name: storyName)
         fetchDataUser()
+        
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        // an navigationbar
-//        navigationController?.setNavigationBarHidden(true, animated: animated)
-//        // an tabbar
-//        self.tabBarController?.tabBar.isHidden = true
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        navigationController?.setNavigationBarHidden(false, animated: animated)
-//        if self.isMovingFromParent {
-//            self.tabBarController?.tabBar.isHidden = false
-//        }
-//    }
+    func seen() {
+        let newViews = views + 1
+        let ref1 = Database.database().reference().child("Stories/\(storyName)")
+        ref1.removeAllObservers()
+        ref1.updateChildValues(["views": newViews])
+    }
     @IBAction func actionBack(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }
@@ -79,6 +71,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
             if self.favoriteBook.contains(self.story.name) {
                 self.liked = true
             }
+            print("Reload user info")
             self.tableView.reloadData()
         })
     }
@@ -89,7 +82,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
         view.addSubview(child.view)
         child.didMove(toParent: self)
         self.ref = Database.database().reference()
-        self.refHandle = ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: name).queryEnding(atValue: storyName+"\u{f8ff}").observe(.value, with: {snapshot in
+        ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: name).queryEnding(atValue: storyName+"\u{f8ff}").observeSingleEvent(of: .value, with: {snapshot in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let storyDict = snap.value as! [String: Any]
@@ -104,6 +97,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
                     arrRating = storyDict["rating"] as! [String: Int]
                 }
                 self.likes = storyDict["likes"] as! Int
+                self.views = storyDict["views"] as! Int
                 let newStory: Story = Story()
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -128,7 +122,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
                     newStory.storyContent.append(newChapter)
                 }
                 newStory.numberOfChapters = newStory.storyContent.count
-                print("new story: \(newStory.name)")
+                print("reload story")
                 self.arrayStory.append(newStory)
                 self.story = self.arrayStory.first!
                 self.tableView.reloadData()
@@ -140,7 +134,6 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
                 child.removeFromParent()
             }
         })
-        self.ref.removeObserver(withHandle: self.refHandle)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Load Avatar
@@ -352,6 +345,7 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
     }
     
     func didTapReadStory() {
+        self.seen()
         performSegue(withIdentifier: "readStory", sender: self)
     }
     func showNote() {
@@ -367,7 +361,6 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
         {
             let storyViewController = segue.destination as! StoryViewController
             if (story.storyContent.count == 0) {
-                storyViewController.content = story.storyContent
                 showNote()
             }
             else {
