@@ -10,7 +10,6 @@ import UIKit
 
 class ListPostTableViewCell: UITableViewCell {
     // Các biến quản lý đối tượng
-    @IBOutlet weak var avatar: UIImageView!
     @IBOutlet var lbTittle: UILabel!
     @IBOutlet weak var subView: UIView!
     override func awakeFromNib() {
@@ -18,8 +17,6 @@ class ListPostTableViewCell: UITableViewCell {
         
         // Giao diện Table View Cell
         subView.layer.cornerRadius = 15.0
-        avatar.layer.cornerRadius = 0.5 * avatar.bounds.size.width
-        avatar.contentMode = .scaleToFill
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

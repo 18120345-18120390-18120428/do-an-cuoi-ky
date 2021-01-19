@@ -43,6 +43,18 @@ class SideMenuController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 1) {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let VC1 = sb.instantiateViewController(withIdentifier: "Top10likesViewController") as! Top10likesViewController
+            VC1.modalPresentationStyle = .fullScreen
+            self.present(VC1, animated:true, completion: nil)
+        }
+        if (indexPath.row == 2) {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let VC1 = sb.instantiateViewController(withIdentifier: "Top10ViewsViewController") as! Top10ViewsViewController
+            VC1.modalPresentationStyle = .fullScreen
+            self.present(VC1, animated:true, completion: nil)
+        }
         if (indexPath.row == 4) {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let VC1 = sb.instantiateViewController(withIdentifier: "ListPostViewController")

@@ -15,6 +15,9 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
     var listName: [String] = []
     var indexUpdate = -1
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func actBack() {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor.darkText
@@ -34,7 +37,15 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         guard let text = searchController.searchBar.text else { return }
 //        searchController.searchBar.isSearchResultsButtonSelected
         if (text != "") {
-            fetchStories(name: text)
+            let listData = convertName(name: text)
+            print(listData)
+            listStory.removeAll()
+            for data in listData {
+                let story = Story()
+                story.name = data
+                listStory.append(story)
+            }
+            tableView.reloadData()
         } else {
             listStory.removeAll()
             tableView.reloadData()
@@ -57,30 +68,26 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
                 result.append(text)
             }
         }
-        
         return result
     }
-    public func fetchStories(name: String) {
-        let listData = convertName(name: name)
-        listStory.removeAll()
-        for data in listData {
-            ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: data).queryEnding(atValue: data+"\u{f8ff}").observe(.value, with: {snapshot in
-                for child in snapshot.children {
-                    let snap = child as! DataSnapshot
-                    let storyDict = snap.value as! [String: Any]
-                    let name = storyDict["name"] as! String
-                    let newStory: Story = Story()
-                    newStory.name = name
-                    print("Name: \(name)")
-                    self.listStory.append(newStory)
-                    self.tableView.reloadData()
-                }
-            })
-        }
-        
-        
-    }
-
+//    public func fetchStories(name: String) {
+//        let listData = convertName(name: name)
+//        listStory.removeAll()
+//        for data in listData {
+//            ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: data).queryEnding(atValue: data+"\u{f8ff}").observe(.value, with: {snapshot in
+//                for child in snapshot.children {
+//                    let snap = child as! DataSnapshot
+//                    let storyDict = snap.value as! [String: Any]
+//                    let name = storyDict["name"] as! String
+//                    let newStory: Story = Story()
+//                    newStory.name = name
+//                    print("Name: \(name)")
+//                    self.listStory.append(newStory)
+//                    self.tableView.reloadData()
+//                }
+//            })
+//        }
+//    }
 }
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

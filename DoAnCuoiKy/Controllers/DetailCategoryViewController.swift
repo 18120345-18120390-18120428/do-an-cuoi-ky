@@ -84,28 +84,32 @@ class DetailCategoryViewController: UIViewController {
                 }
             })
         } else {
-            ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: currentName).queryLimited(toFirst: 11).observe(.value, with: {snapshot in
+            ref.child("Stories").queryOrdered(byChild: "category").queryStarting(atValue: currentName).queryLimited(toFirst: 11).observe(.value, with: {snapshot in
                 let last = snapshot.children.allObjects.last as! DataSnapshot
                 for child in snapshot.children {
                     
                     let snap = child as! DataSnapshot
                     if (snap.key != self.currentKey) {
                         let snap = child as! DataSnapshot
-                        let storyDict = snap.value as! [String: Any]
-                        let name = storyDict["name"] as! String
-                        let author = storyDict["author"] as! String
-                        let urlImage = storyDict["avatar"] as! String
-                        let updateDay = storyDict["timestamp"] as! String
-                        let newStory: Story = Story()
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "dd/MM/yyyy"
-                        let date = dateFormatter.date(from:updateDay)!
-                        newStory.timestamp = date
-                        let url = URL(string: urlImage)
-                        let data = try? Data(contentsOf: url!)
-                        let image = UIImage(data: data!, scale: UIScreen.main.scale)!
-                        newStory.addSimpleStory(name: name, author: author, category: "", avatar: image)
-                        self.data.append(newStory)
+                        if (snap.key != self.currentKey) {
+                            let snap = child as! DataSnapshot
+                            let storyDict = snap.value as! [String: Any]
+                            let name = storyDict["name"] as! String
+                            let author = storyDict["author"] as! String
+                            let urlImage = storyDict["avatar"] as! String
+                            let updateDay = storyDict["timestamp"] as! String
+                            let newStory: Story = Story()
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "dd/MM/yyyy"
+                            let date = dateFormatter.date(from:updateDay)!
+                            newStory.timestamp = date
+                            let url = URL(string: urlImage)
+                            let data = try? Data(contentsOf: url!)
+                            let image = UIImage(data: data!, scale: UIScreen.main.scale)!
+                            newStory.addSimpleStory(name: name, author: author, category: "", avatar: image)
+                            self.data.append(newStory)
+                        }
+                        
                     }
                 }
                 self.currentKey = last.key

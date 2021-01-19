@@ -92,7 +92,6 @@ class LibraryViewController: UIViewController {
             newStory.numberOfChapters = numberOfChapters
             self.dataFavoriteStory.append(newStory)
             self.tableView.reloadData()
-
         })
         
     }
