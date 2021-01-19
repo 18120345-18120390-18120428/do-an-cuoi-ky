@@ -5,26 +5,36 @@
 //  Created by AnhKiem on 12/12/20.
 //  Copyright © 2020 AnhKiem. All rights reserved.
 //
-
+ 
 import UIKit
 import SideMenu
 import Firebase
-
+import RealmSwift
 class LibraryViewController: UIViewController {
     
     var favoriteBook : [String] = []
     var indexFavoriteBook = -1;
+    var indexDownloadBook = -1;
     var downloadBook : [String] = []
     var dataFavoriteStory : [Story] = []
-    var dataDownloadStory : [Story] = []
+    var dbManager:DBManager!
+    var dataDownloadStory:Results<Item>!
+
     @IBAction func segmentChange(_ sender: Any) {
-        print("hihi")
+        print( segment.selectedSegmentIndex)
+       
         tableView.reloadData()
     }
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+         //Khoi tao data manager
+                //Khoi tao dbManger
+        dbManager = DBManager.sharedInstance
+        //Lay ra danh sach du lieu
+        dataDownloadStory = dbManager.getDataFromDB()
+        print(dataDownloadStory.count)
         // Do any additional setup after loading the view.
         // add side menu
         sideMenu.leftSide = true
@@ -87,7 +97,20 @@ class LibraryViewController: UIViewController {
         
     }
 }
+func loadImageFromDiskWith(fileName: String) -> UIImage? {
 
+  let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
+
+    let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+    let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
+
+    if let dirPath = paths.first {
+        let imageUrl = URL(fileURLWithPath: dirPath).appendingPathComponent(fileName)
+        let image = UIImage(contentsOfFile: imageUrl.path)
+        return image
+    }
+    return nil
+}
 extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (segment.selectedSegmentIndex == 0) {
@@ -96,17 +119,33 @@ extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
         return dataDownloadStory.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VVTableCell") as! VVTableViewCell
-        cell.logoItem.layer.cornerRadius = 40.0
-        cell.logoItem.image = dataFavoriteStory[indexPath.row].avatar
-        cell.lbName.text = dataFavoriteStory[indexPath.row].name
-        cell.lbAuthor.text = dataFavoriteStory[indexPath.row].author
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        let date = dateFormatter.string(from: dataFavoriteStory[indexPath.row].timestamp)
-        cell.lbUpdateDay.text = "Ngày cập nhật: \(date)"
-        cell.lbChapterNumber.text = "Số Chương: \(dataFavoriteStory[indexPath.row].numberOfChapters)"
+        if (segment.selectedSegmentIndex == 0) {
+            print("hihi1")
+            cell.logoItem.layer.cornerRadius = 40.0
+            cell.logoItem.image = dataFavoriteStory[indexPath.row].avatar
+            cell.lbName.text = dataFavoriteStory[indexPath.row].name
+            cell.lbAuthor.text = dataFavoriteStory[indexPath.row].author
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            let date = dateFormatter.string(from: dataFavoriteStory[indexPath.row].timestamp)
+            cell.lbUpdateDay.text = "Ngày cập nhật: \(date)"
+            cell.lbChapterNumber.text = "Số Chương: \(dataFavoriteStory[indexPath.row].numberOfChapters)"
+        }else if(segment.selectedSegmentIndex == 1){
+            cell.logoItem.layer.cornerRadius = 40.0
+            cell.logoItem.image = loadImageFromDiskWith(fileName: dataDownloadStory[indexPath.row].name)
+            cell.lbName.text = dataDownloadStory[indexPath.row].name
+            cell.lbAuthor.text = dataDownloadStory[indexPath.row].author
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            let date = dateFormatter.string(from: dataDownloadStory[indexPath.row].timestamp)
+            cell.lbUpdateDay.text = "Ngày cập nhật: \(date)"
+            cell.lbChapterNumber.text = "Số Chương: \(dataDownloadStory[indexPath.row].numberOfChapters)"
+        }
+        
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -114,14 +153,27 @@ extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.indexFavoriteBook = indexPath.row
-        performSegue(withIdentifier: "favoriteBook", sender: self)
+        if (segment.selectedSegmentIndex == 0) {
+            self.indexFavoriteBook = indexPath.row
+            performSegue(withIdentifier: "favoriteBook", sender: self)
+        }
+        else {
+            self.indexDownloadBook = indexPath.row
+            performSegue(withIdentifier: "favoriteBook", sender: self)
+        }
     }
     // Chọn 1 dòng
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let informationStoryViewController = segue.destination as! InformationStoryViewController
-        if (indexFavoriteBook > -1) {
+        
+        if (indexFavoriteBook > -1 && segment.selectedSegmentIndex == 0) {
+            informationStoryViewController.Online = true
             informationStoryViewController.storyName = dataFavoriteStory[indexFavoriteBook].name
+        }
+        if (indexDownloadBook > -1 && segment.selectedSegmentIndex == 1){
+            informationStoryViewController.Online = false
+            let itemobj = dataDownloadStory[indexDownloadBook]
+            informationStoryViewController.dataOffline = itemobj
         }
     }
 }

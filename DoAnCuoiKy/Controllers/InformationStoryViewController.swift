@@ -8,9 +8,14 @@
 
 import UIKit
 import Firebase
-
+import RealmSwift
+import Alertift
 class InformationStoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    //Khoi tao data manager
+    var dbManager:DBManager!
+    var dataList:Results<Item>!
+    var Online = true
+    var dataOffline:Item!
     var liked = false
     var rating = 0
     var storyName = ""
@@ -19,6 +24,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
     var favoriteBook : [String] = []
     var listRating : [String : Int?] = [:]
     var arrRating : [String: Int] = [:]
+    var img : String = ""
     private var story = Story()
     var ref = Database.database().reference()
     @IBOutlet weak var tableView: UITableView!
@@ -32,8 +38,26 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
         tableView.estimatedRowHeight = 600
         
         self.title = "Info"
-        fetchStory(name: storyName)
-        fetchDataUser()
+        if(Online){
+            fetchStory(name: storyName)
+            fetchDataUser()
+        }else{
+            story.name = dataOffline.name
+            story.author = dataOffline.author
+            story.avatar = loadImageFromDiskWith(fileName: dataOffline.name)!
+            story.category = dataOffline.category
+            story.description = dataOffline.descript
+            story.numberOfChapters = dataOffline.numberOfChapters
+            for chapter in dataOffline.storyContent {
+                let chapterOrder = chapter.chapterOrder
+                let chapterName = chapter.chapterName
+                let chapterContent = chapter.chapterContent
+                let newChapter = Chapter()
+                newChapter.addNewChapter(chapterOrder: chapterOrder, chapterName: chapterName, chapterContent: chapterContent)
+                story.storyContent.append(newChapter)
+            }
+            
+        }
     }
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
@@ -51,6 +75,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
 //        }
 //    }
     @IBAction func actionBack(_ sender: Any) {
+        self.Online = true
         dismiss(animated: false, completion: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,6 +119,7 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
                 let author = storyDict["author"] as! String
                 let category = storyDict["category"] as! String
                 let urlImage = storyDict["avatar"] as! String
+                self.img = urlImage
                 let description = storyDict["description"] as! String
                 let updateDay = storyDict["timestamp"] as! String
                 var arrRating: [String: Int] = [:]
@@ -346,8 +372,92 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
             performSegue(withIdentifier: "commentInfo", sender: self)
             
         }
+        else if (item.title == "Chia sẻ") {
+            print("chia sẻ")
+            
+        }
+        else if (item.title == "Tải xuống") {
+            //Khoi tao dbManger
+            dbManager = DBManager.sharedInstance
+            //Lay ra danh sach du lieu
+            dataList = dbManager.getDataFromDB()
+            dataList = dataList.filter("name = '\(story.name)'")
+            if( dataList.count == 0){
+                 let item = Item()
+                 item.name = story.name
+                 item.author = story.author
+                 item.category = story.category
+                 item.descript = story.description
+                 //item.avatar = story.avatar
+                 //item.likes = story.likes
+                 //item.views = story.views
+                 //item.downloads = story.downloads
+                //item.rating = story.rating
+                 item.status = story.status
+                 item.numberOfChapters = story.numberOfChapters
+                 item.timestamp = story.timestamp
+                 for chapter in story.storyContent{
+                     let story = StoryContent()
+                     story.chapterName = chapter.chapterName
+                     story.chapterOrder = chapter.chapterOrder
+                     story.chapterContent = chapter.chapterContent
+                     item.storyContent.append(story);
+                 }
+                 saveImage(imageName: story.name,image: story.avatar)
+
+                 DBManager.sharedInstance.addData(object: item)
+
+                 Alertift.alert(title: "Success", message: "Tải về máy thành công!")
+                 .action(.default("OK"))
+                 .show(on: self)
+            }else{
+                Alertift.alert(title: "Error", message: "Đã tải về máy")
+                .action(.default("OK"))
+                .show(on: self)
+            }
+            
+        }
     }
-    
+    func saveImage(imageName: String, image: UIImage) {
+     guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+
+        let fileName = imageName
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        guard let data = image.jpegData(compressionQuality: 1) else { return }
+
+        //Kiểm tra nếu tồn tài thì xóa đi
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                try FileManager.default.removeItem(atPath: fileURL.path)
+                print("Removed old image")
+            } catch let removeError {
+                print("couldn't remove file at path", removeError)
+            }
+
+        }
+
+        do {
+            try data.write(to: fileURL)
+            print("Save success")
+        } catch let error {
+            print("error saving file with error", error)
+        }
+
+    }
+    func loadImageFromDiskWith(fileName: String) -> UIImage? {
+
+      let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
+
+        let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
+
+        if let dirPath = paths.first {
+            let imageUrl = URL(fileURLWithPath: dirPath).appendingPathComponent(fileName)
+            let image = UIImage(contentsOfFile: imageUrl.path)
+            return image
+        }
+        return nil
+    }
     func didTapReadStory() {
         performSegue(withIdentifier: "readStory", sender: self)
     }
