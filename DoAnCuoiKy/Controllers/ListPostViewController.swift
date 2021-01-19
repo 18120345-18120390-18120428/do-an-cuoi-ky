@@ -96,7 +96,6 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
         indexUpdate = -1
         performSegue(withIdentifier: "PostViewController", sender: self)
     }
-    
     // Phần TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -110,6 +109,25 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListPostCell") as! ListPostTableViewCell
         cell.lbTittle.text = data[indexPath.row].name
         return cell
+    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            tableView.beginUpdates()
+            data.remove(at: indexPath.item)
+            let deleteStory = storyName[indexPath.item]
+            storyName.remove(at: indexPath.item)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let ref = Database.database().reference().child("Profile/\(uid)/publishStory")
+            ref.setValue(storyName)
+            
+            let ref1 = Database.database().reference().child("Stories/\(deleteStory)")
+            ref1.removeValue()
+            tableView.endUpdates()
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
