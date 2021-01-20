@@ -83,6 +83,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             })
         } else {
             self.tableView.tableFooterView = self.createSpinnerFooter()
+            print("current name \(currentName) current key \(currentKey)")
             ref.child("Stories").queryOrdered(byChild: "name").queryStarting(atValue: currentName).queryLimited(toFirst: 11).observeSingleEvent(of: .value, with: {snapshot in
                 let last = snapshot.children.allObjects.last as! DataSnapshot
                 for child in snapshot.children {
@@ -186,10 +187,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         data.removeAll()
         currentName = ""
         currentKey = ""
-        fetchStories();
+        fetchStories()
     }
     
     // Nút Pushlist
-    @IBAction func action_pushlist(_ sender: Any) {
+    @IBAction func actionPaging(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let VC1 = sb.instantiateViewController(withIdentifier: "PagingViewController") as! PagingViewController
+        VC1.modalPresentationStyle = .fullScreen
+        VC1.modalPresentationStyle = .overCurrentContext
+        VC1.delegate = self
+        self.present(VC1, animated: false, completion: nil)
+    }
+}
+extension MainViewController: namePagingViewControllerDelegate  {
+    func paging(name: String) {
+        data.removeAll()
+        currentName = name
+        currentKey = name
+        fetchStories()
     }
 }

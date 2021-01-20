@@ -48,6 +48,7 @@
 		A3296E44258EFD8E00CE5551 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3296E43258EFD8E00CE5551 /* SpinnerViewController.swift */; };
 		A32AEDD325B57BC300BFB5AB /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AEDD225B57BC300BFB5AB /* CommentTableViewCell.swift */; };
 		A32AEDD525B58E8700BFB5AB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AEDD425B58E8700BFB5AB /* Comment.swift */; };
+		A32DC61225B86A9E0009A24E /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DC61125B86A9E0009A24E /* PagingViewController.swift */; };
 		A32E9A782597265700B27957 /* TextFiledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E9A772597265700B27957 /* TextFiledTableViewCell.swift */; };
 		A32E9A7A2597269400B27957 /* ChoseAvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E9A792597269400B27957 /* ChoseAvatarTableViewCell.swift */; };
 		A32E9A7C2597270700B27957 /* InputDesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E9A7B2597270700B27957 /* InputDesTableViewCell.swift */; };
@@ -110,6 +111,7 @@
 		A3296E43258EFD8E00CE5551 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		A32AEDD225B57BC300BFB5AB /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		A32AEDD425B58E8700BFB5AB /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		A32DC61125B86A9E0009A24E /* PagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingViewController.swift; sourceTree = "<group>"; };
 		A32E9A772597265700B27957 /* TextFiledTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFiledTableViewCell.swift; sourceTree = "<group>"; };
 		A32E9A792597269400B27957 /* ChoseAvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseAvatarTableViewCell.swift; sourceTree = "<group>"; };
 		A32E9A7B2597270700B27957 /* InputDesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDesTableViewCell.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				A3D05C1825B3405900E78DB6 /* CommentViewController.swift */,
 				A33DDA8425B6BC0100FFCE6C /* Top10likesViewController.swift */,
 				A33DDA8625B6CB6100FFCE6C /* Top10ViewsViewController.swift */,
+				A32DC61125B86A9E0009A24E /* PagingViewController.swift */,
 				A33CE149258CFAE0007EDD2C /* TableViewCell */,
 			);
 			path = Controllers;
@@ -406,6 +409,7 @@
 				A32AEDD525B58E8700BFB5AB /* Comment.swift in Sources */,
 				A33DDA8525B6BC0100FFCE6C /* Top10likesViewController.swift in Sources */,
 				6C3D57B6257E173100B74B4E /* LoginViewController.swift in Sources */,
+				A32DC61225B86A9E0009A24E /* PagingViewController.swift in Sources */,
 				A32E9A8225973C8D00B27957 /* PickerTableViewCell.swift in Sources */,
 				A325E3F42596D35300B37180 /* DescriptionTableViewCell.swift in Sources */,
 				A32309342597765600AFA42C /* AddChapterViewController.swift in Sources */,
