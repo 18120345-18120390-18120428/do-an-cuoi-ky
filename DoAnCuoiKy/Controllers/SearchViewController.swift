@@ -14,6 +14,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
     var listStory: [Story] = []
     var listName: [String] = []
     var indexUpdate = -1
+    let search = UISearchController(searchResultsController: nil)
     @IBOutlet weak var tableView: UITableView!
     @IBAction func actBack() {
         dismiss(animated: true, completion: nil)
@@ -22,16 +23,21 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor.darkText
         navigationController?.navigationBar.tintColor = UIColor.systemRed
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemYellow]
-        let search = UISearchController(searchResultsController: nil)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemRed]
         search.searchResultsUpdater = self
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Type something here to search"
+        search.searchBar.tintColor = .white
         navigationItem.searchController = search
         definesPresentationContext = true
         getListNameStory()
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    override func viewDidAppear (_ animated: Bool) {
+        super.viewDidAppear (animated)
+        let textFieldInsideSearchBar = search.searchBar.value (forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar? .textColor = .white
     }
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
@@ -110,3 +116,4 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         InfoStoryViewController.storyName = listStory[indexUpdate].name
     }
 }
+

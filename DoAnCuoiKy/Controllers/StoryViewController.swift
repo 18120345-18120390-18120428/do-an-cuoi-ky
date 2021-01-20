@@ -12,6 +12,7 @@ class StoryViewController: UIViewController {
 
     // Các biến quản lý đối tượng
     @IBOutlet weak var textViewContent: UITextView!
+    var Online = true
     var content: [Chapter] = []
     var currentIndex = 0
     var nameStory = ""
@@ -45,13 +46,16 @@ class StoryViewController: UIViewController {
     
     // Phần Trở về
     @IBAction func actionBack(_ sender: Any) {
+        Online = true
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func actionListChapter(_ sender: Any) {
         performSegue(withIdentifier: "choseChapter", sender: self)
     }
     @IBAction func actComment(_ sender: Any) {
-        performSegue(withIdentifier: "commentReadStory", sender: self)
+        if(Online){
+            performSegue(withIdentifier: "commentReadStory", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
