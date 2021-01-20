@@ -101,10 +101,6 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
         return data.count
     }
    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListPostCell") as! ListPostTableViewCell
         cell.lbTittle.text = data[indexPath.row].name

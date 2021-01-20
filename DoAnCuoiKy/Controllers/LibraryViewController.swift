@@ -122,7 +122,6 @@ extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VVTableCell") as! VVTableViewCell
         if (segment.selectedSegmentIndex == 0) {
-            print("hihi1")
             cell.logoItem.layer.cornerRadius = 40.0
             cell.logoItem.image = dataFavoriteStory[indexPath.row].avatar
             cell.lbName.text = dataFavoriteStory[indexPath.row].name
