@@ -218,27 +218,6 @@ class RegisViewController: UIViewController, UIImagePickerControllerDelegate, UI
                 .show(on: self)
                 return
             }
-//            Auth.auth().createUser(withEmail: tfEmail.text!, password: tfPass.text!) { authResult, error in
-//                if let user = authResult?.user, error == nil{
-//                    Alertift.alert(title: "Congratulations!", message: "You have successfully registered!")
-//                    .action(.default("OK"))
-//                    .show(on: self)
-//                    let InfoUser: [String: Any] = [
-//                        "Name": self.tfUsername.text!,
-//                       // "Avatar": self.avatarImg.image!
-//                    ]
-//                    self.ref.child("Profile/\(user.uid)").setValue(InfoUser)
-//
-//                } else{
-//                    print("Error : \(error!.localizedDescription)")
-//                    Alertift.alert(title: "Error", message: error?.localizedDescription)
-//                    .action(.default("OK"))
-//                    .show(on: self)
-//                    return
-//                }
-//
-//
-//            }
         }
     }
 

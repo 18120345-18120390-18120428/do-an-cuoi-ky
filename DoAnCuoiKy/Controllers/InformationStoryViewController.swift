@@ -63,10 +63,12 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
         
     }
     func seen() {
-        let newViews = views + 1
-        let ref1 = Database.database().reference().child("Stories/\(storyName)")
-        ref1.removeAllObservers()
-        ref1.updateChildValues(["views": newViews])
+        if(Online){
+            let newViews = views + 1
+            let ref1 = Database.database().reference().child("Stories/\(storyName)")
+            ref1.removeAllObservers()
+            ref1.updateChildValues(["views": newViews])
+        }
 
     }
     @IBAction func actionBack(_ sender: Any) {
@@ -269,108 +271,148 @@ class InformationStoryViewController: UIViewController, UITableViewDelegate, UIT
 extension InformationStoryViewController: CustomTableViewCellDelegate {
     func choseOneStar() {
         rating = 1;
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let ref = Database.database().reference().child("Profile/\(uid)/rating/")
-        ref.updateChildValues([
-            "\(story.name)" : rating
-        ])
-        let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
-        ref1.updateChildValues([
-            "\(uid)" : rating
-        ])
-        self.arrRating["\(uid)"] = rating
+        if(Online){
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let ref = Database.database().reference().child("Profile/\(uid)/rating/")
+            ref.updateChildValues([
+                "\(story.name)" : rating
+            ])
+            let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
+            ref1.updateChildValues([
+                "\(uid)" : rating
+            ])
+            self.arrRating["\(uid)"] = rating
+        }
         tableView.reloadData()
     }
     
     func choseTwoStar() {
         rating = 2;
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let ref = Database.database().reference().child("Profile/\(uid)/rating/")
-        ref.updateChildValues([
-            "\(story.name)" : rating
-        ])
-        let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
-        ref1.updateChildValues([
-            "\(uid)" : rating
-        ])
-        self.arrRating["\(uid)"] = rating
+        if(Online){
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let ref = Database.database().reference().child("Profile/\(uid)/rating/")
+            ref.updateChildValues([
+                "\(story.name)" : rating
+            ])
+            let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
+            ref1.updateChildValues([
+                "\(uid)" : rating
+            ])
+            self.arrRating["\(uid)"] = rating
+        }
         tableView.reloadData()
     }
     
     func choseThreeStar() {
         rating = 3;
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let ref = Database.database().reference().child("Profile/\(uid)/rating/")
-        ref.updateChildValues([
-            "\(story.name)" : rating
-        ])
-        let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
-        ref1.updateChildValues([
-            "\(uid)" : rating
-        ])
-        self.arrRating["\(uid)"] = rating
+        if(Online){
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let ref = Database.database().reference().child("Profile/\(uid)/rating/")
+            ref.updateChildValues([
+                "\(story.name)" : rating
+            ])
+            let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
+            ref1.updateChildValues([
+                "\(uid)" : rating
+            ])
+            self.arrRating["\(uid)"] = rating
+        }
         tableView.reloadData()
     }
     
     func choseFourStar() {
         rating = 4;
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let ref = Database.database().reference().child("Profile/\(uid)/rating/")
-        ref.updateChildValues([
-            "\(story.name)" : rating
-        ])
-        let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
-        ref1.updateChildValues([
-            "\(uid)" : rating
-        ])
-        self.arrRating["\(uid)"] = rating
+        if(Online){
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let ref = Database.database().reference().child("Profile/\(uid)/rating/")
+            ref.updateChildValues([
+                "\(story.name)" : rating
+            ])
+            let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
+            ref1.updateChildValues([
+                "\(uid)" : rating
+            ])
+            self.arrRating["\(uid)"] = rating
+        }
         tableView.reloadData()
     }
     
     func choseFiveStar() {
         rating = 5;
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let ref = Database.database().reference().child("Profile/\(uid)/rating/")
-        ref.updateChildValues([
-            "\(story.name)" : rating
-        ])
-        let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
-        ref1.updateChildValues([
-            "\(uid)" : rating
-        ])
-        self.arrRating["\(uid)"] = rating
+        if(Online){
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let ref = Database.database().reference().child("Profile/\(uid)/rating/")
+            ref.updateChildValues([
+                "\(story.name)" : rating
+            ])
+            let ref1 = Database.database().reference().child("Stories/\(story.name)/rating")
+            ref1.updateChildValues([
+                "\(uid)" : rating
+            ])
+            self.arrRating["\(uid)"] = rating
+        }
         tableView.reloadData()
     }
     
     func didTapBarItem(item: UITabBarItem) {
         if (item.title == "Thích") {
-            if (liked) {
-                liked = false
-                if let index = favoriteBook.firstIndex(of: story.name) {
-                    favoriteBook.remove(at: index)
+                if (liked) {
+                    liked = false
+                    if let index = favoriteBook.firstIndex(of: story.name) {
+                        favoriteBook.remove(at: index)
+                    }
+                    likes = likes - 1
+                } else {
+                    liked = true
+                    favoriteBook.append(story.name)
+                    likes = likes + 1
                 }
-                likes = likes - 1
-            } else {
-                liked = true
-                favoriteBook.append(story.name)
-                likes = likes + 1
+            if(Online){
+                guard let uid = Auth.auth().currentUser?.uid else { return }
+                let ref = Database.database().reference().child("Profile/\(uid)")
+                ref.updateChildValues([
+                    "favoriteBook": self.favoriteBook
+                ])
+                let ref2 = Database.database().reference().child("Stories/\(story.name)")
+                ref2.updateChildValues([
+                    "likes": likes
+                ])
             }
-            guard let uid = Auth.auth().currentUser?.uid else { return }
-            let ref = Database.database().reference().child("Profile/\(uid)")
-            ref.updateChildValues([
-                "favoriteBook": self.favoriteBook
-            ])
-            let ref2 = Database.database().reference().child("Stories/\(story.name)")
-            ref2.updateChildValues([
-                "likes": likes
-            ])
-            tableView.reloadData()
+                tableView.reloadData()
         } else if (item.title == "Bình luận") {
-            
-            performSegue(withIdentifier: "commentInfo", sender: self)
+            if(Online){
+                performSegue(withIdentifier: "commentInfo", sender: self)
+            }
         }
         else if (item.title == "Chia sẻ") {
             print("chia sẻ")
+            // Mô tả
+            let firstActivityItem = story.name
+
+            // Thiết lập url
+            let secondActivityItem : NSURL = NSURL(string: "http://your-url.com/")!
+            
+            // If you want to use an image
+            let image : UIImage = story.avatar
+            let activityViewController : UIActivityViewController = UIActivityViewController(
+                activityItems: [firstActivityItem, secondActivityItem, image], applicationActivities: nil)
+
+            activityViewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.down
+            activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
+            
+            activityViewController.activityItemsConfiguration = [
+            UIActivity.ActivityType.message
+            ] as? UIActivityItemsConfigurationReading
+            
+            activityViewController.excludedActivityTypes = [
+                UIActivity.ActivityType.postToWeibo,
+                UIActivity.ActivityType.postToTencentWeibo,
+                UIActivity.ActivityType.postToFacebook,
+                UIActivity.ActivityType.postToTwitter,
+            ]
+            
+            activityViewController.isModalInPresentation = true
+            self.present(activityViewController, animated: true, completion: nil)
             
         }
         else if (item.title == "Tải xuống") {
@@ -385,11 +427,6 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
                  item.author = story.author
                  item.category = story.category
                  item.descript = story.description
-                 //item.avatar = story.avatar
-                 //item.likes = story.likes
-                 //item.views = story.views
-                 //item.downloads = story.downloads
-                //item.rating = story.rating
                  item.status = story.status
                  item.numberOfChapters = story.numberOfChapters
                  item.timestamp = story.timestamp
@@ -408,7 +445,7 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
                  .action(.default("OK"))
                  .show(on: self)
             }else{
-                Alertift.alert(title: "Error", message: "Đã tải về máy")
+                Alertift.alert(title: "Failed", message: "Đã tải về máy")
                 .action(.default("OK"))
                 .show(on: self)
             }
@@ -477,6 +514,7 @@ extension InformationStoryViewController: CustomTableViewCellDelegate {
             else {
                 storyViewController.content = story.storyContent
                 storyViewController.nameStory = story.name
+                storyViewController.Online = Online
             }
         }
         else if segue.destination is CommentViewController {

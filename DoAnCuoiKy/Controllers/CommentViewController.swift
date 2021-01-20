@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-
+import Alertift
 class CommentViewController: UIViewController {
     
     var nameStory:String = ""
@@ -38,7 +38,9 @@ class CommentViewController: UIViewController {
     func sentComment(content: String) {
         ref = Database.database().reference()
         if (content == "") {
-            // show alert
+            Alertift.alert(title: "Failed", message: "Vui lòng nhập nội dung")
+            .action(.default("OK"))
+            .show(on: self)
         } else {
             let userID = Auth.auth().currentUser?.uid
             
