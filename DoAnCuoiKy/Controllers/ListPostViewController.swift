@@ -122,6 +122,9 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
             
             let ref1 = Database.database().reference().child("Stories/\(deleteStory)")
             ref1.removeValue()
+            let ref2 = Database.database().reference().child("Profile/\(uid)")
+            ref2.child("rating/\(deleteStory)").removeValue()
+            ref2.child("favoriteBook/\(deleteStory)").removeValue()
             tableView.endUpdates()
         }
     }

@@ -50,7 +50,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             view.addSubview(child.view)
             child.didMove(toParent: self)
             ref.child("Stories").queryOrdered(byChild: "name").queryLimited(toFirst: 10).observeSingleEvent(of: .value, with: {snapshot in
-                let last = snapshot.children.allObjects.last as! DataSnapshot
+                var last: DataSnapshot
+                if (snapshot.children.allObjects.last as? DataSnapshot != nil) {
+                    last = snapshot.children.allObjects.last as! DataSnapshot
+                } else {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        // then remove the spinner view controller
+                        child.willMove(toParent: nil)
+                        child.view.removeFromSuperview()
+                        child.removeFromParent()
+                    }
+                    return
+                }
                 for child in snapshot.children {
                     let snap = child as! DataSnapshot
                     let storyDict = snap.value as! [String: Any]
@@ -152,6 +163,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let spinner = UIActivityIndicatorView()
         spinner.center = footerView.center
         footerView.addSubview(spinner)
+        spinner.startAnimating()
         return footerView
     }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

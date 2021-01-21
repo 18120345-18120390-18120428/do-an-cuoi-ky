@@ -84,6 +84,7 @@ class CommentViewController: UIViewController {
         let spinner = UIActivityIndicatorView()
         spinner.center = footerView.center
         footerView.addSubview(spinner)
+        spinner.startAnimating()
         return footerView
     }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

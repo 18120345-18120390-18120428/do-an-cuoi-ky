@@ -195,22 +195,37 @@ extension PostViewController: ButtonTableViewCellDelegate, TextFiledTableViewCel
         performSegue(withIdentifier: "addChapter", sender: self)
     }
     func tapSave() {
-        delegate?.addNewStory(newStory: newStory)
-        let child = SpinnerViewController()
-        addChild(child)
-        child.view.frame = view.frame
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
-        self.newStory.numberOfChapters = self.newStory.storyContent.count
-        let uploadTask = newStory.pushToFirebase()
-        uploadTask.observe(.success) { snapshot in
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                print("Simulation finished")
-                child.willMove(toParent: nil)
-                child.view.removeFromSuperview()
-                child.removeFromParent()
+        if (newStory.name == "" || newStory.author == "" || newStory.category == "" || newStory.description == "") {
+            showAlert(message: "Please fill enough information of story")
+        } else {
+            delegate?.addNewStory(newStory: newStory)
+            let child = SpinnerViewController()
+            addChild(child)
+            child.view.frame = view.frame
+            view.addSubview(child.view)
+            child.didMove(toParent: self)
+            self.newStory.numberOfChapters = self.newStory.storyContent.count
+            let uploadTask = newStory.pushToFirebase()
+            uploadTask.observe(.success) { snapshot in
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    print("Simulation finished")
+                    child.willMove(toParent: nil)
+                    child.view.removeFromSuperview()
+                    child.removeFromParent()
+                }
             }
         }
+        
+    }
+    func showAlert(message: String) {
+        // create the alert
+        let alert = UIAlertController(title: "Cảnh báo", message: "\(message)", preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let addChapterViewController = segue.destination as! AddChapterViewController
