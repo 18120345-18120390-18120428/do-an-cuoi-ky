@@ -54,6 +54,7 @@ class LibraryViewController: UIViewController {
         tableView.dataSource = self
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         fetchDataUser()
+        tableView.reloadData()
     }
     func fetchDataUser() {
         let userID = Auth.auth().currentUser?.uid

@@ -22,7 +22,7 @@ class ChangePasswordViewController: UIViewController {
         super.viewDidLoad()
         
         // Giao diện Avatar
-        outlet_avatar.layer.cornerRadius = 30.0
+        outlet_avatar.layer.cornerRadius = 0.5 * outlet_avatar.bounds.size.width
         
         // Giao diện khung mật khẩu hiện tại
         outlet_matkhaucu.layer.borderWidth = 1.0
