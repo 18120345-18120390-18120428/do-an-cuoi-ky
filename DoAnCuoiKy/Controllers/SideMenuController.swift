@@ -10,7 +10,7 @@ import UIKit
 
 class SideMenuController: UITableViewController {
 
-    var item = ["Truyện yêu thích", "Truyện xem nhiều", "Truyện mới đăng", "Đăng truyện"]
+    var item = ["Truyện yêu thích", "Truyện xem nhiều", "Đăng truyện"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
@@ -27,7 +27,7 @@ class SideMenuController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 4
     }
 
     
@@ -55,7 +55,7 @@ class SideMenuController: UITableViewController {
             VC1.modalPresentationStyle = .fullScreen
             self.present(VC1, animated:true, completion: nil)
         }
-        if (indexPath.row == 4) {
+        if (indexPath.row == 3) {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let VC1 = sb.instantiateViewController(withIdentifier: "ListPostViewController")
             let navController = UINavigationController(rootViewController: VC1)

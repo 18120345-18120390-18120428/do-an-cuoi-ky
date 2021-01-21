@@ -707,14 +707,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChapterTableViewCell" id="bf6-h7-oBq" customClass="ChapterTableViewCell" customModule="DoAnCuoiKy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="31"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="31.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bf6-h7-oBq" id="KnQ-cN-K7L">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="31.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wY4-xv-lC0">
-                                                    <rect key="frame" x="10" y="5" width="394" height="21"/>
+                                                    <rect key="frame" x="10" y="5" width="394" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1580,7 +1580,6 @@
                                                     <action selector="actComment:" destination="z7J-0Q-hw5" id="TTQ-Ex-qF1"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem title="Item" image="arrow.right.circle" catalog="system" id="7G4-VJ-cO1"/>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
@@ -1963,6 +1962,11 @@
                             </barButtonItem>
                             <barButtonItem title="Thư viện" id="ACJ-sy-ooS"/>
                         </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="goforward" catalog="system" id="1tB-bd-UeG">
+                            <connections>
+                                <action selector="reload" destination="3Ua-Wc-WsT" id="cTT-bA-zZf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="segment" destination="0Oq-ap-5Sb" id="7PA-aJ-B1l"/>
@@ -3013,7 +3017,6 @@
         <!--Paging View Controller-->
         <scene sceneID="wuP-vM-oVe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VTC-NA-XK7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PagingViewController" id="JTs-S8-UU3" customClass="PagingViewController" customModule="DoAnCuoiKy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5U5-gi-TdG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -3091,6 +3094,7 @@
                         <outlet property="tfPage" destination="r37-Qy-amD" id="Xic-GB-zXe"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTC-NA-XK7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2883" y="-1594"/>
         </scene>
@@ -3129,6 +3133,7 @@
         <image name="di-qua-hoa-cuc-1" width="702" height="444"/>
         <image name="doc.on.clipboard.fill" catalog="system" width="58" height="64"/>
         <image name="gobackward" catalog="system" width="58" height="64"/>
+        <image name="goforward" catalog="system" width="58" height="64"/>
         <image name="hand.point.right.fill" catalog="system" width="64" height="48"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="info.circle.fill" catalog="system" width="64" height="62"/>

@@ -25,6 +25,11 @@ class LibraryViewController: UIViewController {
        
         tableView.reloadData()
     }
+    @IBAction func reload() {
+        dataFavoriteStory.removeAll()
+        fetchDataUser()
+        tableView.reloadData()
+    }
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
