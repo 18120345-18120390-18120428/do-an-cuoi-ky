@@ -15,6 +15,7 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     private var data: [Story] = []
     private var storyName : [String] = []
+    private var favoriteBook: [String] = []
     var ref = Database.database().reference()
     var indexUpdate = -1
     override func viewDidLoad() {
@@ -28,36 +29,7 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         getPublishStories()
-//        let child = SpinnerViewController()
-//        addChild(child)
-//        child.view.frame = view.frame
-//        view.addSubview(child.view)
-//        child.didMove(toParent: self)
-//
-//        ref.child("Stories").observeSingleEvent(of: .value, with: {snapshot in
-//            for child in snapshot.children {
-//                let snap = child as! DataSnapshot
-//                let storyDict = snap.value as! [String: Any]
-//                let name = storyDict["name"] as! String
-//                let urlImage = storyDict["avatar"] as! String
-//                let newStory: Story = Story()
-//                let url = URL(string: urlImage)
-//                let data = try? Data(contentsOf: url!)
-//                let image = UIImage(data: data!, scale: UIScreen.main.scale)!
-//                newStory.avatar = image
-//                newStory.name = name
-//                self.storyName.append(name)
-//                self.data.append(newStory)
-//            }
-//            self.tableView.reloadData()
-//            DispatchQueue.main.asyncAfter(deadline: .now()) {
-//                print("Simulation finished")
-//                // then remove the spinner view controller
-//                child.willMove(toParent: nil)
-//                child.view.removeFromSuperview()
-//                child.removeFromParent()
-//            }
-//        })
+        fetchFavorite()
     }
     func getPublishStories() {
         let userID = Auth.auth().currentUser?.uid
@@ -85,6 +57,15 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
             self.tableView.reloadData()
         })
         
+    }
+    func fetchFavorite() {
+        let userID = Auth.auth().currentUser?.uid
+        ref.child("Profile").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            if (snapshot.hasChild("favoriteBook")) {
+                self.favoriteBook = value?["favoriteBook"] as! [String]
+            }
+        })
     }
     // Phần Trở về trang chủ
     @IBAction func actionBack(_ sender: Any) {
@@ -122,9 +103,13 @@ class ListPostViewController: UIViewController, UITableViewDelegate, UITableView
             
             let ref1 = Database.database().reference().child("Stories/\(deleteStory)")
             ref1.removeValue()
-            let ref2 = Database.database().reference().child("Profile/\(uid)")
-            ref2.child("rating/\(deleteStory)").removeValue()
-            ref2.child("favoriteBook/\(deleteStory)").removeValue()
+            let ref2 = Database.database().reference().child("Profile/\(uid)/favoriteBook")
+            if let index = favoriteBook.firstIndex(of: "\(deleteStory)") {
+                favoriteBook.remove(at: index)
+            }
+            ref2.setValue(favoriteBook)
+            let ref3 = Database.database().reference().child("Profile/\(uid)/rating/\(deleteStory)")
+            ref3.removeValue()
             tableView.endUpdates()
         }
     }
