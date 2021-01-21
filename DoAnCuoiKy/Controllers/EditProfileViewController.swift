@@ -23,6 +23,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         ref = Database.database().reference()
         // Do any additional setup after loading the view.
+        Image.layer.cornerRadius = 0.5 * Image.bounds.size.width
     }
     
 
