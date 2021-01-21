@@ -39,6 +39,7 @@ class Top10likesViewController: UIViewController {
                 let storyDict = snap.value as! [String: Any]
                 let name = storyDict["name"] as! String
                 let author = storyDict["author"] as! String
+                let numberOfChapters = storyDict["numberOfChapters"] as! Int
                 let urlImage = storyDict["avatar"] as! String
                 let likes = storyDict["likes"] as! Int
                 let newStory: Story = Story()
@@ -46,6 +47,7 @@ class Top10likesViewController: UIViewController {
                 let data = try? Data(contentsOf: url!)
                 let image = UIImage(data: data!, scale: UIScreen.main.scale)!
                 newStory.addSimpleStory(name: name, author: author, category: "", avatar: image)
+                newStory.numberOfChapters = numberOfChapters
                 newStory.likes = likes
                 self.data.append(newStory)
             }
