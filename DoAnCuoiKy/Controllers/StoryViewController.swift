@@ -18,12 +18,13 @@ class StoryViewController: UIViewController {
     var nameStory = ""
     
     
+    
     @IBOutlet weak var turnOnLight: UIButton!
     @IBOutlet weak var turnOffLight: UIButton!
     @IBOutlet weak var arial: UIButton!
     @IBOutlet weak var timenew: UIButton!
     @IBOutlet weak var futura: UIButton!
-    @IBOutlet weak var feltthin: UIButton!
+    @IBOutlet weak var rockwell: UIButton!
     @IBOutlet weak var snell: UIButton!
     @IBOutlet weak var geeza: UIButton!
     @IBOutlet weak var size: UISlider!
@@ -55,8 +56,8 @@ class StoryViewController: UIViewController {
         timenew.layer.borderWidth = 1.0
         futura.layer.borderColor = UIColor.white.cgColor
         futura.layer.borderWidth = 1.0
-        feltthin.layer.borderColor = UIColor.white.cgColor
-        feltthin.layer.borderWidth = 1.0
+        rockwell.layer.borderColor = UIColor.white.cgColor
+        rockwell.layer.borderWidth = 1.0
         snell.layer.borderColor = UIColor.white.cgColor
         snell.layer.borderWidth = 1.0
         geeza.layer.borderColor = UIColor.white.cgColor
@@ -131,7 +132,7 @@ class StoryViewController: UIViewController {
         textViewContent.font = UIFont(name: "Futura", size: CGFloat(size.value))
     }
     
-    @IBAction func actFetlthin(_ sender: Any) {
+    @IBAction func actRockwell(_ sender: Any) {
         textViewContent.font = UIFont(name: "Rockwell", size: CGFloat(size.value))
     }
     
